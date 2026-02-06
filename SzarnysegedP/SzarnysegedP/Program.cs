@@ -6,6 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+    client.BaseAddress = new Uri(
+        builder.Configuration["ApiBaseUrl"]!
+    );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
