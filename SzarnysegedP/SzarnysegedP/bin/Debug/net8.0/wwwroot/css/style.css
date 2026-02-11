@@ -1,0 +1,215 @@
+/* ====== ALAP ====== */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ====== HEADER ====== */
+header {
+    position: relative;
+    height: 600px;
+    width: 100%;
+
+    background-image: url("Z:\feladat0206\vizsgaremek temp\vizsgaremek temp\kepek\erdo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+/* Sötét overlay a jobb olvashatóságért */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Header tartalom előtérben marad */
+header * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ====== LOGÓ + CÍM ====== */
+.header-left {
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.header-left img {
+    width: 140px;
+    height: 140px;
+}
+
+/* ====== MENÜ ====== */
+.tabs {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+}
+
+.tabs a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 400px;
+    position: center;
+}
+
+/* Aláhúzás animáció */
+.tabs a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: darkolivegreen;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.tabs a:hover::after {
+    width: 100%;
+}
+
+/* ====== MAP ====== */
+#map {
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+#map {
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+/* ====== USER MENU ====== */
+.user-menu {
+    position: relative;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.user-menu span {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    color: black;
+    border-radius: 12px;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: none;
+    overflow: hidden;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-dropdown a:hover {
+    background: #f0f0f0;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+/* ====== IDŐJÁRÁS ====== */
+.hero-weather {
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    backdrop-filter: blur(6px);
+}
+.hero-weather img {
+    width: 40px;
+    height: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding: 100px 10%;
+    background: #f2f2f2;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ====== DOBOZOK ====== */
+.card h3::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: black;
+    margin: 0 auto 20px auto;
+}
+
+.card-image {
+    height: 250px;
+    background: #ccc; /* ide jön majd a kép */
+    border: 3px solid black;
+}
+
+.card-text {
+    padding: 20px;
+    border: 3px solid black;
+    border-top: none;
+    background: #e6e6e6;
+    text-align: center;
+}
+
+#home-cards {
+    display: none;
+}
+
+.home-page #home-cards {
+    display: grid;
+}
+
+
