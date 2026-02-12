@@ -11,7 +11,7 @@ header {
     height: 600px;
     width: 100%;
 
-    background-image: url("Z:\feladat0206\vizsgaremek temp\vizsgaremek temp\kepek\erdo.png");
+    background-image: url("/images/erdo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@ header * {
 }
 
 .page {
-    display: none;
+    
     padding: 20px;
 }
 

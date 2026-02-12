@@ -5,5 +5,7 @@ wwwroot\css\style.css
 wwwroot\favicon.png
 wwwroot\images\erdo.png
 wwwroot\images\header-temp.png
+wwwroot\images\map.jpg
+wwwroot\images\nap.png
 wwwroot\images\sikloernyos.png
 wwwroot\js\terkep.js

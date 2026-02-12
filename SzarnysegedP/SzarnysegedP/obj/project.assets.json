@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lukacsizs0116\\.nuget\\packages\\": {},
+    "C:\\Users\\lukac\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
+      "projectUniqueName": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
       "projectName": "SzarnysegedP",
-      "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
-      "packagesPath": "C:\\Users\\lukacsizs0116\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\obj\\",
+      "projectPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
+      "packagesPath": "C:\\Users\\lukac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lukacsizs0116\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
