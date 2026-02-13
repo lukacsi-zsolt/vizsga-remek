@@ -36,12 +36,6 @@ header * {
     z-index: 1;
 }
 
-.slogan {
-    font-size: 13px;
-    opacity: 0.8;
-    font-style: italic;
-}
-
 /* ====== LOGÓ + CÍM ====== */
 .header-left {
     display: flex;
@@ -57,6 +51,12 @@ header * {
     height: 140px;
 }
 
+.slogan {
+    font-size: 13px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
 /* ====== MENÜ ====== */
 .tabs {
     position: absolute;
@@ -69,7 +69,7 @@ header * {
     color: white;
     text-decoration: none;
     margin-left: 30px;
-    font-weight: 400px;
+    font-weight: 400;
     position: center;
 }
 
@@ -99,7 +99,7 @@ header * {
     color: white;
     padding: 80px 20px;
     text-align: center;
-    width: 100 vw;
+    width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 }

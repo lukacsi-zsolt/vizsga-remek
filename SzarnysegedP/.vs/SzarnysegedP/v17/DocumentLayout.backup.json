@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\layout\\footermenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -84,7 +84,7 @@
               "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\css\\style.css",
               "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
               "RelativeToolTip": "SzarnysegedP\\wwwroot\\css\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-02-12T13:19:03.189Z",
               "EditorCaption": ""
@@ -104,20 +104,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGcAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-06T14:03:24.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T14:03:24.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Terkep.razor",
               "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Terkep.razor",
               "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Terkep.razor",
@@ -125,8 +124,7 @@
               "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Terkep.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-12T12:47:04.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T12:47:04.853Z"
             },
             {
               "$type": "Document",

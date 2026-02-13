@@ -36,12 +36,6 @@ header * {
     z-index: 1;
 }
 
-.slogan {
-    font-size: 13px;
-    opacity: 0.8;
-    font-style: italic;
-}
-
 /* ====== LOGÓ + CÍM ====== */
 .header-left {
     display: flex;
@@ -50,11 +44,20 @@ header * {
     color: white;
     font-size: 40px;
     font-weight: 600;
+    position: absolute;
 }
 
-.header-left img {
-    width: 140px;
-    height: 140px;
+    .header-left img {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+    }
+
+.slogan {
+    font-size: 13px;
+    opacity: 0.8;
+    font-style: italic;
+    position: absolute;
 }
 
 /* ====== MENÜ ====== */
@@ -69,7 +72,7 @@ header * {
     color: white;
     text-decoration: none;
     margin-left: 30px;
-    font-weight: 400px;
+    font-weight: 400;
     position: center;
 }
 
