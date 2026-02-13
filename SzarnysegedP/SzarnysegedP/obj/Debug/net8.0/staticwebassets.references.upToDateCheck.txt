@@ -1,0 +1,4 @@
+Z:\webprogramozas\dolgozat\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+Z:\webprogramozas\dolgozat\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+Z:\webprogramozas\dolgozat\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+Z:\webprogramozas\dolgozat\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
