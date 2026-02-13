@@ -1,31 +1,109 @@
 ﻿@page "/"
+<style>
+    /* ====== DOBOZOK FŐOLDALON ====== */
+    #home-cards {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 60px;
+        margin-bottom: 50px;
+        width: 100vw; /* javítva: 100 vw -> 100vw */
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        flex-wrap: wrap; /* ha kisebb képernyő */
+    }
+
+        #home-cards .home-card {
+            width: 250px;
+            border: 1px solid #0f2d1f;
+            text-decoration: none;
+            color: black;
+        }
+
+        #home-cards .home-card-title {
+            height: auto;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #home-cards .home-card-image {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #0f2d1f;
+        }
+
+        #home-cards .home-card-text {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #home-cards .home-card:hover {
+            background-color: #f2f2f2;
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        #home-cards .home-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+</style>
 
 <PageTitle>Főoldal</PageTitle>
+<div class="why-us">
+    <div class="why-container">
+        <h2>Miért Szárnysegéd?</h2>
+        <p class="why-subtitle">Inkább kaland, mint munka</p>
 
-<div class="cards">
+        <div class="why-features">
+            <div class="why-item">
+                <h4>✔️ Naprakész információk</h4>
+                <p>Mindig friss adatok a biztonságos repüléshez.</p>
+            </div>
+
+            <div class="why-item">
+                <h4>✔️ Megbízható helyszínek</h4>
+                <p>Bevált start- és leszállóhelyek egy helyen.</p>
+            </div>
+
+            <div class="why-item">
+                <h4>✔️ Kezdőknek és haladóknak</h4>
+                <p>Akár most indulsz, akár már tapasztalt pilóta vagy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="home-cards" class="cards">
   
-  <a href="/Elerhetosegek" class="card">
-    <div class="card-title">Elérhetőség</div>
-    <div class="card-image">
-        <img src="" alt="Elérhetőség">
+  <a href="/Elerhetosegek" class="home-card card">
+    <div class="home-card-title">Elérhetőség</div>
+    <div class="home-card-image">
+        <img src="~/images/nap.png" alt="Elérhetőség">
     </div>
-    <div class="card-text">Gyors áttekintés repülés előtt.</div>
+    <div class="home-card-text">Gyors áttekintés repülés előtt.</div>
   </a>
 
-  <a href="/Terkep" class="card">
-    <div class="card-title">Térkép</div>
-    <div class="card-image">
-        <img src="/images/map.jpg" alt="Térkép">
+    <a href="/Terkep" class="home-card card">
+    <div class="home-card-title">Térkép</div>
+    <div class="home-card-image">
+        <img src="/images/kep.jpg" alt="Térkép">
     </div>
-    <div class="card-text">Megbízható helyszínek egy térképen.</div>
+    <div class="home-card-text">Megbízható helyszínek egy térképen.</div>
   </a>
 
-  <a href="/Info" class="card">
-    <div class="card-title">Információ</div>
-    <div class="card-image">
-        <img src="" alt="Infó">
+    <a href="/Info" class="home-card card">
+    <div class="home-card-title">Információ</div>
+    <div class="home-card-image">
+        <img src="/images/kep2.jpg" alt="Infó">
     </div>
-    <div class="card-text">Letisztult felület, mobilbarát megjelenés.</div>
+    <div class="home-card-text">Letisztult felület, mobilbarát megjelenés.</div>
   </a>
 
 </div>
