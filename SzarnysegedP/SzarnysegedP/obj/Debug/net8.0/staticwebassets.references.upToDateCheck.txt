@@ -1,2 +1,3 @@
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
