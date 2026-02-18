@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "crpQ0wvLFmU=",
+  "dgSpecHash": "COK/WlWouhI=",
   "success": true,
-  "projectFilePath": "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+  "projectFilePath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukacsizs0116\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\lukacsizs0116\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

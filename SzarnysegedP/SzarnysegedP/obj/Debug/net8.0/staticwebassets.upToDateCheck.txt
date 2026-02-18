@@ -1,13 +1,13 @@
+wwwroot\css\style.css
+wwwroot\images\erdo.png
+wwwroot\images\header-temp.png
+wwwroot\images\sikloernyos.png
 wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
-wwwroot\css\style.css
 wwwroot\favicon.png
-wwwroot\images\erdo.png
-wwwroot\images\header-temp.png
 wwwroot\images\kep.jpg
 wwwroot\images\kep2.jpg
 wwwroot\images\map.jpg
 wwwroot\images\nap.png
-wwwroot\images\sikloernyos.png
 wwwroot\js\terkep.js
