@@ -267,6 +267,48 @@ header * {
 }
 
 /* ====== INFO ====== */
+
+.info-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* SIDEBAR */
+.info-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.info-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-sidebar a {
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #374151;
+    font-size: 14px;
+    transition: all .2s ease;
+}
+
+.info-sidebar a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* SECTION spacing */
+.info-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px; /* navbar offset */
+}
 .info-container {
     max-width: 900px;
     margin: 40px auto;
@@ -281,6 +323,7 @@ header * {
 
 .info-section {
     margin-bottom: 48px;
+    scroll-margin-top: 100px;
 }
 
 .info-section h2 {
@@ -305,3 +348,15 @@ header * {
     margin-bottom: 8px;
 }
 
+/* ====== IDŐJÁRÁS ====== */
+.weather-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* középre */
+    margin: 30px 0;
+    overflow: visible !important;
+}
+
+#openweathermap-widget-21 {
+    min-width: 700px; /* nagyon fontos */
+}

@@ -1,6 +1,7 @@
 wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
+wwwroot\css\style.css
 wwwroot\favicon.png
 wwwroot\images\erdo.png
 wwwroot\images\header-temp.png
@@ -10,5 +11,5 @@ wwwroot\images\map.jpg
 wwwroot\images\nap.png
 wwwroot\images\repul.jpg
 wwwroot\images\sikloernyos.png
+wwwroot\js\scrollTo.js
 wwwroot\js\terkep.js
-wwwroot\css\style.css

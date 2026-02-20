@@ -1,35 +1,62 @@
 ﻿@page "/Info"
+@inject IJSRuntime JS
+
+@code {
+    async Task ScrollTo(string id)
+    {
+        await JS.InvokeVoidAsync("scrollToSection", id);
+    }
+}
+
 <PageTitle>Információk</PageTitle>
-<div class="info-container">
-    <section class="info-section">
-        <h2>Általános siklóernyős tudnivalók</h2>
-        <p>
-            A siklóernyőzés különleges élmény. A levegőben lenni, csendben suhanni a táj felett olyan szabadságérzést ad, amit nehéz szavakkal leírni.
-            Sokan elsőre bizonytalanok vagy félnek egy kicsit, ez teljesen természetes.
-        </p>
-        <p>
-            Fontos tudni, hogy a repülés nem vakmerőségről szól, hanem tudásról, felkészültségről és fokozatosságról. Megfelelő oktatással, türelemmel és
-            gyakorlással bárki biztonságosan elsajátíthatja az alapokat.
-        </p>
-        <p>
-            A fejlődés lépésről lépésre történik. Először a földi gyakorlatok, majd kisebb csúszások, később magasabb repülések.
-            Nem kell sietni. Minden pilóta ugyanott kezdte, ahol most te tartasz. A legfontosabb, hogy kérdezz bátran, hallgass az oktatókra, és mindig a 
-            saját tempódban haladj. A repülés nem verseny – az élmény és a biztonság az első. Ha nyitott vagy a tanulásra, tiszteled az időjárást és betartod 
-            az alapvető szabályokat, a siklóernyőzés egy életre szóló élménnyé válhat. Az első lépés a legnehezebb, de egyben a legizgalmasabb is.
-        </p>
-    </section>
+
+<div class="info-layout">
+
+    <aside class="info-sidebar">
+        <nav>
+            <a href="Info/#altalanos" @onclick="@(() => ScrollTo("altalanos"))" @onclick:preventDefault>Általános tudnivalók</a>
+            <a href="Info/#biztonsag" @onclick="@(() => ScrollTo("biztonsag"))" @onclick:preventDefault>Biztonsági információk</a>
+            <a href="Info/#meteo" @onclick="@(() => ScrollTo("meteo"))" @onclick:preventDefault>Meteorológia</a>
+            <a href="Info/#tanfolyam" @onclick="@(() => ScrollTo("tanfolyam"))" @onclick:preventDefault>Tanfolyamok és Oktatás</a>
+            <a href="Info/#helyszinek" @onclick="@(() => ScrollTo("helyszinek"))" @onclick:preventDefault>Helyszínek és lehetőségek</a>
+            <a href="Info/#felszereles" @onclick="@(() => ScrollTo("felszereles"))" @onclick:preventDefault>Felszerelés bemutatása</a>
+            <a href="Info/#szabalyok" @onclick="@(() => ScrollTo("szabalyok"))" @onclick:preventDefault>Szabályozások, Engedélyek</a>
+            <a href="Info/#gyik" @onclick="@(() => ScrollTo("gyik"))" @onclick:preventDefault>GYIK</a>
+            <a href="Info/#tandem" @onclick="@(() => ScrollTo("tandem"))" @onclick:preventDefault>Tandem repülés</a>
+            <a href="Info/#kapcsolat" @onclick="@(() => ScrollTo("kapcsolat"))" @onclick:preventDefault>Kapcsolat és Segítség</a>
+        </nav>
+    </aside>
+
+    <div class="info-container">
+        <section id="altalanos" class="info-section">
+            <h2>Általános siklóernyős tudnivalók</h2>
+            <p>
+                A siklóernyőzés különleges élmény. A levegőben lenni, csendben suhanni a táj felett olyan szabadságérzést ad, amit nehéz szavakkal leírni.
+                Sokan elsőre bizonytalanok vagy félnek egy kicsit, ez teljesen természetes.
+            </p>
+            <p>
+                Fontos tudni, hogy a repülés nem vakmerőségről szól, hanem tudásról, felkészültségről és fokozatosságról. Megfelelő oktatással, türelemmel és
+                gyakorlással bárki biztonságosan elsajátíthatja az alapokat.
+            </p>
+            <p>
+                A fejlődés lépésről lépésre történik. Először a földi gyakorlatok, majd kisebb csúszások, később magasabb repülések.
+                Nem kell sietni. Minden pilóta ugyanott kezdte, ahol most te tartasz. A legfontosabb, hogy kérdezz bátran, hallgass az oktatókra, és mindig a
+                saját tempódban haladj. A repülés nem verseny – az élmény és a biztonság az első. Ha nyitott vagy a tanulásra, tiszteled az időjárást és betartod
+                az alapvető szabályokat, a siklóernyőzés egy életre szóló élménnyé válhat. Az első lépés a legnehezebb, de egyben a legizgalmasabb is.
+            </p>
+        </section>
 
 
-    <section class="info-section">
-        <h2>Biztonsági információk</h2>
-        <p>
-            A repülés élmény, de csak akkor marad az, ha a biztonság az első.
-        </p>
+        <section id="biztonsag" class="info-section">
+            <h2>Biztonsági információk</h2>
+            <p>
+                A repülés élmény, de csak akkor marad az, ha a biztonság az első.
+            </p>
 
-        <h4>Felszerelés ellenőrzése</h4>
-        <p>
-            Minden felszállás előtt alaposan ellenőrizd a felszerelésedet, mert egy apró hiba is komoly problémát okozhat a levegőben.
-        </p>
+            <h4>Felszerelés ellenőrzése</h4>
+            <p>
+                Minden felszállás előtt alaposan ellenőrizd a felszerelésedet, mert egy apró hiba is komoly problémát okozhat a levegőben.
+            </p>
             <ul>
                 <li>a kupolát (nincs-e szakadás vagy sérülés)</li>
                 <li>a zsinórokat (nincsenek-e összecsavarodva)</li>
@@ -37,63 +64,63 @@
                 <li>a sisakot és az egyéb védőfelszerelést</li>
             </ul>
 
-        <h4>Időjárás ellenőrzése</h4>
-        <p>
-            Soha ne repülj anélkül, hogy megnéznéd az időjárás-előrejelzést.
-            Figyelj különösen az adott szempontokra. Ha bizonytalan vagy, inkább ne szállj fel!
-        </p>
-        <ul>
-            <li>a szél erősségére és irányára</li>
-            <li>a széllökésekre</li>
-            <li>a közeledő zivatarokra</li>
-            <li>a gyorsan változó körülményekre</li>
-        </ul>
+            <h4>Időjárás ellenőrzése</h4>
+            <p>
+                Soha ne repülj anélkül, hogy megnéznéd az időjárás-előrejelzést.
+                Figyelj különösen az adott szempontokra. Ha bizonytalan vagy, inkább ne szállj fel!
+            </p>
+            <ul>
+                <li>a szél erősségére és irányára</li>
+                <li>a széllökésekre</li>
+                <li>a közeledő zivatarokra</li>
+                <li>a gyorsan változó körülményekre</li>
+            </ul>
 
-        <h4>Saját tudásszint ismerete</h4>
-        <p>
-            Csak olyan körülmények között repülj, amelyek megfelelnek a tapasztalatodnak. Kezdőként kerüld:
-        </p>
-        <ul>
-            <li>az erős szelet</li>
-            <li>a turbulens időjárást</li>
-            <li>a zsúfolt starthelyeket</li>
-        </ul>
+            <h4>Saját tudásszint ismerete</h4>
+            <p>
+                Csak olyan körülmények között repülj, amelyek megfelelnek a tapasztalatodnak. Kezdőként kerüld:
+            </p>
+            <ul>
+                <li>az erős szelet</li>
+                <li>a turbulens időjárást</li>
+                <li>a zsúfolt starthelyeket</li>
+            </ul>
 
-        <h4>Start és leszállás</h4>
-        <p>
-            A legtöbb baleset felszálláskor és leszálláskor történik.
-        </p>
-        <ul>
-            <li>nézd át a starthelyet</li>
-            <li>győződj meg róla, hogy szabad a légtér</li>
-            <li>válassz biztonságos leszállóhelyet</li>
-        </ul>
+            <h4>Start és leszállás</h4>
+            <p>
+                A legtöbb baleset felszálláskor és leszálláskor történik.
+            </p>
+            <ul>
+                <li>nézd át a starthelyet</li>
+                <li>győződj meg róla, hogy szabad a légtér</li>
+                <li>válassz biztonságos leszállóhelyet</li>
+            </ul>
 
-        <h4>Ne repülj egyedül (kezdőként)!!!</h4>
-        <p>Kezdőként mindig jó, ha van tapasztaltabb pilóta a közelben, aki segíthet vagy tanácsot adhat.</p>
+            <h4>Ne repülj egyedül (kezdőként)!!!</h4>
+            <p>Kezdőként mindig jó, ha van tapasztaltabb pilóta a közelben, aki segíthet vagy tanácsot adhat.</p>
 
-        <h4>Ha bizonytalan vagy, ne repülj</h4>
-        <p>
-            Ez az egyik legfontosabb szabály.
-            A repülés nem kötelező. Ha valami nem tűnik biztonságosnak, inkább várj egy jobb napra.
-        </p>
+            <h4>Ha bizonytalan vagy, ne repülj</h4>
+            <p>
+                Ez az egyik legfontosabb szabály.
+                A repülés nem kötelező. Ha valami nem tűnik biztonságosnak, inkább várj egy jobb napra.
+            </p>
 
-    </section>
+        </section>
 
-    <section class="info-section">
-        <h2>Meteorológia</h2>
-        <p>
-            A meteorológia az időjárással foglalkozik. A repülésben ez az egyik legfontosabb rész, mert a levegőben történik minden, és a levegő folyamatosan változik.
-        </p>
-        <p>
-            A szél erőssége és iránya, a hőmérséklet, a felhők megjelenése vagy a légnyomás mind befolyásolják, hogy biztonságos-e a repülés.
-            Ezeket a változások néha lassan, máskor nagyon gyorsan törtnénnek. Egy pilótának ezért értenie kell az időjárás működését.
-        </p>
-        <p>
-            A felhők például nem csak „díszek” az égen. Sok információt adnak arról, mi történik a levegőben. Megmutathatják, hogy van-e emelés,
-            közeledik-e zivatar, vagy erősödik-e a szél. Ha valaki nem tudja értelmezni ezeket a jeleket, könnyen veszélyes helyzetbe kerülhet.
-        </p>
-        <p>A repülés meteorológiája abban segít, hogy:</p>
+        <section id="meteo" class="info-section">
+            <h2>Meteorológia</h2>
+            <p>
+                A meteorológia az időjárással foglalkozik. A repülésben ez az egyik legfontosabb rész, mert a levegőben történik minden, és a levegő folyamatosan változik.
+            </p>
+            <p>
+                A szél erőssége és iránya, a hőmérséklet, a felhők megjelenése vagy a légnyomás mind befolyásolják, hogy biztonságos-e a repülés.
+                Ezeket a változások néha lassan, máskor nagyon gyorsan törtnénnek. Egy pilótának ezért értenie kell az időjárás működését.
+            </p>
+            <p>
+                A felhők például nem csak „díszek” az égen. Sok információt adnak arról, mi történik a levegőben. Megmutathatják, hogy van-e emelés,
+                közeledik-e zivatar, vagy erősödik-e a szél. Ha valaki nem tudja értelmezni ezeket a jeleket, könnyen veszélyes helyzetbe kerülhet.
+            </p>
+            <p>A repülés meteorológiája abban segít, hogy:</p>
             <ul>
 
                 <li>meg tudjuk ítélni, alkalmas-e az adott nap repülésre,</li>
@@ -111,108 +138,131 @@
             <p>
                 Ahhoz pedig, hogy ezt megértsük, először néhány alapvető fizikai és időjárási fogalmat kell megismernünk.
             </p>
-    </section>
+        </section>
 
-    <section class="info-section">
-        <h2>Tanfolyamok és Oktatás</h2>
-        <p>
-            A siklóernyőzés elsajátítása fokozatosan, biztonságos keretek között történik. A képzés célja nemcsak az, hogy megtanulj repülni, hanem az is, hogy magabiztosan és felelősen tudj döntéseket hozni a levegőben.
-        </p>
-        <p>
-            Először mindenkinek, aki belekezd a sporttágba szüksége lesz egy alapfoku tanfolyamot elvégezni. A képzés teljesen kezdőknek szól.
-            Itt megtanulod az alapokat, a felszerelés részeit, a helyes használatát, az alapvető biztonsági szabályokat, a földi irányítást, a biztonságos felszállást és leszállást és az alapvető
-            meteorológiai ismereteket.  A képzés lépésről lépésre halad, így van idő megszokni az új élményeket.
-        </p>
-        <h4>Gyakorlati és elméleti képzés</h4>
-        <p>
-            A gyakorlat során az elméleti tudást a levegőben is alkalmazod. Oktatói felügyelet mellett történnek az első repülések, rádiós segítséggel.
-            A cél, hogy nyugodtan és kontrolláltan tudj felszállni, stabilan repülj és biztonságosan érkezz a kijelölt leszállóhelyre.
-            Az elmélet elsajátítása szintén egy fontos feladat a tanfolyam alatt. Az elméletből vizságt is kell tenni. 
-        </p>
-        <p>
-            A képzés során nem a gyorsaság a cél, hanem a biztos alapok megszerzése.
-            Mindenki a saját tempójában halad, és a biztonság mindig elsőbbséget élvez.
-            A repülés tanulható türelemmel, odafigyeléssel és megfelelő támogatással bárki eljuthat az első önálló repülésig.
-        </p>
-        <h4>Haladó képzés</h4>
-        <p>
-            A haladó szinten már a technikai fejlődés és a tudatosabb repülés kerül előtérbe.
-            Ide tartozhat például, a termikelés alapjai, útvonalrepülés előkészítése, időjárási döntéshozatal fejlesztése, speciális manőverek gyakorlása biztonságos körülmények között.
-        </p>
+        <section id="tanfolyam" class="info-section">
+            <h2>Tanfolyamok és Oktatás</h2>
+            <p>
+                A siklóernyőzés elsajátítása fokozatosan, biztonságos keretek között történik. A képzés célja nemcsak az, hogy megtanulj repülni, hanem az is, hogy magabiztosan és felelősen tudj döntéseket hozni a levegőben.
+            </p>
+            <p>
+                Először mindenkinek, aki belekezd a sporttágba szüksége lesz egy alapfoku tanfolyamot elvégezni. A képzés teljesen kezdőknek szól.
+                Itt megtanulod az alapokat, a felszerelés részeit, a helyes használatát, az alapvető biztonsági szabályokat, a földi irányítást, a biztonságos felszállást és leszállást és az alapvető
+                meteorológiai ismereteket.  A képzés lépésről lépésre halad, így van idő megszokni az új élményeket.
+            </p>
+            <h4>Gyakorlati és elméleti képzés</h4>
+            <p>
+                A gyakorlat során az elméleti tudást a levegőben is alkalmazod. Oktatói felügyelet mellett történnek az első repülések, rádiós segítséggel.
+                A cél, hogy nyugodtan és kontrolláltan tudj felszállni, stabilan repülj és biztonságosan érkezz a kijelölt leszállóhelyre.
+                Az elmélet elsajátítása szintén egy fontos feladat a tanfolyam alatt. Az elméletből vizságt is kell tenni.
+            </p>
+            <p>
+                A képzés során nem a gyorsaság a cél, hanem a biztos alapok megszerzése.
+                Mindenki a saját tempójában halad, és a biztonság mindig elsőbbséget élvez.
+                A repülés tanulható türelemmel, odafigyeléssel és megfelelő támogatással bárki eljuthat az első önálló repülésig.
+            </p>
+            <h4>Haladó képzés</h4>
+            <p>
+                A haladó szinten már a technikai fejlődés és a tudatosabb repülés kerül előtérbe.
+                Ide tartozhat például, a termikelés alapjai, útvonalrepülés előkészítése, időjárási döntéshozatal fejlesztése, speciális manőverek gyakorlása biztonságos körülmények között.
+            </p>
 
-    </section>
+        </section>
 
-    <section class="info-section">
-        <h2>Helyszínek és lehetőségek</h2>
-        <p>
-            Magyarország változatos tájai ideális környezetet biztosítanak a siklóernyőzéshez, különösen azok számára, akik most ismerkednek ezzel a sporttal. A természet közelsége és a
-            jól karbantartott starthelyek segítik a tanulást, miközben biztonságos körülmények között élvezheted a repülést.
-            Ha erdekel par starthely nézz nyugodtan körül a <a href="/Terkep">Térkép</a> fülünkön.
-        </p>
-        <h4>Tippek kezdőknek</h4>
-        <p>
-            Mindig képzett oktatóval repülj, hogy a tanulás biztonságos és hatékony legyen.
-            Válassz olyan helyszíneket, ahol gyors segítség elérhető, és a környezet barátságos a kezdők számára.
-            Kövesd az időjárás-előrejelzést, és kerüld az erős szelet vagy viharokat.
-            Gyakorold a startot és a leszállást sík területen, mielőtt magasabb vagy kihívást jelentő helyszínekre mennél.
-        </p>
-    </section>
+        <section id="helyszinek" class="info-section">
+            <h2>Helyszínek és lehetőségek</h2>
+            <p>
+                Magyarország változatos tájai ideális környezetet biztosítanak a siklóernyőzéshez, különösen azok számára, akik most ismerkednek ezzel a sporttal. A természet közelsége és a
+                jól karbantartott starthelyek segítik a tanulást, miközben biztonságos körülmények között élvezheted a repülést.
+                Ha erdekel par starthely nézz nyugodtan körül a <a href="/Terkep">Térkép</a> fülünkön.
+            </p>
+            <h4>Tippek kezdőknek</h4>
+            <p>
+                Mindig képzett oktatóval repülj, hogy a tanulás biztonságos és hatékony legyen.
+                Válassz olyan helyszíneket, ahol gyors segítség elérhető, és a környezet barátságos a kezdők számára.
+                Kövesd az időjárás-előrejelzést, és kerüld az erős szelet vagy viharokat.
+                Gyakorold a startot és a leszállást sík területen, mielőtt magasabb vagy kihívást jelentő helyszínekre mennél.
+            </p>
+        </section>
 
-    <section class="info-section">
-        <h2>Felszerelés bemutatása</h2>
-        <p>
+        <section id="felszereles" class="info-section">
+            <h2>Felszerelés bemutatása</h2>
+            <p>
 
-        </p>
-    </section>
+            </p>
+        </section>
 
-    <section class="info-section">
-        <h2>Szabályozások, Engedélyek</h2>
-        <p>
-            A siklóernyőzés élvezetes, de fontos tisztában lenni a jogszabályi és biztonsági keretekkel, különösen kezdőként. A szabályok betartása nemcsak a saját biztonságodat szolgálja, hanem a környezet és más repülők védelmét is.
-        </p>
-        <h4>Alapvető szabályok Magyarországon</h4>
-        <p>
-            Repülési engedély, Magyarországon a siklóernyőzéshez nem szükséges külön állami engedély, de a felszálláshoz használati joggal rendelkező területeket kell választani. Egyes starthelyekhez a helyi klubok engedélye szükséges.
-            Légi közlekedés szabályai, A repülést mindig a légiforgalmi előírások figyelembevételével kell végezni. Kerüld a repülést sűrűn lakott területek felett, és tartsd be a minimális magasságokat.
-            Biztonsági felszerelés, Kötelező a megfelelő siklóernyős felszerelés, beleértve a mentőernyőt és sisakot. Képzett oktatóval való repülés kezdőknek kötelező.
-            Képzés és minősítés, A kezdőknek ajánlott tanfolyam elvégzése, amely során megismerheted a start- és leszállástechnikákat, a légáramlatokat és a biztonsági protokollokat.
-        </p>
-    </section>
+        <section id="szabalyok" class="info-section">
+            <h2>Szabályozások, Engedélyek</h2>
+            <p>
+                A siklóernyőzés élvezetes, de fontos tisztában lenni a jogszabályi és biztonsági keretekkel, különösen kezdőként. A szabályok betartása nemcsak a saját biztonságodat szolgálja, hanem a környezet és más repülők védelmét is.
+            </p>
+            <h4>Alapvető szabályok Magyarországon</h4>
+            <p>
+                Repülési engedély, Magyarországon a siklóernyőzéshez nem szükséges külön állami engedély, de a felszálláshoz használati joggal rendelkező területeket kell választani. Egyes starthelyekhez a helyi klubok engedélye szükséges.
+                Légi közlekedés szabályai, A repülést mindig a légiforgalmi előírások figyelembevételével kell végezni. Kerüld a repülést sűrűn lakott területek felett, és tartsd be a minimális magasságokat.
+                Biztonsági felszerelés, Kötelező a megfelelő siklóernyős felszerelés, beleértve a mentőernyőt és sisakot. Képzett oktatóval való repülés kezdőknek kötelező.
+                Képzés és minősítés, A kezdőknek ajánlott tanfolyam elvégzése, amely során megismerheted a start- és leszállástechnikákat, a légáramlatokat és a biztonsági protokollokat.
+            </p>
+        </section>
 
-    <section class="info-section">
-        <h2>GYIK</h2>
-        <h4>Kell-e előképzettség a siklóernyőzéshez?</h4>
-        <p>
-            Nem. A képzés teljesen az alapoktól indul. Nem szükséges sem repülési tapasztalat, sem különleges sportmúlt. A legfontosabb a nyitottság és a tanulási szándék.
-        </p>
+        <section id="gyik" class="info-section">
+            <h2>GYIK</h2>
+            <h4>Kell-e előképzettség a siklóernyőzéshez?</h4>
+            <p>
+                Nem. A képzés teljesen az alapoktól indul. Nem szükséges sem repülési tapasztalat, sem különleges sportmúlt. A legfontosabb a nyitottság és a tanulási szándék.
+            </p>
 
-        <h4>Veszélyes a siklóernyőzés?</h4>
-         <p>
-            Mint minden sportnak, ennek is vannak kockázatai. Megfelelő oktatással, felszereléssel és körültekintő döntésekkel azonban a kockázat jelentősen csökkenthető. A biztonság mindig elsődleges szempont.
-         </p>
+            <h4>Veszélyes a siklóernyőzés?</h4>
+            <p>
+                Mint minden sportnak, ennek is vannak kockázatai. Megfelelő oktatással, felszereléssel és körültekintő döntésekkel azonban a kockázat jelentősen csökkenthető. A biztonság mindig elsődleges szempont.
+            </p>
 
-        <h4>Kell különleges fizikai erőnlét?</h4>
-        <p>
-            Átlagos fizikai állapot elegendő. Nem erő-, inkább figyelem- és technikaigényes sport. A felszálláshoz és a leszálláshoz szükséges egy kis mozgás, de nem extrém terhelés.
-        </p>
+            <h4>Kell különleges fizikai erőnlét?</h4>
+            <p>
+                Átlagos fizikai állapot elegendő. Nem erő-, inkább figyelem- és technikaigényes sport. A felszálláshoz és a leszálláshoz szükséges egy kis mozgás, de nem extrém terhelés.
+            </p>
 
-        <h4>Mi történik, ha félek a magasságtól?</h4>
-        <p>
-            Sokan meglepődnek, de a levegőben lebegve gyakran nem jelentkezik a klasszikus tériszony érzés. A magasság inkább távolságérzetként jelenik meg, nem „leesésként”. A képzés fokozatos, így van idő hozzászokni.
-        </p>
+            <h4>Mi történik, ha félek a magasságtól?</h4>
+            <p>
+                Sokan meglepődnek, de a levegőben lebegve gyakran nem jelentkezik a klasszikus tériszony érzés. A magasság inkább távolságérzetként jelenik meg, nem „leesésként”. A képzés fokozatos, így van idő hozzászokni.
+            </p>
 
-        <h4>Mennyi idő alatt lehet megtanulni?</h4>
-        <p>
-            Az alapok viszonylag gyorsan elsajátíthatók, de a valódi tapasztalat idővel és gyakorlással jön. A fejlődés egyéni tempóban történik.
-        </p>
-    </section>
+            <h4>Mennyi idő alatt lehet megtanulni?</h4>
+            <p>
+                Az alapok viszonylag gyorsan elsajátíthatók, de a valódi tapasztalat idővel és gyakorlással jön. A fejlődés egyéni tempóban történik.
+            </p>
+        </section>
 
-    <section class="info-section">
-        <h2>Kapcsolat és Segítség</h2>
-        <p>
-            Elérhetőségek, hol kérhetsz segítséget vagy további tájékoztatást. Bármilyen más kérdéssel kapcsolatban nyugodtan keress minket 
-            emailen! info@szarnysegéd.hu
-        </p>
-    </section>
+        <section id="tandem" class="info-section">
+            <h2>Tandem repülés</h2>
+            <p>
+                A siklóernyőzés különleges élmény, és nem kell hozzá előzetes vizsga vagy tapasztalat! Tandemrepülés során egy tapasztalt oktató mellett élvezheted a repülést.
+            </p>
+            <p>
+                Ideális kezdőknek vagy bárkinek, aki szeretné megtapasztalni a levegő szabadságát biztonságos keretek között.
+                Az oktató a felszerelésről, a start- és leszállási technikáról gondoskodik, így neked csak élvezni kell a repülést.
+            </p>
+            <h4>Mire számíthatsz?</h4>
+            <ul>
+                <li>Nem szükséges előképzettség vagy vizsga</li>
+                <li>Biztonságos felszerelés és oktatói felügyelet</li>
+                <li>Rövid eligazítás a start előtt</li>
+                <li>Látványos és felejthetetlen élmény a levegőben</li>
+            </ul>
+            <p>
+                A tandemrepülés után lehetőség van további tanfolyamok elvégzésére, ha kedvet kapsz a pilótává váláshoz.
+            </p>
+        </section>
+
+        <section id="kapcsolat" class="info-section">
+            <h2>Kapcsolat és Segítség</h2>
+            <p>
+                Elérhetőségek, hol kérhetsz segítséget vagy további tájékoztatást. Bármilyen más kérdéssel kapcsolatban nyugodtan keress minket
+                emailen! info@szarnysegéd.hu
+            </p>
+        </section>
+
+    </div>
 
 </div>
