@@ -13,3 +13,6 @@ wwwroot\images\repul.jpg
 wwwroot\images\sikloernyos.png
 wwwroot\js\scrollTo.js
 wwwroot\js\terkep.js
+wwwroot\images\felepites.jpg
+wwwroot\images\felszereles.jpg
+wwwroot\images\kodos.jpg

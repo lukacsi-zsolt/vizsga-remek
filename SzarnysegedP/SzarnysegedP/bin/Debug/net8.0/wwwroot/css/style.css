@@ -348,6 +348,21 @@ header * {
     margin-bottom: 8px;
 }
 
+#felszereles-kepek {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+#felszereles-kepek img {
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* ====== IDŐJÁRÁS ====== */
 .weather-wrapper {
     width: 100%;

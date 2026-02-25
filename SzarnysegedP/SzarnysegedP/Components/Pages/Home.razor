@@ -13,119 +13,225 @@
         flex-wrap: wrap; /* ha kisebb képernyő */
     }
 
-        #home-cards .home-card {
-            width: 250px;
-            border: 1px solid lightgray;
-            text-decoration: none;
-            color: black;
-        }
+    #home-cards .home-card {
+        width: 260px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        transition: 0.3s;
+        color:black;
+        text-decoration: none;
+    }
 
-        #home-cards .home-card-title {
-            height: auto;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 20px auto;
-            text-align: center;
-        }
+    #home-cards .home-card-title {
+        height: auto;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 20px auto;
+        text-align: center;
+    }
 
-        #home-cards .home-card-image {
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid darkgray;
-        }
+    #home-cards .home-card-image {
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid darkgray;
+    }
 
-        #home-cards .home-card-text {
-            padding: 15px;
-            text-align: center;
-        }
+    #home-cards .home-card-text {
+        padding: 15px;
+        text-align: center;
+    }
 
-        #home-cards .home-card:hover {
-            background-color: #f2f2f2;
-            transform: scale(1.05);
-            transition: 0.3s;
-        }
+    #home-cards .home-card:hover {
+        transform: translateY(-6px);
+        background-color: white;
+    }
 
-        #home-cards .home-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    #home-cards .home-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ====== HERO RÉSZ ====== */
+
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/kodos.jpg') center/cover;
+        color: white;
+        padding: 120px 20px;
+        text-align: center;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .btn-primary {
+        background: #2d6a4f;
+        color: white;
+        padding: 12px 25px;
+        margin: 10px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+            background: #0f2d1f; 
+    }
+
+    .btn-secondary {
+        border: 1px solid white;
+        padding: 12px 25px;
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* ====== SECTION CSS ====== */
+
+    .home-features {
+        padding: 80px 20px 30px;
+        text-align: center;
+        bakcground: #f7f9f8;
+    }
+
+    .home-features h2 {
+        font-size: 32px;
+        font-weight: 600;
+        color: #0f2d1f;
+        margin-bottom: 10px;
+    }
+
+    .home-features h2::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 3px;
+        background: #2d6a4f;
+        margin: 14px auto 0;
+        border-radius: 2px;
+    }
+
+    .home-features p {
+        max-width: 650px;
+        margin: 18px auto 50px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    .flight-status {
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    .flight-status h2 {
+        font-size: 30px;
+        color: #0f2d1f;
+        margin-bottom: 30px;
+    }
 </style>
 
 <PageTitle>Főoldal</PageTitle>
-<div class="why-us">
-    <div class="why-container">
-        <h2>Miért Szárnysegéd?</h2>
-        <p class="why-subtitle">Inkább kaland, mint munka</p>
 
-        <div class="why-features">
-            <div class="why-item">
-                <h4>✔️ Naprakész információk</h4>
-                <p>Mindig friss adatok a biztonságos repüléshez.</p>
-            </div>
+<section class="why-us">
+    <div class="why-us">
+        <div class="why-container">
+            <h2>Miért Szárnysegéd?</h2>
+            <p class="why-subtitle">Inkább kaland, mint munka</p>
 
-            <div class="why-item">
-                <h4>✔️ Megbízható helyszínek</h4>
-                <p>Bevált start- és leszállóhelyek egy helyen.</p>
-            </div>
+            <div class="why-features">
+                <div class="why-item">
+                    <h4>✔️ Naprakész információk</h4>
+                    <p>Mindig friss adatok a biztonságos repüléshez.</p>
+                </div>
 
-            <div class="why-item">
-                <h4>✔️ Kezdőknek és haladóknak</h4>
-                <p>Akár most indulsz, akár már tapasztalt pilóta vagy.</p>
+                <div class="why-item">
+                    <h4>✔️ Megbízható helyszínek</h4>
+                    <p>Bevált start- és leszállóhelyek egy helyen.</p>
+                </div>
+
+                <div class="why-item">
+                    <h4>✔️ Kezdőknek és haladóknak</h4>
+                    <p>Akár most indulsz, akár már tapasztalt pilóta vagy.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<script src="//unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
-<div class="weather-wrapper">
-    <div id="openweathermap-widget-22"></div>
-    <script type="text/javascript">
-        window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-        window.myWidgetParam.push({
-          id: 22,
-          cityid: '3054643',
-          appid: '3caa2c69a27fcb1aff1c39f3d19f82c8',
-          units: 'metric',
-          containerid: 'openweathermap-widget-22',
-        });
-        (function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.charset = "utf-8";
-          script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator-2.0.js";
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(script, s);
-        })();
-    </script>
-</div>
 
-<div id="home-cards" class="cards">
+<section class="flight-status">
+    <h2>Mai repülési feltételek Budapesten</h2>
+    <script src="//unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
+    <div class="weather-wrapper">
+        <div id="openweathermap-widget-22"></div>
+        <script type="text/javascript">
+            window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+            window.myWidgetParam.push({
+              id: 22,
+              cityid: '3054643',
+              appid: '3caa2c69a27fcb1aff1c39f3d19f82c8',
+              units: 'metric',
+              containerid: 'openweathermap-widget-22',
+            });
+            (function() {
+              var script = document.createElement('script');
+              script.async = true;
+              script.charset = "utf-8";
+              script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator-2.0.js";
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(script, s);
+            })();
+        </script>
+    </div>
+</section>
+
+
+<section class="home-features">
+    <h2>Mit találsz az oldalon?</h2>
+    <p>Gyors döntés a repüléshez, minden egy helyen.</p>
+    <div id="home-cards" class="cards">
   
-  <a href="/Elerhetosegek" class="home-card card">
-    <div class="home-card-title">Elérhetőség</div>
-    <div class="home-card-image">
-        <img src="/images/nap.png" alt="Elérhetőség">
-    </div>
-    <div class="home-card-text">Gyors áttekintés repülés előtt.</div>
-  </a>
+      <a href="/Hirek" class="home-card card">
+        <div class="home-card-title">Hírek</div>
+        <div class="home-card-image">
+            <img src="/images/nap.png" alt="Hírek">
+        </div>
+        <div class="home-card-text">Napi hírek és érdekességek.</div>
+      </a>
 
-    <a href="/Terkep" class="home-card card">
-    <div class="home-card-title">Térkép</div>
-    <div class="home-card-image">
-        <img src="/images/kep.jpg" alt="Térkép">
-    </div>
-    <div class="home-card-text">Megbízható helyszínek egy térképen.</div>
-  </a>
+        <a href="/Terkep" class="home-card card">
+        <div class="home-card-title">Térkép</div>
+        <div class="home-card-image">
+            <img src="/images/kep.jpg" alt="Térkép">
+        </div>
+        <div class="home-card-text">Megbízható helyszínek egy térképen.</div>
+      </a>
 
-    <a href="/Info" class="home-card card">
-    <div class="home-card-title">Információ</div>
-    <div class="home-card-image">
-        <img src="/images/kep2.jpg" alt="Infó">
-    </div>
-    <div class="home-card-text">Letisztult felület, mobilbarát megjelenés.</div>
-  </a>
+        <a href="/Info" class="home-card card">
+        <div class="home-card-title">Információ</div>
+        <div class="home-card-image">
+            <img src="/images/kep2.jpg" alt="Infó">
+        </div>
+        <div class="home-card-text">Letisztult felület, mobilbarát megjelenés.</div>
+      </a>
 
-</div>
+    </div>
+</section>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Repülési feltételek egy helyen</h1>
+        <p>Valós idejű időjárás, starthelyek és repülési döntéstámogatás.</p>
+        <div class="hero-buttons">
+            <a href="/Terkep" class="btn-primary"> Hol repüljek ma?</a>
+            <a href="/Info" class="btn-secondary"> Kezdőknek</a>
+        </div>
+    </div>
+</section>
