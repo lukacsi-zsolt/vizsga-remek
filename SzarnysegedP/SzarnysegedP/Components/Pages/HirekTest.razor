@@ -1,0 +1,39 @@
+﻿@page "/hirek"
+@using SzarnysegedShared.DTOs
+@using SzarnysegedShared.Dtos
+@inject HirService HirService
+@page "/HirekTest"
+
+<h3>Hírek</h3>
+
+@if (hirek == null)
+{
+    <p>Loading...</p>
+}
+else if (!hirek.Any())
+{
+    <p>Nincs hír.</p>
+}
+else
+{
+    @foreach (var hir in hirek)
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4>@hir.Cim</h4>
+                <p>@hir.Tartalom</p>
+                <small>Kategória: @hir.Kategoria</small><br />
+                <small>Dátum: @hir.Datum.ToShortDateString()</small>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    private List<HirDto>? hirek;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hirek = await HirService.GetHirekAsync();
+    }
+}

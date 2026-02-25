@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "SzarnysegedP\\SzarnysegedP.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SzarnysegedShared\\SzarnysegedShared.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

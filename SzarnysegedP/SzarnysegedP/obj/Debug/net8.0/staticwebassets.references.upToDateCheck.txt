@@ -59,3 +59,8 @@ C:\Users\szaboflo0223\source\repos\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozo
 C:\Users\szaboflo0223\source\repos\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\szaboflo0223\source\repos\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\szaboflo0223\source\repos\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json

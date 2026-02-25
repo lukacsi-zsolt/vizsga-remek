@@ -665,10 +665,19 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.1",
-          "Swashbuckle.AspNetCore": "6.6.2"
+          "Swashbuckle.AspNetCore": "6.6.2",
+          "SzarnysegedShared": "1.0.0"
         },
         "runtime": {
           "ErnyosKozoApi.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SzarnysegedShared/1.0.0": {
+        "runtime": {
+          "SzarnysegedShared.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1117,6 +1126,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "ErnyosKozoApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SzarnysegedShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

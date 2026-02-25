@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzarnysegedP", "Szarnyseged
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErnyosKozoApi", "..\ErnyosKozoApiSolution\ErnyosKozoApi\ErnyosKozoApi.csproj", "{5298A265-B4E7-10C3-2AE7-F180D3C5F962}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzarnysegedShared", "SzarnysegedShared\SzarnysegedShared.csproj", "{B51C83C8-E872-4A92-9ECB-8E392C52584E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5298A265-B4E7-10C3-2AE7-F180D3C5F962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5298A265-B4E7-10C3-2AE7-F180D3C5F962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5298A265-B4E7-10C3-2AE7-F180D3C5F962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51C83C8-E872-4A92-9ECB-8E392C52584E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51C83C8-E872-4A92-9ECB-8E392C52584E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51C83C8-E872-4A92-9ECB-8E392C52584E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51C83C8-E872-4A92-9ECB-8E392C52584E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
