@@ -13,6 +13,8 @@ builder.Services.AddHttpClient("ApiClient", client =>
     );
 });
 
+builder.Services.AddScoped<HirService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

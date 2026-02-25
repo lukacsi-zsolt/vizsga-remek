@@ -1,0 +1,677 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ErnyosKozoApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Felhasznalok": {
+      "get": {
+        "tags": [
+          "Felhasznalok"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Felhasznalok"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Felhasznalok/{id}": {
+      "get": {
+        "tags": [
+          "Felhasznalok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Felhasznalok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Felhasznalo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Felhasznalok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hirek": {
+      "get": {
+        "tags": [
+          "Hirek"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Hirek"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHirDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHirDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHirDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hirek/{id}": {
+      "get": {
+        "tags": [
+          "Hirek"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Hirek"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHirDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHirDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHirDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Hirek"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Spotok": {
+      "get": {
+        "tags": [
+          "Spotok"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Spotok"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Spotok/{id}": {
+      "get": {
+        "tags": [
+          "Spotok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Spotok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Spot"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Spotok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Utvonalak": {
+      "get": {
+        "tags": [
+          "Utvonalak"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Utvonalak"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Utvonalak/{id}": {
+      "get": {
+        "tags": [
+          "Utvonalak"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Utvonalak"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utvonal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Utvonalak"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateHirDto": {
+        "required": [
+          "cim",
+          "tartalom"
+        ],
+        "type": "object",
+        "properties": {
+          "cim": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tartalom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "kepUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "kategoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "datum": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Felhasznalo": {
+        "type": "object",
+        "properties": {
+          "felhasznaloID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "felhasznaloNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "teljesNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "szuletesiDatum": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Spot": {
+        "type": "object",
+        "properties": {
+          "spotID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nev": {
+            "type": "string",
+            "nullable": true
+          },
+          "orszag": {
+            "type": "string",
+            "nullable": true
+          },
+          "megye": {
+            "type": "string",
+            "nullable": true
+          },
+          "helyLeiras": {
+            "type": "string",
+            "nullable": true
+          },
+          "magassag": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "atlagSzel": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "szabalyok": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateHirDto": {
+        "required": [
+          "cim",
+          "tartalom"
+        ],
+        "type": "object",
+        "properties": {
+          "cim": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tartalom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "kepUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "kategoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "datum": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utvonal": {
+        "type": "object",
+        "properties": {
+          "utvonalID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "felhasznaloID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "spotID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "indulasIdo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "erkezesIdo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "tavolsagKM": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "megjegyzes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1100,6 +1100,16 @@
             "rid": "win"
           }
         }
+      },
+      "SzarnysegedShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/SzarnysegedShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SzarnysegedShared.dll": {}
+        }
       }
     }
   },
@@ -3263,6 +3273,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SzarnysegedShared/1.0.0": {
+      "type": "project",
+      "path": "../../SzarnysegedP/SzarnysegedShared/SzarnysegedShared.csproj",
+      "msbuildProject": "../../SzarnysegedP/SzarnysegedShared/SzarnysegedShared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3270,27 +3285,28 @@
       "Microsoft.EntityFrameworkCore >= 9.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.1",
-      "Swashbuckle.AspNetCore >= 6.6.2"
+      "Swashbuckle.AspNetCore >= 6.6.2",
+      "SzarnysegedShared >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\szaboflo0223\\.nuget\\packages\\": {},
+    "C:\\Users\\lukacsizs0116\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+      "projectUniqueName": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
       "projectName": "ErnyosKozoApi",
-      "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
-      "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
+      "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+      "packagesPath": "C:\\Users\\lukacsizs0116\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\szaboflo0223\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukacsizs0116\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3304,7 +3320,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+              "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
