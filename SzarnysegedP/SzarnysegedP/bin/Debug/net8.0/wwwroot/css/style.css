@@ -8,7 +8,7 @@ html, body {
 /* ====== HEADER ====== */
 header {
     position: relative;
-    height: 600px;
+    min-height: 600px;
     width: 100%;
 
     background-image: url("/images/erdo.png");
@@ -16,7 +16,8 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
@@ -36,41 +37,53 @@ header * {
     z-index: 1;
 }
 
-.slogan {
-    font-size: 13px;
-    opacity: 0.8;
-    font-style: italic;
-}
-
 /* ====== LOGÓ + CÍM ====== */
 .header-left {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
     color: white;
-    font-size: 40px;
+    font-size: clamp(22px, 4vw, 40px);
     font-weight: 600;
 }
 
+.header-left .brand-name {
+     word-break: break-word;
+}
+
 .header-left img {
-    width: 140px;
-    height: 140px;
+    width: clamp(70px, 12vw, 140px);
+    height: auto;
+}
+
+.slogan {
+    font-size: clamp(12px, 2vw, 16px);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+
+    .header-left {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* ====== MENÜ ====== */
 .tabs {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
     font-size: 25px;
+    justify-self: center;
 }
 
 .tabs a {
     color: white;
     text-decoration: none;
-    margin-left: 30px;
-    font-weight: 400px;
-    position: center;
+    font-weight: 400;
+    position: relative; /* kell az animációhoz */
 }
 
 /* Aláhúzás animáció */
@@ -176,6 +189,7 @@ header * {
     color: white;
     font-weight: 500;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .user-menu span {
@@ -247,8 +261,102 @@ header * {
     transition: 0.3s;
 }
 
-    .footer-socials a:hover {
-        color: white;
-        text-shadow: 0 0 6px #fff;
-    }
+.footer-socials a:hover {
+    color: white;
+    text-shadow: 0 0 6px #fff;
+}
 
+/* ====== INFO ====== */
+
+.info-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* SIDEBAR */
+.info-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.info-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-sidebar a {
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #374151;
+    font-size: 14px;
+    transition: all .2s ease;
+}
+
+.info-sidebar a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* SECTION spacing */
+.info-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px; /* navbar offset */
+}
+.info-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    line-height: 1.6;
+    background: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.info-section {
+    margin-bottom: 48px;
+    scroll-margin-top: 100px;
+}
+
+.info-section h2 {
+    font-size: 2.2rem;
+    color: #0f2d1f;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #0f2d1f;
+    padding-bottom: 6px;
+}
+
+.info-section p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.info-section ul {
+    list-style: inside disc;
+    margin-left: 16px;
+}
+
+.info-section ul li {
+    margin-bottom: 8px;
+}
+
+/* ====== IDŐJÁRÁS ====== */
+.weather-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* középre */
+    margin: 30px 0;
+    overflow: visible !important;
+}
+
+#openweathermap-widget-21 {
+    min-width: 700px; /* nagyon fontos */
+}

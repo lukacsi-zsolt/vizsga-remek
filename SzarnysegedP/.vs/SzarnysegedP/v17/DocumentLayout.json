@@ -1,31 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\",
+  "WorkspaceRootPath": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\models\\spotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\models\\spotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\models\\utvonaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\models\\utvonaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\js\\scrollto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\js\\scrollto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\models\\felhasznalodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\models\\felhasznalodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\models\\utvonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\models\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\models\\felhasznalo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,97 +26,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UtvonalDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\UtvonalDTO.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Models\\UtvonalDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\UtvonalDTO.cs",
-              "RelativeToolTip": "SzarnysegedP\\Models\\UtvonalDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:48:53.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Spot.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Spot.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Spot.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Spot.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Spot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:48:20.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Felhasznalo.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Felhasznalo.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Felhasznalo.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Felhasznalo.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Felhasznalo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:48:11.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Utvonal.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Utvonal.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Utvonal.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Utvonal.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Utvonal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:47:56.848Z",
+              "Title": "scrollTo.js",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\scrollTo.js",
+              "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\js\\scrollTo.js",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\scrollTo.js",
+              "RelativeToolTip": "SzarnysegedP\\wwwroot\\js\\scrollTo.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-20T13:00:53.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FelhasznaloDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\FelhasznaloDTO.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Models\\FelhasznaloDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\FelhasznaloDTO.cs",
-              "RelativeToolTip": "SzarnysegedP\\Models\\FelhasznaloDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:46:07.445Z",
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\App.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\App.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-20T12:17:59.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SpotDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\SpotDTO.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Models\\SpotDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Models\\SpotDTO.cs",
-              "RelativeToolTip": "SzarnysegedP\\Models\\SpotDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T11:40:25.457Z",
+              "Title": "Info.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Info.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Info.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T11:35:50.498Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Program.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
-              "RelativeToolTip": "SzarnysegedP\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T10:58:33.944Z",
+              "DocumentIndex": 3,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "SzarnysegedP\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAADYBAAAAAAAAAAAQwEUBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-18T11:11:15.867Z",
               "EditorCaption": ""
             }
           ]

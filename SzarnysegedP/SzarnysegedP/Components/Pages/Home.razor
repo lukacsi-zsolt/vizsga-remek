@@ -15,7 +15,7 @@
 
         #home-cards .home-card {
             width: 250px;
-            border: 1px solid #0f2d1f;
+            border: 1px solid lightgray;
             text-decoration: none;
             color: black;
         }
@@ -33,7 +33,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid #0f2d1f;
+            border-bottom: 1px solid darkgray;
         }
 
         #home-cards .home-card-text {
@@ -52,7 +52,6 @@
             height: 100%;
             object-fit: cover;
         }
-
 </style>
 
 <PageTitle>Főoldal</PageTitle>
@@ -80,12 +79,35 @@
     </div>
 </div>
 
+<script src="//unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
+<div class="weather-wrapper">
+    <div id="openweathermap-widget-22"></div>
+    <script type="text/javascript">
+        window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+        window.myWidgetParam.push({
+          id: 22,
+          cityid: '3054643',
+          appid: '3caa2c69a27fcb1aff1c39f3d19f82c8',
+          units: 'metric',
+          containerid: 'openweathermap-widget-22',
+        });
+        (function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.charset = "utf-8";
+          script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator-2.0.js";
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(script, s);
+        })();
+    </script>
+</div>
+
 <div id="home-cards" class="cards">
   
   <a href="/Elerhetosegek" class="home-card card">
     <div class="home-card-title">Elérhetőség</div>
     <div class="home-card-image">
-        <img src="~/images/nap.png" alt="Elérhetőség">
+        <img src="/images/nap.png" alt="Elérhetőség">
     </div>
     <div class="home-card-text">Gyors áttekintés repülés előtt.</div>
   </a>

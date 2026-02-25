@@ -9,5 +9,7 @@ wwwroot\images\kep.jpg
 wwwroot\images\kep2.jpg
 wwwroot\images\map.jpg
 wwwroot\images\nap.png
+wwwroot\images\repul.jpg
 wwwroot\images\sikloernyos.png
+wwwroot\js\scrollTo.js
 wwwroot\js\terkep.js
