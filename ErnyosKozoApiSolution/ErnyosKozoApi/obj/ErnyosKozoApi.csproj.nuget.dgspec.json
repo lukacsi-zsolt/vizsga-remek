@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {}
+    "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
+    "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+        "projectUniqueName": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
         "projectName": "ErnyosKozoApi",
-        "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
-        "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
+        "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+        "packagesPath": "C:\\Users\\lukacsizs0116\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\szaboflo0223\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukacsizs0116\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
-                "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj"
+              "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+                "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj"
               }
             }
           }
@@ -96,20 +96,20 @@
         }
       }
     },
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+    "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "projectUniqueName": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
         "projectName": "SzarnysegedShared",
-        "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
-        "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
+        "projectPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "packagesPath": "C:\\Users\\lukacsizs0116\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\szaboflo0223\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukacsizs0116\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

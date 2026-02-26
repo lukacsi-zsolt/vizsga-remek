@@ -1,52 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\",
+  "WorkspaceRootPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\hirektest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\hirektest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\hirektest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\controllers\\hirekcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\updatehirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\updatehirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\updatehirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\hirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\hirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\hirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\createhirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\createhirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\createhirdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\controllers\\utvonalakcontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\models\\hir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,176 +56,162 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T13:36:18.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HirService.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Services\\HirService.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
-              "RelativeToolTip": "SzarnysegedP\\Services\\HirService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T13:00:47.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Program.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
-              "RelativeToolTip": "SzarnysegedP\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "UpdateHirDTO.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
+              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
+              "RelativeToolTip": "SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:55:36.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:42:58.452Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UpdateHirDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
-              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
-              "RelativeToolTip": "SzarnysegedShared\\DTOs\\UpdateHirDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:42:58.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "CreateHirDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
               "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
               "RelativeToolTip": "SzarnysegedShared\\DTOs\\CreateHirDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:42:42.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HirDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\HirDTO.cs",
-              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\HirDTO.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\HirDTO.cs",
-              "RelativeToolTip": "SzarnysegedShared\\DTOs\\HirDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:42:18.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UtvonalakControllers.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:31:12.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:42:42.019Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "HirekController.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAqAAAAAAAAAA==",
+              "Title": "HirDTO.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\HirDTO.cs",
+              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\HirDTO.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\HirDTO.cs",
+              "RelativeToolTip": "SzarnysegedShared\\DTOs\\HirDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:30:58.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Hir.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:27:21.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:42:18.345Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA1AAAAAAAAAA==",
+              "Title": "UtvonalakControllers.cs",
+              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
+              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\UtvonalakControllers.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:26:53.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:31:12.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HirekController.cs",
+              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
+              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\HirekController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T12:30:58.114Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
               "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\appsettings.json",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-25T12:22:07.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:22:07.421Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HirekTest.razor",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\HirekTest.razor",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\HirekTest.razor",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\HirekTest.razor",
-              "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\HirekTest.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T13:02:49.149Z",
-              "EditorCaption": ""
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Program.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
+              "RelativeToolTip": "SzarnysegedP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T12:55:36.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HirService.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Services\\HirService.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
+              "RelativeToolTip": "SzarnysegedP\\Services\\HirService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T13:00:47.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
+              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T13:36:18.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Hir.cs",
+              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
+              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Models\\Hir.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T12:27:21.751Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T12:26:53.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HirekTest.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\HirekTest.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\HirekTest.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\HirekTest.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\HirekTest.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T13:02:49.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\css\\style.css",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
               "RelativeToolTip": "SzarnysegedP\\wwwroot\\css\\style.css",
               "ViewState": "AgIAADYBAAAAAAAAAAAQwEUBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-02-18T11:11:15.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T11:11:15.867Z"
             }
           ]
         }

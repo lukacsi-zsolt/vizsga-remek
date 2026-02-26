@@ -1,5 +1,5 @@
 ﻿using System.Net.Http.Json;
-using SzarnysegedShared.DTOs;
+using SzarnysegedShared.DTOs.HirDTOs;
 
 public class HirService
 {

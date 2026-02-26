@@ -1,10 +1,9 @@
 ﻿using ErnyosKozoApi.Data;
-using ErnyosKozoApi.Dtos;
 using ErnyosKozoApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SzarnysegedShared.Dtos;
 using SzarnysegedShared.DTOs;
+using SzarnysegedShared.DTOs.HirDTOs;
 
 namespace ErnyosKozoApi.Controllers
 {

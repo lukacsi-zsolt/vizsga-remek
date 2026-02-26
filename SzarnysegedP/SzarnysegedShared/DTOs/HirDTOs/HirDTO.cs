@@ -1,15 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ErnyosKozoApi.Dtos
+﻿namespace SzarnysegedShared.DTOs.HirDTOs
 {
-    public class UpdateHirDto
+    public class HirDto
     {
-        [Required]
+        public int HirID { get; set; }
         public string? Cim { get; set; }
-
-        [Required]
         public string? Tartalom { get; set; }
-
         public string? KepUrl { get; set; }
         public string? Kategoria { get; set; }
         public DateTime Datum { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SzarnysegedShared.Dtos
+namespace SzarnysegedShared.DTOs.HirDTOs
 {
     public class CreateHirDto
     {
