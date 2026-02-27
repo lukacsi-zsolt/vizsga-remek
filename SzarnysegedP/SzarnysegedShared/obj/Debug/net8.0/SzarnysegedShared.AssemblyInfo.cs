@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SzarnysegedShared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+938c9c798f6cedc9ef3a8f0c67af007dda274962")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f484a291ab38d6769a8e4293c486d234bb43c9a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SzarnysegedShared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SzarnysegedShared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -98,7 +98,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "SzarnysegedShared.Dtos.CreateHirDto",
+        "Type": "SzarnysegedShared.DTOs.HirDTOs.CreateHirDto",
         "IsRequired": true
       }
     ],
@@ -135,7 +135,7 @@
       },
       {
         "Name": "dto",
-        "Type": "ErnyosKozoApi.Dtos.UpdateHirDto",
+        "Type": "SzarnysegedShared.DTOs.HirDTOs.UpdateHirDto",
         "IsRequired": true
       }
     ],

@@ -9,10 +9,6 @@
       {
         "Path": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
         "Action": "Start"
-      },
-      {
-        "Path": "SzarnysegedShared\\SzarnysegedShared.csproj",
-        "Action": "Start"
       }
     ]
   }

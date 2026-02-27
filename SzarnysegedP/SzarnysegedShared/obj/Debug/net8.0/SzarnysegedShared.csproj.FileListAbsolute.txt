@@ -10,3 +10,15 @@ C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedSha
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\refint\SzarnysegedShared.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.pdb
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\ref\SzarnysegedShared.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.deps.json
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.pdb
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.AssemblyInfoInputs.cache
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.AssemblyInfo.cs
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.csproj.CoreCompileInputs.cache
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.sourcelink.json
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\refint\SzarnysegedShared.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.pdb
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\ref\SzarnysegedShared.dll

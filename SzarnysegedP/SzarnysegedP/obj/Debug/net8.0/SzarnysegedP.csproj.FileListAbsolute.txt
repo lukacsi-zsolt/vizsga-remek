@@ -312,3 +312,5 @@ C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\De
 C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\ref\SzarnysegedP.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.pdb
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.pdb
