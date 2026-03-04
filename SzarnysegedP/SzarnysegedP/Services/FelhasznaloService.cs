@@ -10,9 +10,9 @@ public class FelhasznaloService
         _http = factory.CreateClient("ApiClient");
     }
 
-    public async Task<List<FelhasznaloDTO>> GetHirekAsync()
+    public async Task<List<FelhasznaloDTO>> GetFelhasznalokAsync()
     {
-        return await _http.GetFromJsonAsync<List<FelhasznaloDTO>>("api/hirek")
+        return await _http.GetFromJsonAsync<List<FelhasznaloDTO>>("api/felhasznalok")
                ?? new List<FelhasznaloDTO>();
     }
 }

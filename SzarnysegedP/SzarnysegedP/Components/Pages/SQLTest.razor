@@ -1,7 +1,9 @@
 ﻿@using SzarnysegedShared.DTOs
+@using SzarnysegedShared.DTOs.FelhasznaloDTOs
 @using SzarnysegedShared.DTOs.HirDTOs
 @inject HirService HirService
-@page "/HirekTest"
+@inject FelhasznaloService FelhasznaloService
+@page "/SQLTest"
 
 <h3>Hírek</h3>
 
@@ -28,11 +30,21 @@ else
     }
 }
 
+@foreach (var f in felhasznalok)
+{
+    <h3>@f.FelhasznaloNev</h3>
+    <h3>@f.Email</h3>
+    <h3>@f.Email</h3>
+}
+
+
 @code {
     private List<HirDto>? hirek;
+    private List<FelhasznaloDTO>? felhasznalok;
 
     protected override async Task OnInitializedAsync()
     {
         hirek = await HirService.GetHirekAsync();
+		felhasznalok = await FelhasznaloService.GetFelhasznalokAsync();
     }
 }
