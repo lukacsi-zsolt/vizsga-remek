@@ -444,3 +444,14 @@ C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\Ernyo
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.csproj.AssemblyReference.cache
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.AssemblyInfoInputs.cache
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.AssemblyInfo.cs
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.csproj.CoreCompileInputs.cache
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.sourcelink.json
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.dll
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\refint\ErnyosKozoApi.dll
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ErnyosKozoApi.pdb

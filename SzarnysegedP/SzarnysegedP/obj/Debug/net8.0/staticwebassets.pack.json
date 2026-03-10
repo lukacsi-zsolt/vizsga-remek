@@ -1,0 +1,105 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SzarnysegedP.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SzarnysegedP.pw2kbmpz4x.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\erdo.png",
+      "PackagePath": "staticwebassets\\images\\erdo.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\felepites.jpg",
+      "PackagePath": "staticwebassets\\images\\felepites.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\felszereles.jpg",
+      "PackagePath": "staticwebassets\\images\\felszereles.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\header-temp.png",
+      "PackagePath": "staticwebassets\\images\\header-temp.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\kep.jpg",
+      "PackagePath": "staticwebassets\\images\\kep.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\kep2.jpg",
+      "PackagePath": "staticwebassets\\images\\kep2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\kodos.jpg",
+      "PackagePath": "staticwebassets\\images\\kodos.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\map.jpg",
+      "PackagePath": "staticwebassets\\images\\map.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\nap.png",
+      "PackagePath": "staticwebassets\\images\\nap.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\repul.jpg",
+      "PackagePath": "staticwebassets\\images\\repul.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\sikloernyos.png",
+      "PackagePath": "staticwebassets\\images\\sikloernyos.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\scrollTo.js",
+      "PackagePath": "staticwebassets\\js\\scrollTo.js"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\terkep.js",
+      "PackagePath": "staticwebassets\\js\\terkep.js"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\weather.js",
+      "PackagePath": "staticwebassets\\js\\weather.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SzarnysegedP.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SzarnysegedP.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SzarnysegedP.props",
+      "PackagePath": "build\\SzarnysegedP.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SzarnysegedP.props",
+      "PackagePath": "buildMultiTargeting\\SzarnysegedP.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SzarnysegedP.props",
+      "PackagePath": "buildTransitive\\SzarnysegedP.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

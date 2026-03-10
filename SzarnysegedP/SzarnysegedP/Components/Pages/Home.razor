@@ -1,59 +1,184 @@
 ﻿@page "/"
+
 <style>
-    /* ====== DOBOZOK FŐOLDALON ====== */
-    #home-cards {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin-top: 60px;
-        margin-bottom: 50px;
+    /* ====== WHYY US ====== */
+    .why-us {
+        background: #2d6a4f;
+        color: white;
+        padding: 80px, 20px;
+        text-align: center;
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
+    }
+
+    .why-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .why-us h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .why-subtitle {
+        opacity: 0.75;
+        font-style: italic;
+        margin-bottom: 50px;
+        font-size: 15px;
+    }
+
+    .why-features {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
         flex-wrap: wrap;
+    }
+
+    .why-item {
+        max-width: 280px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 6px;
+        padding: 28px 24px;
+        text-align: center;
+    }
+
+    .why-item h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .why-item p {
+        font-size: 14px;
+        opacity: 0.82;
+        line-height: 1.6;
+    }
+
+    /* ====== WEATHER ====== */
+    .flight-status {
+        padding: 60px 20px;
+        text-align: center;
+        background: #f5f0e8;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .flight-status h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        color: #3a2e1e;
+        margin-bottom: 28px;
+    }
+
+    .weather-box {
+        display: inline-flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: white;
+        border: 1px solid rgba(92,74,50,0.12);
+        border-radius: 6px;
+        padding: 32px 48px;
+        box-shadow: 0 4px 16px rgba(92,74,50,0.08);
+    }
+
+    .weather-unit {
+        font-size: 12px;
+        color: #7a6e5f;
+        margin-top: 6px;
+        letter-spacing: 0.5px;
+    }
+
+    /* ====== KÁRTYÁK ====== */
+    .home-features {
+        padding: 70px, 20px, 60px;
+        text-align: center;
+        background: white;
+    }
+
+    .home-features h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        color: #3a2e1e;
+        margin-bottom: 8px;
+    }
+
+    .home-features h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #2d5a3d;
+        margin: 12px auto 0;
+        border-radius: 2px;
+    }
+
+    .home-features > p {
+        color: #7a6e5f;
+        font-size: 15px;
+        margin: 16px auto 44px;
+        max-width: 500px;
+    }
+
+    #home-cards {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 0 20px 60px;
     }
 
     #home-cards .home-card {
         width: 260px;
-        border-radius: 12px;
+        border-radius: 6px;
         overflow: hidden;
-        background: white;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        transition: 0.3s;
-        color: black;
+        background: #f5f0e8;
+        border: 1px solid rgba(92,74,50,0.12);
+        box-shadow: 0 4px 16px rgba(92,74,50,0.08);
+        transition: transform 0.25s, box-shadow 0.25s;
+        color: #3a2e1e;
         text-decoration: none;
     }
 
-    #home-cards .home-card-title {
-        height: auto;
-        font-size: 16px;
-        font-weight: bold;
-        margin: 20px auto;
-        text-align: center;
+    #home-cards .home-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 28px rgba(92,74,50,0.14);
     }
 
     #home-cards .home-card-image {
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 1px solid darkgray;
-    }
-
-    #home-cards .home-card-text {
-        padding: 15px;
-        text-align: center;
-    }
-
-    #home-cards .home-card:hover {
-        transform: translateY(-6px);
-        background-color: white;
+        height: 180px;
+        overflow: hidden;
     }
 
     #home-cards .home-card-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
+    }
+
+    #home-cards .home-card-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 16px 16px 6px;
+        color: #3a2e1e;
+    }
+
+    #home-cards .home-card-text {
+        padding: 0 16px 20px;
+        font-size: 13px;
+        color: #7a6e5f;
+        line-height: 1.55;
     }
 
     /* ====== HERO RÉSZ ====== */
@@ -63,175 +188,205 @@
         color: white;
         padding: 120px 20px;
         text-align: center;
+        width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
     }
 
     .hero-content {
-        max-width: 700px;
+        max-width: 620px;
         margin: 0 auto;
     }
 
+    .hero-content h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(32px, 5vw, 52px);
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        opacity: 0.85;
+        margin-bottom: 36px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
     .btn-primary {
-        background: #2d6a4f;
+        background: #2d5a3d;
         color: white;
-        padding: 12px 25px;
-        margin: 10px;
+        padding: 12px 28px;
         text-decoration: none;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: background 0.2s;
     }
 
     .btn-primary:hover {
-        background: #0f2d1f;
+        background: #1e3d29;
+        color: white;
     }
 
     .btn-secondary {
-        border: 1px solid white;
-        padding: 12px 25px;
-        margin: 10px;
+        border: 1px solid rgba(255,255,255,0.7);
+        padding: 12px 28px;
         color: white;
         text-decoration: none;
+        border-radius: 3px;
+        font-size: 14px;
+        transition: background 0.2s;
     }
 
-    /* ====== SECTION CSS ====== */
-
-    .home-features {
-        padding: 80px 20px 30px;
-        text-align: center;
-        bakcground: #f7f9f8;
+    .btn-secondary:hover {
+        background: rgba(255,255,255,0.1);
+        color: white;
     }
 
-    .home-features h2 {
-        font-size: 32px;
-        font-weight: 600;
-        color: #0f2d1f;
-        margin-bottom: 10px;
-    }
-
-    .home-features h2::after {
-        content: "";
-        display: block;
-        width: 70px;
-        height: 3px;
-        background: #2d6a4f;
-        margin: 14px auto 0;
-        border-radius: 2px;
-    }
-
-    .home-features p {
-        max-width: 650px;
-        margin: 18px auto 50px;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #555;
-    }
-
+    /* ====== WEATHER ====== */
     .flight-status {
-        padding: 70px 20px;
-        text-align: center;
-    }
+    padding: 60px 20px;
+    text-align: center;
+    background: #f5f0e8;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
 
-    .flight-status h2 {
-        font-size: 30px;
-        color: #0f2d1f;
-        margin-bottom: 30px;
-    }
+.flight-status h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #3a2e1e;
+    margin-bottom: 28px;
+}
+
+.weather-box {
+    display: inline-flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: white;
+    border: 1px solid rgba(92,74,50,0.12);
+    border-radius: 6px;
+    padding: 32px 48px;
+    box-shadow: 0 4px 16px rgba(92,74,50,0.08);
+}
+
+.weather-item {
+    text-align: center;
+}
+
+.weather-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d5a3d;
+}
+
+.weather-unit {
+    font-size: 12px;
+    color: #7a6e5f;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
 </style>
 
 <PageTitle>Főoldal</PageTitle>
 
+<!-- WHY US -->
 <section class="why-us">
-    <div class="why-us">
-        <div class="why-container">
-            <h2>Miért Szárnysegéd?</h2>
-            <p class="why-subtitle">Inkább kaland, mint munka</p>
-
-            <div class="why-features">
-                <div class="why-item">
-                    <h4>✔️ Naprakész információk</h4>
-                    <p>Mindig friss adatok a biztonságos repüléshez.</p>
-                </div>
-
-                <div class="why-item">
-                    <h4>✔️ Megbízható helyszínek</h4>
-                    <p>Bevált start- és leszállóhelyek egy helyen.</p>
-                </div>
-
-                <div class="why-item">
-                    <h4>✔️ Kezdőknek és haladóknak</h4>
-                    <p>Akár most indulsz, akár már tapasztalt pilóta vagy.</p>
-                </div>
+    <div class="why-container">
+        <h2>Miért Szárnysegéd?</h2>
+        <p class="why-subtitle">Inkább kaland, mint munka</p>
+        <div class="why-features">
+            <div class="why-item">
+                <h4>Naprakész információk</h4>
+                <p>Mindig friss adatok a biztonságos repüléshez.</p>
+            </div>
+            <div class="why-item">
+                <h4>Megbízható helyszínek</h4>
+                <p>Bevált start- és leszállóhelyek egy helyen.</p>
+            </div>
+            <div class="why-item">
+                <h4>Kezdőknek és haladóknak</h4>
+                <p>Akár most indulsz, akár már tapasztalt pilóta vagy.</p>
             </div>
         </div>
     </div>
 </section>
 
-
+<!-- IDŐJÁRÁS -->
 <section class="flight-status">
     <h2>Mai repülési feltételek Budapesten</h2>
-    <script src="//unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
-    <div class="weather-wrapper">
-        <div id="openweathermap-widget-22"></div>
-        <script type="text/javascript">
-            window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-            window.myWidgetParam.push({
-              id: 22,
-              cityid: '3054643',
-              appid: '3caa2c69a27fcb1aff1c39f3d19f82c8',
-              units: 'metric',
-              containerid: 'openweathermap-widget-22',
-            });
-            (function() {
-              var script = document.createElement('script');
-              script.async = true;
-              script.charset = "utf-8";
-              script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator-2.0.js";
-              var s = document.getElementsByTagName('script')[0];
-              s.parentNode.insertBefore(script, s);
-            })();
-        </script>
+    <div class="weather-box">
+        <div class="weather-item">
+            <div class="weather-val" id="weather-temp">...</div>
+            <div class="weather-unit">Hőmérséklet</div>
+        </div>
+        <div class="weather-item">
+            <div class="weather-val" id="weather-wind">...</div>
+            <div class="weather-unit">Szél</div>
+        </div>
+        <div class="weather-item">
+            <div class="weather-val" id="weather-visibility">...</div>
+            <div class="weather-unit">Látótávolság</div>
+        </div>
+        <div class="weather-item">
+            <div class="weather-val" id="weather-sky">...</div>
+            <div class="weather-unit">Égbolt</div>
+        </div>
     </div>
 </section>
 
-
+<!-- KÁRTYÁK -->
 <section class="home-features">
     <h2>Mit találsz az oldalon?</h2>
     <p>Gyors döntés a repüléshez, minden egy helyen.</p>
-    <div id="home-cards" class="cards">
+    <div id="home-cards">
 
-        <a href="/Hirek" class="home-card card">
-            <div class="home-card-title">Hírek</div>
+        <a href="/Hirek" class="home-card">
             <div class="home-card-image">
-                <img src="/images/nap.png" alt="Hírek">
+                <img src="/images/nap.png" alt="Hírek" />
             </div>
+            <div class="home-card-title">Hírek</div>
             <div class="home-card-text">Napi hírek és érdekességek.</div>
         </a>
 
-        <a href="/Terkep" class="home-card card">
-            <div class="home-card-title">Térkép</div>
+        <a href="/Terkep" class="home-card">
             <div class="home-card-image">
-                <img src="/images/kep.jpg" alt="Térkép">
+                <img src="/images/kep.jpg" alt="Térkép" />
             </div>
+            <div class="home-card-title">Térkép</div>
             <div class="home-card-text">Megbízható helyszínek egy térképen.</div>
         </a>
 
-        <a href="/Info" class="home-card card">
-            <div class="home-card-title">Információ</div>
+        <a href="/Info" class="home-card">
             <div class="home-card-image">
-                <img src="/images/kep2.jpg" alt="Infó">
+                <img src="/images/kep2.jpg" alt="Infó" />
             </div>
+            <div class="home-card-title">Információ</div>
             <div class="home-card-text">Letisztult felület, mobilbarát megjelenés.</div>
         </a>
 
     </div>
 </section>
 
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <h1>Repülési feltételek egy helyen</h1>
         <p>Valós idejű időjárás, starthelyek és repülési döntéstámogatás.</p>
         <div class="hero-buttons">
-            <a href="/Terkep" class="btn-primary"> Hol repüljek ma?</a>
-            <a href="/Info" class="btn-secondary"> Kezdőknek</a>
+            <a href="/Terkep" class="btn-primary">Hol repüljek ma?</a>
+            <a href="/Info" class="btn-secondary">Kezdőknek</a>
         </div>
     </div>
 </section>
