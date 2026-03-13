@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\",
+  "WorkspaceRootPath": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\fcsro\\onedrive\\dokumentumok\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\fcsro\\onedrive\\dokumentumok\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\info.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\source\\repos\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Info.razor",
-              "DocumentMoniker": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
               "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Info.razor",
-              "ToolTip": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Info.razor",
               "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Info.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwDIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-10T11:30:36.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\css\\style.css",
-              "ToolTip": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
               "RelativeToolTip": "SzarnysegedP\\wwwroot\\css\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsBAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAOoBAAAAAAAAAAAAAP0BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-03-10T10:39:39.441Z",
               "EditorCaption": ""

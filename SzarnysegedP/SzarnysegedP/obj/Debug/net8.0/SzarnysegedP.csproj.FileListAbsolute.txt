@@ -422,3 +422,4 @@ C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\Szarnysege
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\SzarnysegedP.pdb
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\SzarnysegedP.genruntimeconfig.cache
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\ref\SzarnysegedP.dll
+C:\Users\szaboflo0223\source\repos\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
