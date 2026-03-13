@@ -28,11 +28,11 @@ namespace ErnyosKozoApi.Controllers
 
                 var claims = new[]
                 {
-            new Claim(ClaimTypes.Name, model.Username)
-        };
+                    new Claim(ClaimTypes.Name, model.Username)
+                };
 
                 var key = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes("THIS_IS_YOUR_SUPER_SECRET_KEY"));
+                    Encoding.UTF8.GetBytes("secret key"));
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
