@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {}
+    "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+    "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "projectUniqueName": "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
         "projectName": "SzarnysegedShared",
-        "projectPath": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
-        "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szaboflo0223\\source\\repos\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
+        "projectPath": "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "packagesPath": "C:\\Users\\lukacsizs0116\\.nuget\\packages\\",
+        "outputPath": "Z:\\webprogramozas\\dolgozat\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\szaboflo0223\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukacsizs0116\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

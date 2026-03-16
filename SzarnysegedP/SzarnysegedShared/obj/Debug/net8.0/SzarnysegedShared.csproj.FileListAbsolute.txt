@@ -34,3 +34,15 @@ C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\Szarnysege
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\refint\SzarnysegedShared.dll
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.pdb
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\ref\SzarnysegedShared.dll
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.deps.json
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.dll
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\bin\Debug\net8.0\SzarnysegedShared.pdb
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.AssemblyInfoInputs.cache
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.AssemblyInfo.cs
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.csproj.CoreCompileInputs.cache
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.sourcelink.json
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.dll
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\refint\SzarnysegedShared.dll
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\SzarnysegedShared.pdb
+Z:\webprogramozas\dolgozat\vizsga-remek\SzarnysegedP\SzarnysegedShared\obj\Debug\net8.0\ref\SzarnysegedShared.dll
