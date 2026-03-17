@@ -9,7 +9,23 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "ErnyosKozoApi.Controllers.LoginDto",
+        "Type": "SzarnysegedShared.DTOs.FelhasznaloDTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SzarnysegedShared.DTOs.FelhasznaloDTOs.RegisterDTO",
         "IsRequired": true
       }
     ],

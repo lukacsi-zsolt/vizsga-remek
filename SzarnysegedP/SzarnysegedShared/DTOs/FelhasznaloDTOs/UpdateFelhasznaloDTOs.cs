@@ -2,7 +2,7 @@
 
 namespace SzarnysegedShared.DTOs.FelhasznaloDTOs
 {
-    public class UpdateFelhazsnaloDto
+    public class UpdateFelhasznaloDto
     {
         [Required]
         public string? FelhasznaloNev { get; set; }
@@ -13,5 +13,6 @@ namespace SzarnysegedShared.DTOs.FelhasznaloDTOs
         public string? Email { get; set; }
         [Required]
         public DateTime? SzuletesiDatum { get; set; }
+        public string? Password { get; set; } //kesobb jelszo valtoztatashoz
     }
 }

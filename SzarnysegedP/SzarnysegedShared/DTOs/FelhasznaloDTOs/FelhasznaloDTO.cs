@@ -7,6 +7,7 @@
         public string? TeljesNev { get; set; }
         public string? Email { get; set; }
         public DateTime? SzuletesiDatum { get; set; }
+        // ide nehogy jelszo hash keruljon
     }
 }
 

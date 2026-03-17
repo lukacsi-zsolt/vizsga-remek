@@ -7,8 +7,10 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
+// JWT kulcs
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
+// autentikacio
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -28,23 +30,29 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+// adatbazis
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// controllerek es a swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// fejlesztoi kornyezetnel engedelyezzuk a swaggert hogy tesztelni lehessen az apit
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication();
 app.UseHttpsRedirection();
+
+app.UseAuthentication(); //ez maradjon a helyen mert megijedt a program
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

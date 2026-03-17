@@ -1,2 +1,24 @@
 ﻿@page "/Login"
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+@using SzarnysegedP.Services
+@using SzarnysegedShared.DTOs.FelhasznaloDTOs
 <PageTitle>Bejelentkezés</PageTitle>
+<h3>Bejelentkezés</h3>
+
+<input @bind="model.Username" placeholder="Felhasználónév" />
+<input type="password" @bind="model.Password" placeholder="Jelszó" />
+
+<button @onclick="LoginUser">Login</button>
+
+@code {
+    LoginDTO model = new();
+
+    async Task LoginUser()
+    {
+        var success = await AuthService.Login(model);
+
+        if (success)
+            Navigation.NavigateTo("/");
+    }
+}
