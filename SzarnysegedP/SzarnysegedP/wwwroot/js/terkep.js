@@ -47,7 +47,7 @@ window.initMapbox = async function (containerId) {
 
         console.log("Initializing Mapbox in container:", containerId);
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoienNvbHRsdWthY3NpIiwiYSI6ImNta2R6dWh2eDAxcmMzZnF3dXptbnpwcDEifQ.pkJgWCxAikfxhxLGQwrIuA';
+        mapboxgl.accessToken = window.apiKey;
 
         let map;
         try {

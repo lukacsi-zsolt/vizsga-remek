@@ -1,5 +1,6 @@
 ﻿@page "/Terkep"
 @inject IJSRuntime JS
+@inject IConfiguration Config
 <style>
     /* ====== TERKEP OLDAL ====== */
     .terkepcard {
@@ -94,6 +95,12 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
+            var apiKey = Config["ApiTokens:MapboxKey"];
+            await JS.InvokeVoidAsync("eval", $"window.apiKey = '{apiKey}'");
+        }
+
         if (_initialized)
         {
             return;

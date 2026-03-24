@@ -31,5 +31,11 @@ namespace SzarnysegedP.Services
 
             return true;
         }
+        public async Task<bool> Register(CreateFelhasznaloDto dto)
+        {
+            var response = await _http.PostAsJsonAsync("api/auth/register", dto);
+            var text = await response.Content.ReadAsStringAsync();
+            return response.IsSuccessStatusCode;
+        }
     }
 }

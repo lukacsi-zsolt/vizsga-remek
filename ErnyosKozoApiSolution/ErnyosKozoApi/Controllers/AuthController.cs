@@ -69,14 +69,14 @@ namespace ErnyosKozoApi.Controllers
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterDTO dto)
+        public async Task<IActionResult> Register(CreateFelhasznaloDto dto)
         {
-            if (await _context.Felhasznalok.AnyAsync(x => x.FelhasznaloNev == dto.Username))
+            if (await _context.Felhasznalok.AnyAsync(x => x.FelhasznaloNev == dto.FelhasznaloNev))
                 return BadRequest("Felhasználónév foglalt");
 
             var user = new Felhasznalo
             {
-                FelhasznaloNev = dto.Username,
+                FelhasznaloNev = dto.FelhasznaloNev,
                 TeljesNev = dto.TeljesNev,
                 Email = dto.Email,
                 SzuletesiDatum = dto.SzuletesiDatum

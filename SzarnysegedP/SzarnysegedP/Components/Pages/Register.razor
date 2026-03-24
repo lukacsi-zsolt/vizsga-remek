@@ -1,8 +1,9 @@
-﻿@* @page "/Register"
+﻿@page "/Register"
 @inject AuthService AuthService
 @inject NavigationManager Navigation
 @using SzarnysegedP.Services
 @using SzarnysegedShared.DTOs.FelhasznaloDTOs
+
 
 <style>
     :root {
@@ -258,7 +259,7 @@
                             </svg>
                         </span>
                         <input class="field-input"
-                               @bind="model.LastName"
+                               @bind="lastName"
                                @bind:event="oninput"
                                placeholder="Kiss" />
                     </div>
@@ -273,11 +274,18 @@
                             </svg>
                         </span>
                         <input class="field-input"
-                               @bind="model.FirstName"
+                               @bind="firstName"
                                @bind:event="oninput"
                                placeholder="János" />
                     </div>
                 </div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label">Születési dátum</label>
+                <input class="field-input"
+                       type="date"
+                       @bind="model.SzuletesiDatum" />
             </div>
 
             <div class="field-group">
@@ -314,7 +322,7 @@
                         </svg>
                     </span>
                     <input class="field-input"
-                           @bind="model.Username"
+                           @bind="model.FelhasznaloNev"
                            @bind:event="oninput"
                            placeholder="pl. kiss.janos"
                            autocomplete="username" />
@@ -369,13 +377,14 @@
                     </div>
             }
 
-            <button class="reg-btn @(isLoading ? "loading" : "")"
+            <button type="button" class="reg-btn @(isLoading ? "loading" : "")"
                     @onclick="RegisterUser"
                     disabled="@isLoading">
                 @if (isLoading)
                 {
                         <span class="spinner"></span>
                         <span>Regisztráció...</span>
+                        
                 }
                 else
                 {
@@ -384,11 +393,13 @@
                             <line x1="5" y1="12" x2="19" y2="12"/>
                             <polyline points="12 5 19 12 12 19"/>
                         </svg>
+                        
                 }
             </button>
 
             <p class="login-link">
                 Már van fiókja? <a href="/Login">Jelentkezzen be</a>
+                
             </p>
 
         </div>
@@ -396,15 +407,19 @@
 </div>
 
 @code {
-    RegisterDTO model = new();
+    CreateFelhasznaloDto model = new();
     string confirmPassword = "";
     bool isLoading = false;
     string errorMessage = "";
+    string firstName = "";
+    string lastName = "";
 
     async Task RegisterUser()
     {
+
+
         if (isLoading) return;
-        errorMessage = "";
+        errorMessage = "elindult";
 
         if (model.Password != confirmPassword)
         {
@@ -412,23 +427,28 @@
             return;
         }
 
+        //ossze tesszuk a ket nevet egy teljes nevve, mert a backend ezt varja
+        model.TeljesNev = $"{lastName} {firstName}";
+
         isLoading = true;
 
         try
         {
             var success = await AuthService.Register(model);
+
             if (success)
                 Navigation.NavigateTo("/Login");
             else
-                errorMessage = "A regisztráció sikertelen. Lehet, hogy a felhasználónév már foglalt.";
+                errorMessage = "A regisztráció sikertelen.";
         }
         catch
         {
-            errorMessage = "Kapcsolódási hiba. Kérjük, próbálja újra.";
+            errorMessage = "Kapcsolódási hiba.";
         }
         finally
         {
             isLoading = false;
+
         }
     }
-} *@
+} 

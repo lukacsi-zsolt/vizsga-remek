@@ -45,17 +45,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/CreateFelhasznaloDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/CreateFelhasznaloDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/CreateFelhasznaloDto"
               }
             }
           }
@@ -570,6 +570,39 @@
   },
   "components": {
     "schemas": {
+      "CreateFelhasznaloDto": {
+        "required": [
+          "email",
+          "felhasznaloNev",
+          "password",
+          "szuletesiDatum",
+          "teljesNev"
+        ],
+        "type": "object",
+        "properties": {
+          "felhasznaloNev": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "teljesNev": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "szuletesiDatum": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateHirDto": {
         "required": [
           "cim",
@@ -640,33 +673,6 @@
           },
           "password": {
             "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RegisterDTO": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "teljesNev": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "szuletesiDatum": {
-            "type": "string",
-            "format": "date-time",
             "nullable": true
           }
         },
