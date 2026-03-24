@@ -1,17 +1,57 @@
 ﻿@* NavLink *@ 
-
-<div class="header-left">
-      <img src="/images/sikloernyos.png" alt="logo" />
-    <div class="brand">
-        <div class="brand-name">Szárnysegéd</div>
-        <div class="slogan">Inkább kaland, mint munka</div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-xl">
+        <!-- Brand / Logo -->
+        <a class="navbar-brand" href="/">
+            <img src="/images/sikloernyos.png" alt="Szárnysegéd logó" />
+            <div class="brand-text">
+                <span class="brand-name">Szárnysegéd</span>
+                <span class="slogan">Inkább kaland, mint munka</span>
+            </div>
+        </a>
+        <!-- Hamburger gomb mobilon -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Menü megnyitása">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Nav linkek -->
+        <div class="collapse navbar-collapse align-items-center" id="mainNavbar">
+            <!-- Középső linkek -->
+            <ul class="navbar-nav mx-auto gap-1">
+                <li class="nav-item d-flex align-items-center">
+                    <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Kezdőlap</NavLink>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <NavLink class="nav-link" href="Terkep">Térkép</NavLink>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <NavLink class="nav-link" href="Hirek">Hírek</NavLink>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <NavLink class="nav-link" href="Info">Info</NavLink>
+                </li>
+            </ul>
+            <!-- Fiók dropdown – jobb szélen -->
+            <ul class="navbar-nav ms-lg-auto">
+                <li class="nav-item dropdown d-flex align-items-center">
+                    <button class="nav-link nav-link-account dropdown-toggle"
+                            type="button"
+                            id="userDropdownBtn"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Fiók
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownBtn">
+                        <li><a class="dropdown-item" href="Login">Bejelentkezés</a></li>
+                        <li><a class="dropdown-item" href="Register">Regisztráció</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-
-<nav class="tabs">
-      <NavLink href="/">Kezdőlap</NavLink>
-      <NavLink href="Terkep">Térkép</NavLink>
-      <NavLink href="Hirek">Hírek</NavLink>
-      <NavLink href="Info">Info</NavLink>
 </nav>
-

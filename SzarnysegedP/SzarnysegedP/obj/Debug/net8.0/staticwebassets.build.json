@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vfimPdeg17z/6znuyncTBxwuPaOuCa4g0WGbAyUeZRI=",
+  "Hash": "xivsI90eNqPYIq8vD51S+ox4bbkS+IIFb3nbyHSPdX0=",
   "Source": "SzarnysegedP",
   "BasePath": "_content/SzarnysegedP",
   "Mode": "Default",
@@ -134,6 +134,27 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\MainLayout.css",
+      "SourceId": "SzarnysegedP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\",
+      "BasePath": "_content/SzarnysegedP",
+      "RelativePath": "css/MainLayout#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9fkd4hb9oe",
+      "Integrity": "W//U9qvmtwKKiuV9IycFsmpMRLDPLxricyX4kSY+4jQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\MainLayout.css"
+    },
+    {
       "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
       "SourceId": "SzarnysegedP",
       "SourceType": "Discovered",
@@ -148,8 +169,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vpe1p2uu3k",
-      "Integrity": "PZ7WlgnErVyr8qaIgrBo9hXQqK96M0ZYY/Q/GVTTN7w=",
+      "Fingerprint": "no4h4mrbfg",
+      "Integrity": "9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
@@ -718,6 +739,88 @@
       ]
     },
     {
+      "Route": "css/MainLayout.9fkd4hb9oe.css",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\MainLayout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1306"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W//U9qvmtwKKiuV9IycFsmpMRLDPLxricyX4kSY+4jQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Mar 2026 15:57:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9fkd4hb9oe"
+        },
+        {
+          "Name": "label",
+          "Value": "css/MainLayout.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W//U9qvmtwKKiuV9IycFsmpMRLDPLxricyX4kSY+4jQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/MainLayout.css",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\MainLayout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1306"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W//U9qvmtwKKiuV9IycFsmpMRLDPLxricyX4kSY+4jQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Mar 2026 15:57:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W//U9qvmtwKKiuV9IycFsmpMRLDPLxricyX4kSY+4jQ="
+        }
+      ]
+    },
+    {
       "Route": "css/style.css",
       "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
       "Selectors": [],
@@ -728,7 +831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9373"
+          "Value": "22981"
         },
         {
           "Name": "Content-Type",
@@ -736,11 +839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PZ7WlgnErVyr8qaIgrBo9hXQqK96M0ZYY/Q/GVTTN7w=\""
+          "Value": "\"9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Mar 2026 11:33:12 GMT"
+          "Value": "Tue, 24 Mar 2026 16:58:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -750,12 +853,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-PZ7WlgnErVyr8qaIgrBo9hXQqK96M0ZYY/Q/GVTTN7w="
+          "Value": "sha256-9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI="
         }
       ]
     },
     {
-      "Route": "css/style.vpe1p2uu3k.css",
+      "Route": "css/style.no4h4mrbfg.css",
       "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -765,7 +868,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9373"
+          "Value": "22981"
         },
         {
           "Name": "Content-Type",
@@ -773,11 +876,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PZ7WlgnErVyr8qaIgrBo9hXQqK96M0ZYY/Q/GVTTN7w=\""
+          "Value": "\"9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Mar 2026 11:33:12 GMT"
+          "Value": "Tue, 24 Mar 2026 16:58:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -787,7 +890,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vpe1p2uu3k"
+          "Value": "no4h4mrbfg"
         },
         {
           "Name": "label",
@@ -795,7 +898,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PZ7WlgnErVyr8qaIgrBo9hXQqK96M0ZYY/Q/GVTTN7w="
+          "Value": "sha256-9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI="
         }
       ]
     },
