@@ -5,9 +5,9 @@ public class HirService
 {
     private readonly HttpClient _http;
 
-    public HirService(IHttpClientFactory factory)
+    public HirService(HttpClient http)
     {
-        _http = factory.CreateClient("ApiClient");
+        _http = http;
     }
 
     public async Task<List<HirDto>> GetHirekAsync()
