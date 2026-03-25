@@ -1,1 +1,19 @@
-# vizsga-remek
+# **Szárnysegéd**
+
+
+
+---
+
+
+
+## Fejlesztők:
+
+- Szabó Flóra
+- Lukácsi Zsolt
+
+---
+
+## Tudnivalók:
+
+
+

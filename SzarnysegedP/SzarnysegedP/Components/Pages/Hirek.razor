@@ -1,5 +1,8 @@
 ﻿@page "/Hirek"
 @* @inject HirService HirService *@
+@using SzarnysegedShared.DTOs
+@using SzarnysegedShared.DTOs.HirDTOs
+@inject HirService HirService
 @inject NavigationManager Nav
 <PageTitle>Hírek</PageTitle>
 <style>
@@ -55,23 +58,32 @@
 </style>
 
 <section id="hirek-container">
-
-    <div class="hir-kartya" onclick="location.href='hir1.html'">
-        <img src="images/hir1.jpg" alt="Hír kép">
-        <div class="hir-tartalom">
-            <h3>Új siklóernyős verseny Dobogókőn</h3>
-            <p>Idén nyáron ismét megrendezésre kerül a népszerű hegyi verseny...</p>
-            <span class="tovabb">Tovább olvasom →</span>
-        </div>
-    </div>
-
-    <div class="hir-kartya" onclick="location.href='hir2.html'">
-        <img src="images/hir2.jpg" alt="Hír kép">
-        <div class="hir-tartalom">
-            <h3>Új felszerelések érkeztek</h3>
-            <p>Megérkezett a legújabb generációs beülő és ernyő...</p>
-            <span class="tovabb">Tovább olvasom →</span>
-        </div>
-    </div>
-
+    @if (hirek != null)
+    {
+        foreach(var hir in hirek)
+        {
+            <div class="hir-kartya" onclick="location.href='hir1.html'">
+                <img src="@hir.KepUrl" alt="Hír kép">
+                <div class="hir-tartalom">
+                    <h3>@hir.Cim</h3>
+                    <p>@hir.Tartalom</p>
+                    <small>@hir.Datum.ToShortDateString()</small>
+                    <span class="tovabb">Tovább olvasom →</span>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Betöltés...</p>
+    }
 </section>
+
+@code {
+    private List<HirDto>? hirek;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hirek = await HirService.GetHirekAsync();
+    }
+}
