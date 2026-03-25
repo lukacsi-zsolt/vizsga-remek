@@ -26,16 +26,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     .reg-wrapper {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--bg);
-        font-family: 'Source Sans 3', sans-serif;
-        padding: 24px;
-        z-index: 9999;
-        overflow-y: auto;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: 'Source Sans 3', sans-serif;
+    padding: 24px;
+    overflow-y: auto;
     }
 
     .reg-card {
