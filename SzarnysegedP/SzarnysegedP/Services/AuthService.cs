@@ -35,6 +35,9 @@ namespace SzarnysegedP.Services
         {
             var response = await _http.PostAsJsonAsync("api/auth/register", dto);
             var text = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"STATUS: {response.StatusCode}");
+            Console.WriteLine($"RESPONSE: {text}");
+
             return response.IsSuccessStatusCode;
         }
     }

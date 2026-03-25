@@ -639,3 +639,5 @@ C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug
 C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\SzarnysegedP.genruntimeconfig.cache
 C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\ref\SzarnysegedP.dll
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
