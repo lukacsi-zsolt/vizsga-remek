@@ -1,17 +1,17 @@
-# \# \*\*Szárnysegéd\*\*
+# **Szárnysegéd**
 
 
 
-\---
+---
 
 
 
-# \## Fejlesztők:
+## Fejlesztők:
 
-* Szabó Flóra
-* Lukácsi Zsolt
+- Szabó Flóra
+- Lukácsi Zsolt
 
-\---
+---
 
 ## Tudnivalók:
 
