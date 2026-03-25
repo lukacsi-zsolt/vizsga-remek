@@ -641,3 +641,7 @@ C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Blazored.LocalStorage.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Blazored.LocalStorage.dll
 C:\Users\lukacsizs0116\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\szaboflo0223\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\szaboflo0223\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\szaboflo0223\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.dll
+C:\Users\szaboflo0223\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\SzarnysegedShared.pdb
