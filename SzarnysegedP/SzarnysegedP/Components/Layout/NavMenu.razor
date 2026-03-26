@@ -1,4 +1,7 @@
-﻿@* NavLink *@ 
+﻿@inject SzarnysegedP.Services.AuthService AuthService
+@inject NavigationManager Navigation
+@implements IDisposable
+@rendermode InteractiveServer
 <style>
     .nav-item {
         padding: 0 !important;
@@ -111,8 +114,20 @@
                         Fiók
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownBtn">
-                        <li><a class="dropdown-item" href="Login">Bejelentkezés</a></li>
-                        <li><a class="dropdown-item" href="Register">Regisztráció</a></li>
+                        @if (isLoggedIn)
+                        {
+                            <li>
+                                <a class="dropdown-item" href="/profil">Profil</a>
+                            </li>
+                            <li>
+                                <button class="dropdown-item" @onclick="Logout">Kijelentkezés</button>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a class="dropdown-item" href="/login">Bejelentkezés</a></li>
+                            <li><a class="dropdown-item" href="/register">Regisztráció</a></li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -120,3 +135,38 @@
 
     </div>
 </nav>
+
+@code {
+    private bool isLoggedIn;
+
+    protected override void OnInitialized()
+    {
+        AuthService.AuthStateChanged += OnAuthStateChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            isLoggedIn = await AuthService.IsLoggedIn();
+            StateHasChanged();
+        }
+    }
+
+    private async void OnAuthStateChanged()
+    {
+        isLoggedIn = await AuthService.IsLoggedIn();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.Logout();
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+
+    public void Dispose()
+    {
+        AuthService.AuthStateChanged -= OnAuthStateChanged;
+    }
+}

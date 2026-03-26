@@ -1498,3 +1498,220 @@ main {
     }
 }
 
+/* ====== PROFIL SZERKESZTÉS ====== */
+
+.profil-edit-loading {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    color: var(--brown-light);
+    font-size: 15px;
+}
+
+.profil-edit-hero {
+    position: relative;
+    min-height: 220px;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('/images/kodos.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.profil-edit-hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.profil-edit-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+    color: var(--white);
+}
+
+.profil-edit-hero-inner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    margin: 0 0 10px;
+}
+
+.profil-edit-hero-inner p {
+    margin: 0;
+    opacity: 0.88;
+    font-size: 15px;
+    max-width: 520px;
+}
+
+.profil-edit-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+.profil-edit-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.profil-edit-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profil-edit-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profil-edit-preview {
+    text-align: center;
+}
+
+.profil-edit-avatar {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-mid);
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    border: 4px solid var(--cream);
+}
+
+.profil-edit-preview h4 {
+    margin: 0 0 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.profil-edit-preview p {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: var(--brown-light);
+}
+
+.profil-edit-preview-bio {
+    font-size: 13px;
+    color: var(--brown);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.profil-edit-preview-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.profil-edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.profil-edit-grid-single {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.profil-edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.profil-edit-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brown);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.profil-edit-field input,
+.profil-edit-field textarea {
+    width: 100%;
+    border: 1px solid rgba(92,74,50,0.18);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profil-edit-field input:focus,
+.profil-edit-field textarea:focus {
+    outline: none;
+    border-color: var(--green-mid);
+    box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.12);
+}
+
+.profil-edit-field textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.profil-edit-message {
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #fff4e8;
+    border: 1px solid rgba(122,110,95,0.22);
+    color: var(--brown);
+    font-size: 13px;
+}
+
+.profil-edit-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profil-edit-cancel {
+    background: transparent;
+    border: 1px solid rgba(92,74,50,0.22);
+    color: var(--brown);
+    padding: 13px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.profil-edit-cancel:hover {
+    background: var(--cream);
+    border-color: rgba(92,74,50,0.32);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+    .profil-edit-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .profil-edit-grid {
+        grid-template-columns: 1fr;
+    }
+}

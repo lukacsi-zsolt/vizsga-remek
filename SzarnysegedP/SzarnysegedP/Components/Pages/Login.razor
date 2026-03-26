@@ -3,6 +3,7 @@
 @inject NavigationManager Navigation
 @using SzarnysegedP.Services
 @using SzarnysegedShared.DTOs.FelhasznaloDTOs
+@rendermode InteractiveServer
 
 <style>
 :root {
@@ -292,7 +293,7 @@
         {
             var success = await AuthService.Login(model);
             if (success)
-                Navigation.NavigateTo("/");
+                Navigation.NavigateTo("/profil", forceLoad: true);
             else
                 errorMessage = "Hibás felhasználónév vagy jelszó.";
         }

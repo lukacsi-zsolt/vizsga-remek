@@ -89,6 +89,76 @@ namespace ErnyosKozoApi.Controllers
 
             return Ok();
         }
-    
+        [HttpGet("me")]
+        public async Task<ActionResult<FelhasznaloDTO>> Me()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim))
+                return Unauthorized();
+
+            if (!int.TryParse(userIdClaim, out int userId))
+                return Unauthorized();
+
+            var user = await _context.Felhasznalok
+                .Where(x => x.FelhasznaloID == userId)
+                .Select(x => new FelhasznaloDTO
+                {
+                    FelhasznaloID = x.FelhasznaloID,
+                    FelhasznaloNev = x.FelhasznaloNev,
+                    TeljesNev = x.TeljesNev,
+                    Email = x.Email,
+                    SzuletesiDatum = x.SzuletesiDatum,
+                    Bio = x.Bio,
+                    Helyszin = x.Helyszin,
+                    Klub = x.Klub,
+                    AvatarUrl = x.AvatarUrl,
+                    CoverUrl = x.CoverUrl
+                })
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+                return NotFound();
+
+            return Ok(user);
+        }
+        [HttpPut("profile")]
+        public async Task<IActionResult> UpdateProfile(UpdateFelhasznaloDto dto)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim))
+                return Unauthorized();
+
+            if (!int.TryParse(userIdClaim, out int userId))
+                return Unauthorized();
+
+            var user = await _context.Felhasznalok.FirstOrDefaultAsync(x => x.FelhasznaloID == userId);
+
+            if (user == null)
+                return NotFound();
+
+            var usernameExists = await _context.Felhasznalok.AnyAsync(x =>
+                x.FelhasznaloNev == dto.FelhasznaloNev &&
+                x.FelhasznaloID != userId);
+
+            if (usernameExists)
+                return BadRequest("Ez a felhasználónév már foglalt.");
+
+            user.FelhasznaloNev = dto.FelhasznaloNev;
+            user.TeljesNev = dto.TeljesNev;
+            user.Email = dto.Email;
+            user.SzuletesiDatum = dto.SzuletesiDatum;
+            user.Bio = dto.Bio;
+            user.Helyszin = dto.Helyszin;
+            user.Klub = dto.Klub;
+            user.AvatarUrl = dto.AvatarUrl;
+            user.CoverUrl = dto.CoverUrl;
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
     }
 }

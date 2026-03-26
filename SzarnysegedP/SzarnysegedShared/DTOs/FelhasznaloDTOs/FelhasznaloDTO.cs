@@ -7,6 +7,11 @@
         public string? TeljesNev { get; set; }
         public string? Email { get; set; }
         public DateTime? SzuletesiDatum { get; set; }
+        public string? Bio { get; set; }
+        public string? Helyszin { get; set; }
+        public string? Klub { get; set; }
+        public string? AvatarUrl { get; set; }
+        public string? CoverUrl { get; set; }
         // ide nehogy jelszo hash keruljon
     }
 }

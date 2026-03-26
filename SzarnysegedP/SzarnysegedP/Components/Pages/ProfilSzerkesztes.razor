@@ -1,0 +1,211 @@
+﻿@page "/profil/szerkesztes"
+@rendermode InteractiveServer
+
+@using SzarnysegedShared.DTOs.FelhasznaloDTOs
+@inject SzarnysegedP.Services.AuthService AuthService
+@inject NavigationManager Navigation
+
+<PageTitle>Profil szerkesztése – Szárnysegéd</PageTitle>
+
+@if (isLoading)
+{
+    <div class="profil-edit-loading">
+        <p>Profil betöltése...</p>
+    </div>
+}
+else
+{
+    <div class="profil-edit-hero">
+        <div class="profil-edit-hero-overlay"></div>
+        <div class="profil-edit-hero-inner">
+            <h1>Profil szerkesztése</h1>
+            <p>Állítsd be, hogyan látnak téged a közösség tagjai.</p>
+        </div>
+    </div>
+
+    <div class="profil-edit-wrapper">
+        <div class="profil-edit-layout">
+
+            <aside class="profil-edit-side">
+                <div class="profil-card">
+                    <h3 class="profil-card-cim">Előnézet</h3>
+
+                    <div class="profil-edit-preview">
+                        <div class="profil-edit-avatar">
+                            @GetMonogram()
+                        </div>
+
+                        <h4>@model.TeljesNev</h4>
+                        <p>@("@"+model.FelhasznaloNev)</p>
+
+                        @if (!string.IsNullOrWhiteSpace(model.Bio))
+                        {
+                            <div class="profil-edit-preview-bio">@model.Bio</div>
+                        }
+
+                        <div class="profil-edit-preview-tags">
+                            @if (!string.IsNullOrWhiteSpace(model.Helyszin))
+                            {
+                                <span class="profil-badge profil-badge-outline">@model.Helyszin</span>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(model.Klub))
+                            {
+                                <span class="profil-badge profil-badge-outline">@model.Klub</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="profil-edit-main">
+                <div class="profil-card">
+                    <h3 class="profil-card-cim">Alapadatok</h3>
+
+                    @if (!string.IsNullOrWhiteSpace(message))
+                    {
+                        <div class="profil-edit-message">@message</div>
+                    }
+
+                    <div class="profil-edit-grid">
+                        <div class="profil-edit-field">
+                            <label>Felhasználónév</label>
+                            <input @bind="model.FelhasznaloNev" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Teljes név</label>
+                            <input @bind="model.TeljesNev" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Email</label>
+                            <input type="email" @bind="model.Email" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Születési dátum</label>
+                            <input type="date" @bind="model.SzuletesiDatum" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profil-card">
+                    <h3 class="profil-card-cim">Profilinformációk</h3>
+
+                    <div class="profil-edit-grid-single">
+                        <div class="profil-edit-field">
+                            <label>Bemutatkozás</label>
+                            <textarea rows="5" @bind="model.Bio"></textarea>
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Helyszín</label>
+                            <input @bind="model.Helyszin" placeholder="pl. Velence-hegység, HU" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Klub</label>
+                            <input @bind="model.Klub" placeholder="pl. Dunántúli Siklóernyős Egyesület" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Avatar URL</label>
+                            <input @bind="model.AvatarUrl" placeholder="/images/avatar-placeholder.png" />
+                        </div>
+
+                        <div class="profil-edit-field">
+                            <label>Borítókép URL</label>
+                            <input @bind="model.CoverUrl" placeholder="/images/kodos.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profil-edit-actions">
+                    <button class="btn-primary-custom" @onclick="Save" disabled="@isSaving">
+                        @(isSaving ? "Mentés..." : "Változtatások mentése")
+                    </button>
+
+                    <button type="button" class="profil-edit-cancel" @onclick="Cancel">
+                        Mégse
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+}
+
+@code {
+    private UpdateFelhasznaloDto model = new();
+    private bool isLoading = true;
+    private bool isSaving = false;
+    private string message = "";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+
+        var user = await AuthService.GetCurrentUser();
+
+        if (user == null)
+        {
+            Navigation.NavigateTo("/login", forceLoad: true);
+            return;
+        }
+
+        model = new UpdateFelhasznaloDto
+        {
+            FelhasznaloNev = user.FelhasznaloNev ?? "",
+            TeljesNev = user.TeljesNev ?? "",
+            Email = user.Email ?? "",
+            SzuletesiDatum = user.SzuletesiDatum,
+            Bio = user.Bio,
+            Helyszin = user.Helyszin,
+            Klub = user.Klub,
+            AvatarUrl = user.AvatarUrl,
+            CoverUrl = user.CoverUrl
+        };
+
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private async Task Save()
+    {
+        if (isSaving)
+            return;
+
+        isSaving = true;
+        message = "";
+
+        var success = await AuthService.UpdateProfile(model);
+
+        if (success)
+        {
+            Navigation.NavigateTo("/profil", forceLoad: true);
+            return;
+        }
+
+        message = "A mentés nem sikerült. Ellenőrizd az adatokat, és próbáld újra.";
+        isSaving = false;
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/profil");
+    }
+
+    private string GetMonogram()
+    {
+        if (string.IsNullOrWhiteSpace(model.TeljesNev))
+            return "F";
+
+        var parts = model.TeljesNev
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (parts.Length >= 2)
+            return $"{parts[0][0]}{parts[1][0]}".ToUpper();
+
+        return parts[0][0].ToString().ToUpper();
+    }
+}
