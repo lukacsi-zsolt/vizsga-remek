@@ -1,30 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\",
+  "WorkspaceRootPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\sqltest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\sqltest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\js\\weather.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\js\\weather.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\hirek.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\hirek.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\hirek.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\sqltest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\sqltest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukacsizs0116\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\js\\weather.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\js\\weather.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\szaboflo0223\\desktop\\webprogramozas\\backend\\vizsga-remek\\szarnysegedp\\szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\services\\hirservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "SQLTest.razor",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\SQLTest.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\SQLTest.razor",
               "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\SQLTest.razor",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\SQLTest.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\SQLTest.razor",
               "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\SQLTest.razor",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-25T11:58:46.676Z",
               "IsPinned": true,
@@ -54,11 +70,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Hirek.razor",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Hirek.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Hirek.razor",
               "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Hirek.razor",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Hirek.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Hirek.razor",
               "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Hirek.razor",
-              "ViewState": "AgIAADcAAAAAAAAAAAAiwEkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-25T11:59:42.19Z",
               "IsPinned": true,
@@ -66,39 +82,90 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T09:56:18.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "SzarnysegedP\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAACwBAAAAAAAAAAAAAEQBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-26T09:41:35.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\App.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\App.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T09:35:28.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T09:34:54.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "weather.js",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\weather.js",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\weather.js",
               "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\js\\weather.js",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\weather.js",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\weather.js",
               "RelativeToolTip": "SzarnysegedP\\wwwroot\\js\\weather.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-03-25T12:37:15.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "HirService.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
               "RelativeDocumentMoniker": "SzarnysegedP\\Services\\HirService.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Services\\HirService.cs",
               "RelativeToolTip": "SzarnysegedP\\Services\\HirService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T12:22:37.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T12:22:37.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
               "RelativeDocumentMoniker": "SzarnysegedP\\Program.cs",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Program.cs",
               "RelativeToolTip": "SzarnysegedP\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T12:22:02.378Z",
               "EditorCaption": ""
@@ -107,9 +174,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\appsettings.json",
               "RelativeDocumentMoniker": "SzarnysegedP\\appsettings.json",
-              "ToolTip": "C:\\Users\\lukacsizs0116\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\appsettings.json",
+              "ToolTip": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\appsettings.json",
               "RelativeToolTip": "SzarnysegedP\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",

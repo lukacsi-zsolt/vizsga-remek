@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+      "projectUniqueName": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
       "projectName": "SzarnysegedShared",
-      "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+      "projectPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
       "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
+      "outputPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\szaboflo0223\\Desktop\\g": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

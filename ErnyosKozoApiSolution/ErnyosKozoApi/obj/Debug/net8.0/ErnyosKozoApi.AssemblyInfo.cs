@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ErnyosKozoApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+984a699d34abfd625d2a3be64ac237c3ed7eed75")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de06d0c6442eab137752bf354536a795e0c9a392")]
 [assembly: System.Reflection.AssemblyProductAttribute("ErnyosKozoApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ErnyosKozoApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

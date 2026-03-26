@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {}
+    "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
+    "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+        "projectUniqueName": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
         "projectName": "ErnyosKozoApi",
-        "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
+        "projectPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",
         "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
+        "outputPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\szaboflo0223\\Desktop\\g": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
-                "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj"
+              "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+                "projectPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj"
               }
             }
           }
@@ -101,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
+    "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "projectUniqueName": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
         "projectName": "SzarnysegedShared",
-        "projectPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
+        "projectPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\SzarnysegedShared.csproj",
         "packagesPath": "C:\\Users\\szaboflo0223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szaboflo0223\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
+        "outputPath": "C:\\Users\\szaboflo0223\\Desktop\\webprogramozas\\backend\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -123,7 +122,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\szaboflo0223\\Desktop\\g": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
