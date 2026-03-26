@@ -4,7 +4,8 @@
     "Projects": [
       {
         "Path": "SzarnysegedP\\SzarnysegedP.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
       },
       {
         "Path": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj",

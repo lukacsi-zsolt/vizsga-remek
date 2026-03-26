@@ -39,7 +39,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("allowAll",
+        policy => policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+
 var app = builder.Build();
+app.UseCors("allowAll");
 
 // fejlesztoi kornyezetnel engedelyezzuk a swaggert hogy tesztelni lehessen az apit
 if (app.Environment.IsDevelopment())

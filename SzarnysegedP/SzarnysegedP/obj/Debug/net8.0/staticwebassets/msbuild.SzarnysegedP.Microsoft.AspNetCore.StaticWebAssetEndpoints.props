@@ -51,14 +51,14 @@
     <StaticWebAssetEndpoint Include="_content/SzarnysegedP/css/style.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"22981"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00229z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 24 Mar 2026 16:58:49 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ei\u002B\u002BSMO8VKtwGkGzYkf1dHI\u002BCVvOaUyePzs1rkbppg8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"30926"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ei\u002B\u002BSMO8VKtwGkGzYkf1dHI\u002BCVvOaUyePzs1rkbppg8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Mar 2026 09:19:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/SzarnysegedP/css/style.no4h4mrbfg.css">
+    <StaticWebAssetEndpoint Include="_content/SzarnysegedP/css/style.efdifbmpwb.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"no4h4mrbfg"},{"Name":"integrity","Value":"sha256-9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI="},{"Name":"label","Value":"_content/SzarnysegedP/css/style.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"22981"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00229z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 24 Mar 2026 16:58:49 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"efdifbmpwb"},{"Name":"integrity","Value":"sha256-ei\u002B\u002BSMO8VKtwGkGzYkf1dHI\u002BCVvOaUyePzs1rkbppg8="},{"Name":"label","Value":"_content/SzarnysegedP/css/style.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"30926"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ei\u002B\u002BSMO8VKtwGkGzYkf1dHI\u002BCVvOaUyePzs1rkbppg8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Mar 2026 09:19:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SzarnysegedP/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
@@ -216,17 +216,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"mcja2q7ocz"},{"Name":"integrity","Value":"sha256-iiVJ2/VH5Qq\u002BluBuY8zwsyF0ZmlZ/EaCP88Cf35ziTU="},{"Name":"label","Value":"_content/SzarnysegedP/js/scrollTo.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"228"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022iiVJ2/VH5Qq\u002BluBuY8zwsyF0ZmlZ/EaCP88Cf35ziTU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 24 Feb 2026 13:11:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/SzarnysegedP/js/terkep.j0grbdxzmx.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\terkep.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"j0grbdxzmx"},{"Name":"integrity","Value":"sha256-LWfKUIWZTQOPoWCiT57Xl7X45yDMh\u002BvRJC19tjDqLlw="},{"Name":"label","Value":"_content/SzarnysegedP/js/terkep.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7163"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022LWfKUIWZTQOPoWCiT57Xl7X45yDMh\u002BvRJC19tjDqLlw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Feb 2026 18:42:00 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SzarnysegedP/js/terkep.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\terkep.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LWfKUIWZTQOPoWCiT57Xl7X45yDMh\u002BvRJC19tjDqLlw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7163"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022LWfKUIWZTQOPoWCiT57Xl7X45yDMh\u002BvRJC19tjDqLlw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Feb 2026 18:42:00 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Mar 2026 08:28:56 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/SzarnysegedP/js/terkep.xh424zafzc.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\terkep.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xh424zafzc"},{"Name":"integrity","Value":"sha256-RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8="},{"Name":"label","Value":"_content/SzarnysegedP/js/terkep.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Mar 2026 08:28:56 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SzarnysegedP/js/weather.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\weather.js'))</AssetFile>

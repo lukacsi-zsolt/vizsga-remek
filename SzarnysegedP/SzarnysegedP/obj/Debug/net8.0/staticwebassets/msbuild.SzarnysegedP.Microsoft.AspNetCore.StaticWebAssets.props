@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>no4h4mrbfg</Fingerprint>
-      <Integrity>9z0/ERuWzHwPQOWG2PNYoii2xFLSkiFuejAc3tFTIPI=</Integrity>
+      <Fingerprint>efdifbmpwb</Fingerprint>
+      <Integrity>ei++SMO8VKtwGkGzYkf1dHI+CVvOaUyePzs1rkbppg8=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</OriginalItemSpec>
@@ -336,8 +336,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>j0grbdxzmx</Fingerprint>
-      <Integrity>LWfKUIWZTQOPoWCiT57Xl7X45yDMh+vRJC19tjDqLlw=</Integrity>
+      <Fingerprint>xh424zafzc</Fingerprint>
+      <Integrity>RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\terkep.js'))</OriginalItemSpec>

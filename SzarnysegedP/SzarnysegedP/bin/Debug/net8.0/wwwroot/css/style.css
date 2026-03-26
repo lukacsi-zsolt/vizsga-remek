@@ -850,6 +850,22 @@ footer, .footer {
     color: #f5f0e8;
 }
 
+#app, .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 @media (max-width: 768px) {
     footer, .footer {
         flex-direction: column;
@@ -1082,3 +1098,403 @@ footer, .footer {
 .acc-body-inner ul li {
     margin-bottom: 4px;
 }
+
+/* ====== PROFIL OLDAL ====== */
+
+/* Cover */
+.profil-cover {
+    height: 220px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--green-mid);
+    position: relative;
+}
+
+.profil-cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+}
+
+/* Wrapper */
+.profil-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* Fejléc */
+.profil-fejlec {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(92,74,50,0.15);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.profil-avatar-wrap {
+    margin-top: -50px;
+    flex-shrink: 0;
+}
+
+.profil-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    object-fit: cover;
+    background: var(--green-mid);
+    display: block;
+}
+
+.profil-info {
+    flex: 1;
+    padding-top: 12px;
+}
+
+.profil-nev {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 4px;
+}
+
+.profil-handle {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin: 0 0 10px;
+}
+
+.profil-badge-sor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.profil-badge {
+    display: inline-block;
+    background: var(--green-mid);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+    .profil-badge.profil-badge-outline {
+        background: transparent;
+        border: 1px solid rgba(92,74,50,0.35);
+        color: var(--brown);
+    }
+
+.profil-akciok {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 40px;
+}
+
+/* Fő layout */
+.profil-main {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+}
+
+/* Sidebar */
+.profil-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Kártya */
+.profil-card {
+    background: var(--white);
+    border: 1px solid rgba(92,74,50,0.12);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(92,74,50,0.06);
+}
+
+.profil-card-cim {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cream);
+}
+
+/* Bio */
+.profil-bio {
+    font-size: 13.5px;
+    color: var(--brown);
+    line-height: 1.75;
+    margin: 0 0 14px;
+}
+
+.profil-reszletek {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profil-reszlet-sor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--brown);
+}
+
+.profil-ikon {
+    width: 15px;
+    height: 15px;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* Statisztikák */
+.profil-stat-sor {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+}
+
+.profil-stat {
+    text-align: center;
+    flex: 1;
+    padding: 8px 0;
+}
+
+    .profil-stat + .profil-stat {
+        border-left: 1px solid rgba(92,74,50,0.1);
+    }
+
+.profil-stat-szam {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--green-mid);
+    line-height: 1;
+}
+
+.profil-stat-cimke {
+    font-size: 11px;
+    color: var(--brown-light);
+    margin-top: 4px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.profil-szint-wrap {
+    margin-top: 4px;
+}
+
+.profil-szint-sor {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--brown-light);
+    margin-bottom: 6px;
+}
+
+.profil-szint-sav {
+    height: 6px;
+    background: rgba(92,74,50,0.12);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.profil-szint-tolt {
+    height: 100%;
+    background: var(--green-mid);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+/* Helyszínek */
+.profil-spot {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(92,74,50,0.08);
+}
+
+    .profil-spot:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+.profil-spot-ikon {
+    width: 40px;
+    height: 36px;
+    border-radius: 6px;
+    background: var(--green-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profil-spot-nev {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 2px;
+}
+
+.profil-spot-helyszin {
+    font-size: 11px;
+    color: var(--brown-light);
+    margin: 0;
+}
+
+/* Tabok */
+.profil-tabok {
+    display: flex;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(92,74,50,0.12);
+}
+
+.profil-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brown-light);
+    cursor: pointer;
+    margin-bottom: -1px;
+    font-family: 'Lato', sans-serif;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+    .profil-tab:hover {
+        color: var(--green-mid);
+    }
+
+    .profil-tab.aktiv {
+        color: var(--green-mid);
+        border-bottom-color: var(--green-mid);
+        font-weight: 700;
+    }
+
+/* Poszt rácsok */
+.profil-posztok-racs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.profil-poszt-kartya {
+    background: var(--white);
+    border: 1px solid rgba(92,74,50,0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(92,74,50,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .profil-poszt-kartya:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(92,74,50,0.12);
+    }
+
+.profil-poszt-kep {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--green-mid);
+}
+
+.profil-poszt-body {
+    padding: 16px 18px;
+}
+
+.profil-poszt-cim {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 4px;
+}
+
+.profil-poszt-meta {
+    font-size: 12px;
+    color: var(--brown-light);
+    margin: 0 0 8px;
+}
+
+.profil-poszt-szoveg {
+    font-size: 13px;
+    color: var(--brown);
+    line-height: 1.65;
+    margin: 0 0 14px;
+}
+
+.profil-poszt-footer {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid rgba(92,74,50,0.08);
+    padding-top: 12px;
+}
+
+.profil-akció {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--brown-light);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .profil-akció:hover {
+        color: var(--green-mid);
+    }
+
+/*IDEIGLENES!!!*/
+.profil-avatar-monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-mid);
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Reszponzív */
+@media (max-width: 900px) {
+    .profil-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .profil-posztok-racs {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-fejlec {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profil-akciok {
+        padding-top: 0;
+    }
+}
+

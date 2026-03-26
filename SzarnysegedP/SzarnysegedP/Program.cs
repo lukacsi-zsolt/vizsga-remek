@@ -1,6 +1,7 @@
 using Blazored.LocalStorage;
 using SzarnysegedP.Components;
 using SzarnysegedP.Services;
+using static System.Net.WebRequestMethods;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,15 +15,25 @@ builder.Services.AddRazorComponents()
 //        builder.Configuration["ApiBaseUrl"]!
 //    );
 //});
+builder.Services.AddHttpClient<HirService>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["ApiBaseUrl"]!);
+});
+
 builder.Services.AddHttpClient<AuthService>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["ApiBaseUrl"]!);
 });
 
-builder.Services.AddScoped<HirService>();
+//builder.Services.AddScoped(sp => new HttpClient
+//{
+//    BaseAddress = new Uri(builder.Configuration["ApiBaseUrl"])
+//});
+
+//builder.Services.AddScoped<HirService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddAuthorizationCore();
-builder.Services.AddScoped<AuthService>();
+//builder.Services.AddScoped<AuthService>();
 
 var app = builder.Build();
 
@@ -42,3 +53,4 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
