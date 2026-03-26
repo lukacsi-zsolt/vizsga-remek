@@ -1,8 +1,13 @@
 ﻿@page "/Terkep"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
 @inject IJSRuntime JS
 @inject IConfiguration Config
+@inject HttpClient Http
+@inject IHttpClientFactory HttpClientFactory
+
 <style>
-    /* ====== TERKEP OLDAL ====== */
     .terkepcard {
         background: white;
         border: 1px solid rgba(92,74,50,0.12);
@@ -30,7 +35,6 @@
         overflow: hidden;
     }
 
-    /* ====== TABLAZAT ====== */
     .terkepcard table {
         width: 100%;
         border-collapse: collapse;
@@ -61,6 +65,97 @@
         border: none;
         border-bottom: 1px solid rgba(92,74,50,0.07);
     }
+
+    .spot-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .spot-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .spot-field label {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--brown, #5c4a32);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .spot-field input,
+    .spot-field textarea {
+        width: 100%;
+        border: 1px solid rgba(92,74,50,0.18);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 14px;
+        font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+        color: #2e2416;
+        background: #fff;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .spot-field input:focus,
+    .spot-field textarea:focus {
+        outline: none;
+        border-color: #2d5a3d;
+        box-shadow: 0 0 0 3px rgba(45,90,61,0.12);
+    }
+
+    .spot-field textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .spot-form-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+
+    .spot-info-line {
+        color: #7a6e5f;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .spot-message {
+        margin-bottom: 16px;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #fff4e8;
+        border: 1px solid rgba(122,110,95,0.22);
+        color: #5c4a32;
+        font-size: 13px;
+    }
+
+    .spot-add-btn {
+        margin-bottom: 16px;
+    }
+
+    .spot-cancel-btn {
+        background: transparent;
+        border: 1px solid rgba(92,74,50,0.22);
+        color: #5c4a32;
+        padding: 13px 24px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .spot-cancel-btn:hover {
+        background: #f5f0e8;
+        border-color: rgba(92,74,50,0.32);
+        transform: translateY(-1px);
+    }
 </style>
 
 <PageTitle>Térkép</PageTitle>
@@ -68,9 +163,89 @@
 <div class="card mb-4 terkepcard">
     <div class="card-body">
         <h4>Spotok térképen</h4>
+
+        <button type="button" class="btn-primary-custom spot-add-btn" @onclick="ToggleCreateForm">
+            @(showCreateForm ? "Űrlap bezárása" : "Új spot hozzáadása")
+        </button>
+
         <div id="map" class="mt-3"></div>
     </div>
 </div>
+
+@if (showCreateForm)
+{
+    <div class="card mb-4 terkepcard">
+        <div class="card-body">
+            <h4>Új spot hozzáadása</h4>
+
+            @if (!string.IsNullOrWhiteSpace(formMessage))
+            {
+                <div class="spot-message">@formMessage</div>
+            }
+
+            <p class="spot-info-line">
+                Kattints a térképre, vagy add meg kézzel a koordinátákat.
+            </p>
+
+            <div class="spot-form-grid">
+                <div class="spot-field">
+                    <label>Név</label>
+                    <input @bind="ujSpot.Nev" placeholder="pl. Dobogókő" />
+                </div>
+
+                <div class="spot-field">
+                    <label>Ország</label>
+                    <input @bind="ujSpot.Orszag" placeholder="pl. Magyarország" />
+                </div>
+
+                <div class="spot-field">
+                    <label>Megye / régió</label>
+                    <input @bind="ujSpot.Megye" placeholder="pl. Pest" />
+                </div>
+
+                <div class="spot-field">
+                    <label>Magasság</label>
+                    <input type="number" @bind="ujSpot.Magassag" placeholder="pl. 699" />
+                </div>
+
+                <div class="spot-field">
+                    <label>Szélesség (Lat)</label>
+                    <input type="number" step="any" @bind="ujSpot.Lat" placeholder="pl. 47.7000" />
+                </div>
+
+                <div class="spot-field">
+                    <label>Hosszúság (Lon)</label>
+                    <input type="number" step="any" @bind="ujSpot.Lon" placeholder="pl. 18.9000" />
+                </div>
+            </div>
+
+            <div class="spot-field">
+                <label>Leírás</label>
+                <textarea @bind="ujSpot.HelyLeiras" placeholder="Írj pár mondatot a spotról..."></textarea>
+            </div>
+
+            <div class="spot-field">
+                <label>Szabályok</label>
+                <textarea @bind="ujSpot.Szabalyok" placeholder="Speciális szabályok, megjegyzések..."></textarea>
+            </div>
+
+            <div class="spot-form-actions">
+                <button type="button"
+                        class="btn-primary-custom"
+                        @onclick="CreateSpot"
+                        disabled="@isSavingSpot">
+                    @(isSavingSpot ? "Mentés..." : "Spot mentése")
+                </button>
+
+                <button type="button"
+                        class="spot-cancel-btn"
+                        @onclick="ResetSpotForm">
+                    Törlés / újrakezdés
+                </button>
+            </div>
+        </div>
+    </div>
+}
 
 <div class="card terkepcard">
     <div class="card-body">
@@ -88,67 +263,135 @@
         </table>
     </div>
 </div>
+
 <script src="/js/terkep.js"></script>
 
 @code {
+    [SupplyParameterFromQuery(Name = "spot")]
+    public string? SpotSlug { get; set; }
+
     private bool _initialized;
+    private bool showCreateForm;
+    private bool isSavingSpot;
+    private string formMessage = "";
+
+    private UjSpotModel ujSpot = new();
+
+    private DotNetObjectReference<Terkep>? _objRef;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
-        {
-            var apiKey = Config["ApiTokens:MapboxKey"];
-            await JS.InvokeVoidAsync("eval", $"window.apiKey = '{apiKey}'");
-        }
+        if (!firstRender || _initialized)
+            return;
 
-        if (_initialized)
+        var apiKey = Config["ApiTokens:MapboxKey"];
+        var apiBaseUrl = Config["ApiBaseUrl"];
+
+        _objRef = DotNetObjectReference.Create(this);
+
+        await JS.InvokeVoidAsync("setMapboxConfig", apiKey, SpotSlug, apiBaseUrl);
+        await JS.InvokeVoidAsync("setMapboxDotNetRef", _objRef);
+        await JS.InvokeVoidAsync("initMapbox", "map");
+
+        _initialized = true;
+    }
+
+    private void ToggleCreateForm()
+    {
+        showCreateForm = !showCreateForm;
+        formMessage = "";
+    }
+
+    [JSInvokable]
+    public Task HandleMapClick(double lat, double lon)
+    {
+        ujSpot.Lat = lat;
+        ujSpot.Lon = lon;
+        showCreateForm = true;
+        formMessage = $"Koordináták kiválasztva: {lat:F6}, {lon:F6}";
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    private async Task CreateSpot()
+    {
+        if (isSavingSpot)
+            return;
+
+        formMessage = "";
+
+        if (string.IsNullOrWhiteSpace(ujSpot.Nev))
         {
+            formMessage = "A spot neve kötelező.";
             return;
         }
 
-        const int maxAttempts = 8;
-        const int delayMs = 400;
-
-        for (int attempt = 1; attempt <= maxAttempts && !_initialized; attempt++)
+        if (ujSpot.Lat == null || ujSpot.Lon == null)
         {
-            try
-            {
-                await JS.InvokeVoidAsync("console.log", $"Terkep: attempt {attempt} to call initMapbox");
-
-                await JS.InvokeVoidAsync("initMapbox", "map");
-
-                _initialized = true;
-                await JS.InvokeVoidAsync("console.log", "Terkep: initMapbox succeeded");
-                break;
-            }
-            catch (JSException jsEx)
-            {
-                await JS.InvokeVoidAsync("console.warn", $"Terkep: initMapbox attempt {attempt} failed: {jsEx.Message}");
-                if (attempt < maxAttempts)
-                {
-                    await Task.Delay(delayMs);
-                }
-            }
+            formMessage = "A koordináták kötelezőek.";
+            return;
         }
 
-        if (!_initialized)
+        isSavingSpot = true;
+
+        try
         {
-            await JS.InvokeVoidAsync("console.error", "Terkep: failed to call initMapbox after retries. Use manual init or check console/network.");
+            var apiClient = HttpClientFactory.CreateClient();
+            apiClient.BaseAddress = new Uri(Config["ApiBaseUrl"]!);
+
+            var response = await apiClient.PostAsJsonAsync("api/spotok", ujSpot);
+
+            if (response.IsSuccessStatusCode)
+            {
+                formMessage = "A spot sikeresen létrejött.";
+                ResetSpotFormValues();
+                await JS.InvokeVoidAsync("reloadMapboxSpots");
+            }
+            else
+            {
+                var errorText = await response.Content.ReadAsStringAsync();
+                formMessage = string.IsNullOrWhiteSpace(errorText)
+                    ? "A spot mentése nem sikerült."
+                    : $"A spot mentése nem sikerült: {errorText}";
+            }
+        }
+        catch (Exception ex)
+        {
+            formMessage = $"Hiba történt a mentés közben: {ex.Message}";
+        }
+        finally
+        {
+            isSavingSpot = false;
+            StateHasChanged();
         }
     }
 
-    private async Task ManualInit()
+    private void ResetSpotForm()
     {
-        try
-        {
-            await JS.InvokeVoidAsync("console.log", "ManualInit button clicked - calling initMapbox");
-            await JS.InvokeVoidAsync("initMapbox", "map");
-            await JS.InvokeVoidAsync("console.log", "Manual initMapbox call completed");
-            _initialized = true;
-        }
-        catch (JSException jsEx)
-        {
-            await JS.InvokeVoidAsync("console.error", "Manual initMapbox failed:", jsEx.Message);
-        }
+        ResetSpotFormValues();
+        formMessage = "";
+    }
+
+    private void ResetSpotFormValues()
+    {
+        ujSpot = new UjSpotModel();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _objRef?.Dispose();
+        await Task.CompletedTask;
+    }
+
+    private class UjSpotModel
+    {
+        public string? Nev { get; set; }
+        public string? Orszag { get; set; }
+        public string? Megye { get; set; }
+        public string? HelyLeiras { get; set; }
+        public int? Magassag { get; set; }
+        public string? Szabalyok { get; set; }
+        public double? Lat { get; set; }
+        public double? Lon { get; set; }
     }
 }

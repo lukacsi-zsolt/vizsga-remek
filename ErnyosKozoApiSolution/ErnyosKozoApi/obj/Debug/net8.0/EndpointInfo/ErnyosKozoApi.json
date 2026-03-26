@@ -831,6 +831,28 @@
         }
       }
     },
+    "/api/Spotok/slug/{slug}": {
+      "get": {
+        "tags": [
+          "Spotok"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Utvonalak": {
       "get": {
         "tags": [

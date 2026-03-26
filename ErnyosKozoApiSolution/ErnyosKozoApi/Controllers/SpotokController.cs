@@ -18,9 +18,15 @@ namespace ErnyosKozoApi.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-            => Ok(await _context.Spotok.ToListAsync());
+        {
+            var spotok = await _context.Spotok
+                .OrderBy(s => s.Nev)
+                .ToListAsync();
 
-        [HttpGet("{id}")]
+            return Ok(spotok);
+        }
+
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
             var spot = await _context.Spotok.FindAsync(id);
@@ -28,11 +34,40 @@ namespace ErnyosKozoApi.Controllers
             return Ok(spot);
         }
 
+        [HttpGet("slug/{slug}")]
+        public async Task<IActionResult> GetBySlug(string slug)
+        {
+            var spot = await _context.Spotok
+                .FirstOrDefaultAsync(s => s.Slug == slug);
+
+            if (spot == null) return NotFound();
+
+            return Ok(spot);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create(Spot spot)
         {
+            if (string.IsNullOrWhiteSpace(spot.Nev))
+                return BadRequest("A spot neve kötelező.");
+
+            if (spot.Lat == null || spot.Lon == null)
+                return BadRequest("A koordináták kötelezőek.");
+
+            if (string.IsNullOrWhiteSpace(spot.Slug))
+            {
+                spot.Slug = Slugify(spot.Nev);
+            }
+
+            var slugExists = await _context.Spotok.AnyAsync(s => s.Slug == spot.Slug);
+            if (slugExists)
+            {
+                spot.Slug = $"{spot.Slug}-{Guid.NewGuid().ToString("N")[..6]}";
+            }
+
             _context.Spotok.Add(spot);
             await _context.SaveChangesAsync();
+
             return Ok(spot);
         }
 
@@ -40,6 +75,7 @@ namespace ErnyosKozoApi.Controllers
         public async Task<IActionResult> Update(int id, Spot spot)
         {
             if (id != spot.SpotID) return BadRequest();
+
             _context.Entry(spot).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();
@@ -54,6 +90,23 @@ namespace ErnyosKozoApi.Controllers
             _context.Spotok.Remove(spot);
             await _context.SaveChangesAsync();
             return NoContent();
+        }
+
+        private static string Slugify(string text)
+        {
+            return text
+                .Trim()
+                .ToLower()
+                .Replace("á", "a")
+                .Replace("é", "e")
+                .Replace("í", "i")
+                .Replace("ó", "o")
+                .Replace("ö", "o")
+                .Replace("ő", "o")
+                .Replace("ú", "u")
+                .Replace("ü", "u")
+                .Replace("ű", "u")
+                .Replace(" ", "-");
         }
     }
 }

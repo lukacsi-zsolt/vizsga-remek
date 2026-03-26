@@ -489,6 +489,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ErnyosKozoApi.Controllers.SpotokController",
+    "Method": "GetBySlug",
+    "RelativePath": "api/Spotok/slug/{slug}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "slug",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErnyosKozoApi.Controllers.UtvonalakController",
     "Method": "GetAll",
     "RelativePath": "api/Utvonalak",
