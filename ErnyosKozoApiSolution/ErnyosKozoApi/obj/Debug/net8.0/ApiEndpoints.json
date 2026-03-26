@@ -68,6 +68,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ErnyosKozoApi.Controllers.AuthController",
+    "Method": "UploadAvatar",
+    "RelativePath": "api/Auth/upload-avatar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AuthController",
+    "Method": "UploadCover",
+    "RelativePath": "api/Auth/upload-cover",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
     "Method": "GetFelhasznalok",
     "RelativePath": "api/Felhasznalok",
@@ -147,6 +179,126 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "GetBejegyzesek",
+    "RelativePath": "api/Forum/bejegyzesek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SzarnysegedShared.DTOs.ForumDTOs.BejegyzesListaDto, SzarnysegedShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "CreateBejegyzes",
+    "RelativePath": "api/Forum/bejegyzesek",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SzarnysegedShared.DTOs.ForumDTOs.BejegyzesLetrehozasDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "GetBejegyzes",
+    "RelativePath": "api/Forum/bejegyzesek/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SzarnysegedShared.DTOs.ForumDTOs.BejegyzesListaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "GetKommentek",
+    "RelativePath": "api/Forum/bejegyzesek/{id}/kommentek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SzarnysegedShared.DTOs.ForumDTOs.KommentDto, SzarnysegedShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "CreateKomment",
+    "RelativePath": "api/Forum/kommentek",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SzarnysegedShared.DTOs.ForumDTOs.KommentLetrehozasDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "UploadForumImage",
+    "RelativePath": "api/Forum/upload-image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErnyosKozoApi.Controllers.HirekController",
     "Method": "GetAll",
     "RelativePath": "api/Hirek",
@@ -219,6 +371,38 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.KovetesekController",
+    "Method": "KovetesValtas",
+    "RelativePath": "api/Kovetesek/{kovetettFelhasznaloId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kovetettFelhasznaloId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.KovetesekController",
+    "Method": "GetKovetesAllapot",
+    "RelativePath": "api/Kovetesek/allapot/{felhasznaloId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "felhasznaloId",
         "Type": "System.Int32",
         "IsRequired": true
       }

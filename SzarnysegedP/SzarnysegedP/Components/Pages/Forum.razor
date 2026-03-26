@@ -1,0 +1,470 @@
+﻿@page "/forum"
+@rendermode InteractiveServer
+
+@using System.Net.Http.Json
+@using SzarnysegedShared.DTOs.ForumDTOs
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject SzarnysegedP.Services.AuthService AuthService
+
+<PageTitle>Fórum – Szárnysegéd</PageTitle>
+
+@if (isLoading)
+{
+    <div class="forum-loading">
+        <p>Bejegyzések betöltése...</p>
+    </div>
+}
+else
+{
+    <div class="forum-page">
+        <div class="forum-header">
+            <div>
+                <h1>Közösségi fórum</h1>
+                <p>Tapasztalatok, kérdések, helyszínek, élmények — minden egy helyen.</p>
+            </div>
+        </div>
+
+        <div class="forum-layout">
+            <aside class="forum-sidebar">
+                <div class="forum-card">
+                    <h3>Fórum</h3>
+                    <p>
+                        Ossz meg élményeket, kérdezz más pilótáktól, és jelöld meg a repülési helyszíneket.
+                    </p>
+                </div>
+
+                <div class="forum-card">
+                    <h3>Tippek</h3>
+                    <ul class="forum-tip-list">
+                        <li>Írj beszédes címet.</li>
+                        <li>Használj helyszín taget.</li>
+                        <li>Légy segítőkész a kommentekben.</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="forum-main">
+                @if (isLoggedIn)
+                {
+                    @if (!ujBejegyzesNyitva)
+                    {
+                        <div class="forum-card forum-create-launcher">
+                            <div class="forum-create-launcher-row">
+                                <button type="button"
+                                        class="forum-create-trigger"
+                                        @onclick="() => ujBejegyzesNyitva = true">
+                                    Új bejegyzés írása...
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                    @if (ujBejegyzesNyitva)
+                    {
+                        <div class="forum-card forum-create-card">
+                            <div class="forum-create-header">
+                                <h3>Új bejegyzés</h3>
+
+                                <button type="button"
+                                        class="forum-close-btn"
+                                        @onclick="CloseCreatePost">
+                                    ×
+                                </button>
+                            </div>
+
+                            @if (!string.IsNullOrWhiteSpace(createMessage))
+                            {
+                                <div class="forum-message">@createMessage</div>
+                            }
+
+                            <div class="forum-field">
+                                <label>Cím</label>
+                                <input @bind="ujBejegyzes.Cim" placeholder="pl. Első repülésem Dobogókőn" />
+                            </div>
+
+                            <div class="forum-field">
+                                <label>Tartalom</label>
+                                <textarea @bind="ujBejegyzes.Tartalom"
+                                          rows="5"
+                                          placeholder="Írd le az élményedet, kérdésedet vagy tapasztalatodat..."></textarea>
+                            </div>
+
+                            <div class="forum-grid">
+                                <div class="forum-field">
+                                    <label>Spot</label>
+                                    <select @bind="selectedSpotIdString">
+                                        <option value="">Nincs kiválasztva</option>
+                                        @foreach (var spot in spotok)
+                                        {
+                                            <option value="@spot.SpotID">@spot.Nev</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="forum-field">
+                                    <label>Kép feltöltése</label>
+                                    <InputFile OnChange="UploadPostImageFile" accept=".jpg,.jpeg,.png,.webp" />
+
+                                    @if (!string.IsNullOrWhiteSpace(postImageMessage))
+                                    {
+                                        <div class="forum-message" style="margin-top:10px;">@postImageMessage</div>
+                                    }
+
+                                    @if (!string.IsNullOrWhiteSpace(ujBejegyzes.KepUrl))
+                                    {
+                                        <div class="forum-post-upload-preview">
+                                            <img src="@ujBejegyzes.KepUrl"
+                                                 alt="Bejegyzés kép előnézet"
+                                                 onerror="this.style.display='none'" />
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            @if (!string.IsNullOrWhiteSpace(selectedSpotSlug))
+                            {
+                                <div class="forum-selected-tag">
+                                    Helyszín tag: <span>#@selectedSpotSlug</span>
+                                </div>
+                            }
+
+                            <div class="forum-actions">
+                                <button type="button"
+                                        class="btn-primary-custom"
+                                        @onclick="CreateBejegyzes"
+                                        disabled="@isCreating">
+                                    @(isCreating ? "Küldés..." : "Bejegyzés közzététele")
+                                </button>
+
+                                <button type="button"
+                                        class="forum-cancel-btn"
+                                        @onclick="CloseCreatePost">
+                                    Mégse
+                                </button>
+                            </div>
+                        </div>
+                    }
+                }
+
+                @if (bejegyzesek.Count == 0)
+                {
+                    <div class="forum-card">
+                        <p class="forum-empty">Még nincsenek bejegyzések.</p>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var bejegyzes in bejegyzesek)
+                    {
+                        <article class="forum-post-card">
+                            <div class="forum-post-top">
+                                <div class="forum-post-user" @onclick="() => OpenProfil(bejegyzes.FelhasznaloNev)">
+                                    @if (!string.IsNullOrWhiteSpace(bejegyzes.AvatarUrl))
+                                    {
+                                        <img class="forum-avatar"
+                                             src="@bejegyzes.AvatarUrl"
+                                             alt="@bejegyzes.FelhasznaloNev"
+                                             onerror="this.style.display='none'" />
+                                    }
+                                    else
+                                    {
+                                        <div class="forum-avatar forum-avatar-monogram">
+                                            @GetMonogram(bejegyzes.TeljesNev, bejegyzes.FelhasznaloNev)
+                                        </div>
+                                    }
+
+                                    <div class="forum-user-meta">
+                                        <div class="forum-user-name">
+                                            @(string.IsNullOrWhiteSpace(bejegyzes.TeljesNev)
+                                                ? bejegyzes.FelhasznaloNev
+                                                : bejegyzes.TeljesNev)
+                                        </div>
+                                        <div class="forum-user-handle">
+                                            @("@"+bejegyzes.FelhasznaloNev) · @FormatDatum(bejegyzes.Letrehozva)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="forum-post-body">
+                                @if (!string.IsNullOrWhiteSpace(bejegyzes.Cim))
+                                {
+                                    <h2 class="forum-post-title">@bejegyzes.Cim</h2>
+                                }
+
+                                <div class="forum-post-text">
+                                    @RenderTartalom(bejegyzes)
+                                </div>
+
+                                @if (!string.IsNullOrWhiteSpace(bejegyzes.KepUrl))
+                                {
+                                    <div class="forum-post-image-wrap">
+                                        <img class="forum-post-image"
+                                             src="@bejegyzes.KepUrl"
+                                             alt="@bejegyzes.Cim"
+                                             onerror="this.style.display='none'" />
+                                    </div>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(bejegyzes.SpotSlug))
+                                {
+                                    <div class="forum-post-tags">
+                                        <a class="forum-tag"
+                                           href="@($"/terkep?spot={bejegyzes.SpotSlug}")">
+                                            #@bejegyzes.SpotSlug
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="forum-post-footer">
+                                <button type="button"
+                                        class="forum-footer-btn"
+                                        @onclick="() => OpenBejegyzes(bejegyzes.BejegyzesID)">
+                                    💬 @bejegyzes.KommentekSzama komment
+                                </button>
+
+                                <button type="button"
+                                        class="forum-footer-btn"
+                                        @onclick="() => OpenProfil(bejegyzes.FelhasznaloNev)">
+                                    👤 profil
+                                </button>
+                            </div>
+                        </article>
+                    }
+                }
+            </section>
+        </div>
+    </div>
+}
+
+@code {
+    private bool ujBejegyzesNyitva = false;
+
+    private List<BejegyzesListaDto> bejegyzesek = new();
+    private List<SpotListaElem> spotok = new();
+
+    private BejegyzesLetrehozasDto ujBejegyzes = new();
+
+    private bool isLoading = true;
+    private bool isCreating = false;
+    private bool isLoggedIn = false;
+
+    private string createMessage = "";
+    private string selectedSpotIdString = "";
+    private string postImageMessage = "";
+
+    private int? SelectedSpotId
+    {
+        get
+        {
+            if (int.TryParse(selectedSpotIdString, out var id))
+                return id;
+            return null;
+        }
+    }
+
+    private string? selectedSpotSlug
+        => spotok.FirstOrDefault(x => x.SpotID == SelectedSpotId)?.Slug;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+
+        isLoggedIn = await AuthService.IsLoggedIn();
+        await AuthService.SetAuthorizationHeader();
+
+        await LoadSpotok();
+        await LoadBejegyzesek();
+
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private async Task LoadBejegyzesek()
+    {
+        var result = await Http.GetFromJsonAsync<List<BejegyzesListaDto>>("api/forum/bejegyzesek");
+        bejegyzesek = result ?? new List<BejegyzesListaDto>();
+    }
+
+    private async Task LoadSpotok()
+    {
+        var result = await Http.GetFromJsonAsync<List<SpotListaElem>>("api/spotok");
+        spotok = result ?? new List<SpotListaElem>();
+
+        foreach (var spot in spotok)
+        {
+            if (string.IsNullOrWhiteSpace(spot.Slug) && !string.IsNullOrWhiteSpace(spot.Nev))
+            {
+                spot.Slug = Slugify(spot.Nev);
+            }
+        }
+    }
+
+    private void CloseCreatePost()
+    {
+        ujBejegyzesNyitva = false;
+        createMessage = "";
+        postImageMessage = "";
+    }
+
+    private async Task CreateBejegyzes()
+    {
+        if (isCreating)
+            return;
+
+        createMessage = "";
+
+        if (string.IsNullOrWhiteSpace(ujBejegyzes.Cim) && string.IsNullOrWhiteSpace(ujBejegyzes.Tartalom))
+        {
+            createMessage = "Adj meg legalább címet vagy tartalmat.";
+            return;
+        }
+
+        isCreating = true;
+
+        try
+        {
+            await AuthService.SetAuthorizationHeader();
+
+            ujBejegyzes.SpotID = SelectedSpotId;
+
+            var response = await Http.PostAsJsonAsync("api/forum/bejegyzesek", ujBejegyzes);
+
+            if (response.IsSuccessStatusCode)
+            {
+                ujBejegyzes = new BejegyzesLetrehozasDto();
+                selectedSpotIdString = "";
+                createMessage = "";
+                postImageMessage = "";
+                ujBejegyzesNyitva = false;
+
+                await LoadBejegyzesek();
+            }
+            else
+            {
+                var errorText = await response.Content.ReadAsStringAsync();
+                createMessage = string.IsNullOrWhiteSpace(errorText)
+                    ? "A bejegyzés létrehozása nem sikerült."
+                    : $"A bejegyzés létrehozása nem sikerült: {errorText}";
+            }
+        }
+        catch (Exception ex)
+        {
+            createMessage = $"Hiba történt a bejegyzés létrehozása közben: {ex.Message}";
+        }
+        finally
+        {
+            isCreating = false;
+            StateHasChanged();
+        }
+    }
+
+    private void OpenProfil(string? felhasznaloNev)
+    {
+        if (string.IsNullOrWhiteSpace(felhasznaloNev))
+            return;
+
+        Navigation.NavigateTo($"/profil/{felhasznaloNev}");
+    }
+
+    private void OpenBejegyzes(int bejegyzesId)
+    {
+        Navigation.NavigateTo($"/forum/{bejegyzesId}");
+    }
+
+    private MarkupString RenderTartalom(BejegyzesListaDto bejegyzes)
+    {
+        var text = bejegyzes.Tartalom ?? "";
+
+        if (!string.IsNullOrWhiteSpace(bejegyzes.SpotSlug))
+        {
+            var tag = "#" + bejegyzes.SpotSlug;
+            if (text.Contains(tag, StringComparison.OrdinalIgnoreCase))
+            {
+                var encodedUrl = $"/terkep?spot={bejegyzes.SpotSlug}";
+                text = text.Replace(tag, $"<a class=\"forum-inline-tag\" href=\"{encodedUrl}\">{tag}</a>", StringComparison.OrdinalIgnoreCase);
+            }
+        }
+
+        text = text.Replace("\n", "<br>");
+        return new MarkupString(text);
+    }
+
+    private async Task UploadPostImageFile(InputFileChangeEventArgs e)
+    {
+        postImageMessage = "";
+
+        var file = e.File;
+        if (file == null)
+            return;
+
+        try
+        {
+            await using var stream = file.OpenReadStream(8 * 1024 * 1024);
+            var imageUrl = await AuthService.UploadForumImage(stream, file.Name);
+
+            if (!string.IsNullOrWhiteSpace(imageUrl))
+            {
+                ujBejegyzes.KepUrl = imageUrl;
+                await InvokeAsync(StateHasChanged);
+            }
+            else
+            {
+                postImageMessage = "A kép feltöltése nem sikerült.";
+            }
+        }
+        catch (Exception ex)
+        {
+            postImageMessage = $"Hiba történt a kép feltöltése közben: {ex.Message}";
+        }
+    }
+
+    private string GetMonogram(string? teljesNev, string? felhasznaloNev)
+    {
+        if (!string.IsNullOrWhiteSpace(teljesNev))
+        {
+            var parts = teljesNev.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length >= 2)
+                return $"{parts[0][0]}{parts[1][0]}".ToUpper();
+
+            return parts[0][0].ToString().ToUpper();
+        }
+
+        if (!string.IsNullOrWhiteSpace(felhasznaloNev))
+            return felhasznaloNev[0].ToString().ToUpper();
+
+        return "F";
+    }
+
+    private string FormatDatum(DateTime dateTime)
+    {
+        return dateTime.ToLocalTime().ToString("yyyy. MM. dd. HH:mm");
+    }
+
+    private string Slugify(string text)
+    {
+        return text
+            .ToLower()
+            .Replace("á", "a")
+            .Replace("é", "e")
+            .Replace("í", "i")
+            .Replace("ó", "o")
+            .Replace("ö", "o")
+            .Replace("ő", "o")
+            .Replace("ú", "u")
+            .Replace("ü", "u")
+            .Replace("ű", "u")
+            .Replace(" ", "-");
+    }
+
+    private class SpotListaElem
+    {
+        public int SpotID { get; set; }
+        public string? Nev { get; set; }
+        public string? Slug { get; set; }
+    }
+}

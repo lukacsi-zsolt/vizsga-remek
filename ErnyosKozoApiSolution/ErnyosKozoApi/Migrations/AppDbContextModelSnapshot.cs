@@ -22,6 +22,41 @@ namespace ErnyosKozoApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ErnyosKozoApi.Models.Bejegyzes", b =>
+                {
+                    b.Property<int>("BejegyzesID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BejegyzesID"));
+
+                    b.Property<string>("Cim")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("KepUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Letrehozva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("SpotID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tartalom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BejegyzesID");
+
+                    b.HasIndex("FelhasznaloID");
+
+                    b.HasIndex("SpotID");
+
+                    b.ToTable("Bejegyzesek");
+                });
+
             modelBuilder.Entity("ErnyosKozoApi.Models.Felhasznalo", b =>
                 {
                     b.Property<int>("FelhasznaloID")
@@ -97,6 +132,65 @@ namespace ErnyosKozoApi.Migrations
                     b.ToTable("Hirek");
                 });
 
+            modelBuilder.Entity("ErnyosKozoApi.Models.Komment", b =>
+                {
+                    b.Property<int>("KommentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KommentID"));
+
+                    b.Property<int>("BejegyzesID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Letrehozva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("SzuloKommentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tartalom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("KommentID");
+
+                    b.HasIndex("BejegyzesID");
+
+                    b.HasIndex("FelhasznaloID");
+
+                    b.HasIndex("SzuloKommentID");
+
+                    b.ToTable("Kommentek");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.Kovetes", b =>
+                {
+                    b.Property<int>("KovetesID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KovetesID"));
+
+                    b.Property<int>("KovetettFelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("KovetoFelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Letrehozva")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("KovetesID");
+
+                    b.HasIndex("KovetoFelhasznaloID", "KovetettFelhasznaloID")
+                        .IsUnique();
+
+                    b.ToTable("Kovetesek");
+                });
+
             modelBuilder.Entity("ErnyosKozoApi.Models.Spot", b =>
                 {
                     b.Property<int>("SpotID")
@@ -111,6 +205,15 @@ namespace ErnyosKozoApi.Migrations
                     b.Property<string>("HelyLeiras")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double?>("Lat")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("LetrehozoFelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Lon")
+                        .HasColumnType("float");
+
                     b.Property<int?>("Magassag")
                         .HasColumnType("int");
 
@@ -121,6 +224,9 @@ namespace ErnyosKozoApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Orszag")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Szabalyok")
@@ -161,6 +267,59 @@ namespace ErnyosKozoApi.Migrations
                     b.HasKey("UtvonalID");
 
                     b.ToTable("Utvonalak");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.Bejegyzes", b =>
+                {
+                    b.HasOne("ErnyosKozoApi.Models.Felhasznalo", "Felhasznalo")
+                        .WithMany()
+                        .HasForeignKey("FelhasznaloID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErnyosKozoApi.Models.Spot", "Spot")
+                        .WithMany()
+                        .HasForeignKey("SpotID");
+
+                    b.Navigation("Felhasznalo");
+
+                    b.Navigation("Spot");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.Komment", b =>
+                {
+                    b.HasOne("ErnyosKozoApi.Models.Bejegyzes", "Bejegyzes")
+                        .WithMany("Kommentek")
+                        .HasForeignKey("BejegyzesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErnyosKozoApi.Models.Felhasznalo", "Felhasznalo")
+                        .WithMany()
+                        .HasForeignKey("FelhasznaloID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ErnyosKozoApi.Models.Komment", "SzuloKomment")
+                        .WithMany("Valaszok")
+                        .HasForeignKey("SzuloKommentID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Bejegyzes");
+
+                    b.Navigation("Felhasznalo");
+
+                    b.Navigation("SzuloKomment");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.Bejegyzes", b =>
+                {
+                    b.Navigation("Kommentek");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.Komment", b =>
+                {
+                    b.Navigation("Valaszok");
                 });
 #pragma warning restore 612, 618
         }

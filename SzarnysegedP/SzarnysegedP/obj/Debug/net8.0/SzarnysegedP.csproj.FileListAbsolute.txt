@@ -639,3 +639,4 @@ C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug
 C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\SzarnysegedP.genruntimeconfig.cache
 C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\ref\SzarnysegedP.dll
 C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\lukac\Documents\GitHub\vizsga-remek\SzarnysegedP\SzarnysegedP\bin\Debug\net8.0\ErnyosKozoApi.staticwebassets.runtime.json

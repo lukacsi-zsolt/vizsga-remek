@@ -52,6 +52,8 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors("allowAll");
 
+app.UseStaticFiles();
+
 // fejlesztoi kornyezetnel engedelyezzuk a swaggert hogy tesztelni lehessen az apit
 if (app.Environment.IsDevelopment())
 {

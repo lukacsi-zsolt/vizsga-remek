@@ -24,42 +24,41 @@ else
 
     <div class="profil-wrapper">
 
-        <!-- ====== PROFIL FEJLÉC ====== -->
-        <div class="profil-fejlec">
-            <div class="profil-avatar profil-avatar-monogram">
-                @(mockFelhasznalo.TeljesNev.Split(' ').Length >= 2
-                    ? $"{mockFelhasznalo.TeljesNev.Split(' ')[0][0]}{mockFelhasznalo.TeljesNev.Split(' ')[1][0]}"
-                    : mockFelhasznalo.TeljesNev[0].ToString())
-            </div>
-
-            <div class="profil-info">
-                <h1 class="profil-nev">@mockFelhasznalo.TeljesNev</h1>
-                <p class="profil-handle">@("@"+mockFelhasznalo.FelhasznaloNev) · Csatlakozott: @mockFelhasznalo.Csatlakozott</p>
-
-                <div class="profil-badge-sor">
-                    <span class="profil-badge">@mockFelhasznalo.Szint</span>
-                    <span class="profil-badge profil-badge-outline">@mockFelhasznalo.Sportag</span>
-                    @foreach (var helyszin in mockFelhasznalo.KedvencHelyek)
-                    {
-                        <span class="profil-badge profil-badge-outline">@helyszin</span>
-                    }
+    <!-- ====== PROFIL FEJLÉC ====== -->
+    <div class="profil-fejlec">
+        <div class="profil-avatar-wrap">
+            @if (!string.IsNullOrWhiteSpace(mockFelhasznalo.AvatarUrl))
+            {
+                <img class="profil-avatar"
+                     src="@mockFelhasznalo.AvatarUrl"
+                     alt="@mockFelhasznalo.TeljesNev" />
+            }
+            else
+            {
+                <div class="profil-avatar profil-avatar-monogram">
+                    @GetMonogram()
                 </div>
-            </div>
+            }
+        </div>
 
-            <div class="profil-akciok">
-                @if (SajatProfil)
+        <div class="profil-info">
+            <h1 class="profil-nev">@mockFelhasznalo.TeljesNev</h1>
+            <p class="profil-handle">@("@"+mockFelhasznalo.FelhasznaloNev) · Csatlakozott: @mockFelhasznalo.Csatlakozott</p>
+
+            <div class="profil-badge-sor">
+                <span class="profil-badge">@mockFelhasznalo.Szint</span>
+                <span class="profil-badge profil-badge-outline">@mockFelhasznalo.Sportag</span>
+                @foreach (var helyszin in mockFelhasznalo.KedvencHelyek)
                 {
-                    <a href="/profil/szerkesztes" class="btn-primary-custom">Profil szerkesztése</a>
-                }
-                else
-                {
-                    <button class="btn-primary-custom" @onclick="Kovet">
-                        @(Kovetett ? "Követed ✓" : "+ Követés")
-                    </button>
-                    <button class="btn-secondary-custom ms-2">Üzenet</button>
+                    <span class="profil-badge profil-badge-outline">@helyszin</span>
                 }
             </div>
         </div>
+
+        <div class="profil-akciok">
+            <a href="/profil/szerkesztes" class="btn-primary-custom">Profil szerkesztése</a>
+        </div>
+    </div>
 
         <!-- ====== FŐ TARTALOM ====== -->
         <div class="profil-main">
@@ -269,8 +268,14 @@ else
         mockFelhasznalo.Bio = currentUser.Bio ?? "";
         mockFelhasznalo.Helyszin = currentUser.Helyszin ?? "";
         mockFelhasznalo.Klub = currentUser.Klub ?? "";
-        mockFelhasznalo.AvatarUrl = currentUser.AvatarUrl ?? "/images/avatar-placeholder.png";
-        mockFelhasznalo.CoverUrl = currentUser.CoverUrl ?? "/images/kodos.jpg";
+
+        mockFelhasznalo.AvatarUrl = string.IsNullOrWhiteSpace(currentUser.AvatarUrl)
+            ? "/images/avatar-placeholder.png"
+            : currentUser.AvatarUrl;
+
+        mockFelhasznalo.CoverUrl = string.IsNullOrWhiteSpace(currentUser.CoverUrl)
+            ? "/images/kodos.jpg"
+            : currentUser.CoverUrl;
 
         isLoading = false;
         StateHasChanged();
@@ -379,5 +384,19 @@ else
         public string KepUrl { get; set; } = "";
         public int Kommentek { get; set; }
         public int Likok { get; set; }
+    }
+
+    private string GetMonogram()
+    {
+        if (string.IsNullOrWhiteSpace(mockFelhasznalo.TeljesNev))
+            return "F";
+
+        var parts = mockFelhasznalo.TeljesNev
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (parts.Length >= 2)
+            return $"{parts[0][0]}{parts[1][0]}".ToUpper();
+
+        return parts[0][0].ToString().ToUpper();
     }
 }

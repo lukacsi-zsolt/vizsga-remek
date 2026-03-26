@@ -4,6 +4,7 @@ using System.Security.Claims;
 using Blazored.LocalStorage;
 using SzarnysegedShared.DTOs.FelhasznaloDTOs;
 
+
 namespace SzarnysegedP.Services
 {
     public class AuthService
@@ -137,6 +138,64 @@ namespace SzarnysegedP.Services
 
             var response = await _http.PutAsJsonAsync("api/auth/profile", dto);
             return response.IsSuccessStatusCode;
+        }
+
+        public async Task<string?> UploadAvatar(Stream fileStream, string fileName)
+        {
+            await SetAuthorizationHeader();
+
+            using var content = new MultipartFormDataContent();
+            using var streamContent = new StreamContent(fileStream);
+            streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            content.Add(streamContent, "file", fileName);
+
+            var response = await _http.PostAsync("api/auth/upload-avatar", content);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
+            return result?.ImageUrl;
+        }
+
+        public async Task<string?> UploadCover(Stream fileStream, string fileName)
+        {
+            await SetAuthorizationHeader();
+
+            using var content = new MultipartFormDataContent();
+            using var streamContent = new StreamContent(fileStream);
+            streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            content.Add(streamContent, "file", fileName);
+
+            var response = await _http.PostAsync("api/auth/upload-cover", content);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
+            return result?.ImageUrl;
+        }
+        public async Task<string?> UploadForumImage(Stream fileStream, string fileName)
+        {
+            await SetAuthorizationHeader();
+
+            using var content = new MultipartFormDataContent();
+            using var streamContent = new StreamContent(fileStream);
+            streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+
+            content.Add(streamContent, "file", fileName);
+
+            var response = await _http.PostAsync("api/forum/upload-image", content);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
+            return result?.ImageUrl;
+        }
+        public class ImageUploadResponse
+        {
+            public string? ImageUrl { get; set; }
         }
     }
 }

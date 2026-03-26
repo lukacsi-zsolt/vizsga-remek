@@ -1,6 +1,7 @@
 ﻿@page "/profil/szerkesztes"
 @rendermode InteractiveServer
 
+@using Microsoft.AspNetCore.Components.Forms
 @using SzarnysegedShared.DTOs.FelhasznaloDTOs
 @inject SzarnysegedP.Services.AuthService AuthService
 @inject NavigationManager Navigation
@@ -15,7 +16,7 @@
 }
 else
 {
-    <div class="profil-edit-hero">
+    <div class="profil-edit-hero" style="background-image: url('@GetCoverPreviewUrl()')">
         <div class="profil-edit-hero-overlay"></div>
         <div class="profil-edit-hero-inner">
             <h1>Profil szerkesztése</h1>
@@ -31,12 +32,30 @@ else
                     <h3 class="profil-card-cim">Előnézet</h3>
 
                     <div class="profil-edit-preview">
-                        <div class="profil-edit-avatar">
-                            @GetMonogram()
-                        </div>
+                        @if (!string.IsNullOrWhiteSpace(model.AvatarUrl))
+                        {
+                            <img class="profil-edit-preview-avatar-img"
+                                 src="@model.AvatarUrl"
+                                 alt="Profilkép előnézet" />
+                        }
+                        else
+                        {
+                            <div class="profil-edit-avatar">
+                                @GetMonogram()
+                            </div>
+                        }
 
-                        <h4>@model.TeljesNev</h4>
-                        <p>@("@"+model.FelhasznaloNev)</p>
+                        <h4>@(string.IsNullOrWhiteSpace(model.TeljesNev) ? "Teljes név" : model.TeljesNev)</h4>
+                        <p>
+                            @if (!string.IsNullOrWhiteSpace(model.FelhasznaloNev))
+                            {
+                                @("@"+model.FelhasznaloNev)
+                            }
+                            else
+                            {
+                                @("@felhasznalo")
+                            }
+                        </p>
 
                         @if (!string.IsNullOrWhiteSpace(model.Bio))
                         {
@@ -64,6 +83,11 @@ else
                     @if (!string.IsNullOrWhiteSpace(message))
                     {
                         <div class="profil-edit-message">@message</div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(uploadMessage))
+                    {
+                        <div class="profil-edit-message">@uploadMessage</div>
                     }
 
                     <div class="profil-edit-grid">
@@ -107,21 +131,41 @@ else
                             <label>Klub</label>
                             <input @bind="model.Klub" placeholder="pl. Dunántúli Siklóernyős Egyesület" />
                         </div>
+                    </div>
+                </div>
 
+                <div class="profil-card">
+                    <h3 class="profil-card-cim">Képek</h3>
+
+                    <div class="profil-edit-grid-single">
                         <div class="profil-edit-field">
-                            <label>Avatar URL</label>
-                            <input @bind="model.AvatarUrl" placeholder="/images/avatar-placeholder.png" />
+                            <label>Profilkép feltöltése</label>
+                            <InputFile OnChange="UploadAvatarFile" accept=".jpg,.jpeg,.png,.webp" />
+
+                            @if (!string.IsNullOrWhiteSpace(model.AvatarUrl))
+                            {
+                                <div class="profil-edit-image-preview profil-edit-avatar-preview">
+                                    <img src="@model.AvatarUrl" alt="Profilkép előnézet" />
+                                </div>
+                            }
                         </div>
 
                         <div class="profil-edit-field">
-                            <label>Borítókép URL</label>
-                            <input @bind="model.CoverUrl" placeholder="/images/kodos.jpg" />
+                            <label>Borítókép feltöltése</label>
+                            <InputFile OnChange="UploadCoverFile" accept=".jpg,.jpeg,.png,.webp" />
+
+                            @if (!string.IsNullOrWhiteSpace(model.CoverUrl))
+                            {
+                                <div class="profil-edit-image-preview profil-edit-cover-preview">
+                                    <img src="@model.CoverUrl" alt="Borítókép előnézet" />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
 
                 <div class="profil-edit-actions">
-                    <button class="btn-primary-custom" @onclick="Save" disabled="@isSaving">
+                    <button type="button" class="btn-primary-custom" @onclick="Save" disabled="@isSaving">
                         @(isSaving ? "Mentés..." : "Változtatások mentése")
                     </button>
 
@@ -139,6 +183,7 @@ else
     private bool isLoading = true;
     private bool isSaving = false;
     private string message = "";
+    private string uploadMessage = "";
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -166,6 +211,9 @@ else
             CoverUrl = user.CoverUrl
         };
 
+        if (string.IsNullOrWhiteSpace(model.CoverUrl))
+            model.CoverUrl = "/images/kodos.jpg";
+
         isLoading = false;
         StateHasChanged();
     }
@@ -175,24 +223,93 @@ else
         if (isSaving)
             return;
 
-        isSaving = true;
         message = "";
+        uploadMessage = "";
+        isSaving = true;
 
-        var success = await AuthService.UpdateProfile(model);
-
-        if (success)
+        try
         {
-            Navigation.NavigateTo("/profil", forceLoad: true);
-            return;
-        }
+            var success = await AuthService.UpdateProfile(model);
 
-        message = "A mentés nem sikerült. Ellenőrizd az adatokat, és próbáld újra.";
-        isSaving = false;
+            if (success)
+            {
+                Navigation.NavigateTo("/profil", forceLoad: true);
+                return;
+            }
+
+            message = "A mentés nem sikerült. Ellenőrizd az adatokat, és próbáld újra.";
+        }
+        catch
+        {
+            message = "Hiba történt a mentés közben.";
+        }
+        finally
+        {
+            isSaving = false;
+        }
     }
 
     private void Cancel()
     {
         Navigation.NavigateTo("/profil");
+    }
+
+    private async Task UploadAvatarFile(InputFileChangeEventArgs e)
+    {
+        uploadMessage = "";
+
+        var file = e.File;
+        if (file == null)
+            return;
+
+        try
+        {
+            await using var stream = file.OpenReadStream(5 * 1024 * 1024);
+            var imageUrl = await AuthService.UploadAvatar(stream, file.Name);
+
+            if (!string.IsNullOrWhiteSpace(imageUrl))
+            {
+                model.AvatarUrl = imageUrl;
+                await InvokeAsync(StateHasChanged);
+            }
+            else
+            {
+                uploadMessage = "A profilkép feltöltése nem sikerült.";
+            }
+        }
+        catch
+        {
+            uploadMessage = "Hiba történt a profilkép feltöltése közben.";
+        }
+    }
+
+    private async Task UploadCoverFile(InputFileChangeEventArgs e)
+    {
+        uploadMessage = "";
+
+        var file = e.File;
+        if (file == null)
+            return;
+
+        try
+        {
+            await using var stream = file.OpenReadStream(5 * 1024 * 1024);
+            var imageUrl = await AuthService.UploadCover(stream, file.Name);
+
+            if (!string.IsNullOrWhiteSpace(imageUrl))
+            {
+                model.CoverUrl = imageUrl;
+                await InvokeAsync(StateHasChanged);
+            }
+            else
+            {
+                uploadMessage = "A borítókép feltöltése nem sikerült.";
+            }
+        }
+        catch
+        {
+            uploadMessage = "Hiba történt a borítókép feltöltése közben.";
+        }
     }
 
     private string GetMonogram()
@@ -207,5 +324,13 @@ else
             return $"{parts[0][0]}{parts[1][0]}".ToUpper();
 
         return parts[0][0].ToString().ToUpper();
+    }
+
+    private string GetCoverPreviewUrl()
+    {
+        if (!string.IsNullOrWhiteSpace(model.CoverUrl))
+            return model.CoverUrl!;
+
+        return "/images/kodos.jpg";
     }
 }

@@ -9,6 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 
 namespace ErnyosKozoApi.Controllers
@@ -152,12 +154,53 @@ namespace ErnyosKozoApi.Controllers
             user.Bio = dto.Bio;
             user.Helyszin = dto.Helyszin;
             user.Klub = dto.Klub;
-            user.AvatarUrl = dto.AvatarUrl;
-            user.CoverUrl = dto.CoverUrl;
+            user.AvatarUrl = $"{Request.Scheme}://{Request.Host}/uploads/avatars/{dto.AvatarUrl}";
+            user.CoverUrl = $"{Request.Scheme}://{Request.Host}/uploads/covers/{dto.CoverUrl}";
 
             await _context.SaveChangesAsync();
 
             return Ok();
+        }
+
+        [HttpPost("upload-avatar")]
+        public async Task<IActionResult> UploadAvatar(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No file");
+
+            var folder = Path.Combine("wwwroot", "uploads", "avatars");
+
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(folder, fileName);
+
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            var url = $"{fileName}";
+
+            return Ok(new { imageUrl = url });
+        }
+
+        [HttpPost("upload-cover")]
+        public async Task<IActionResult> UploadCover(IFormFile file)
+        {
+            var folder = Path.Combine("wwwroot", "uploads", "covers");
+
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(folder, fileName);
+
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            var url = $"{fileName}";
+
+            return Ok(new { imageUrl = url });
         }
 
     }

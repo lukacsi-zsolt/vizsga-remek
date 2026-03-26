@@ -1,0 +1,526 @@
+﻿@page "/forum/{BejegyzesId:int}"
+@rendermode InteractiveServer
+
+@using System.Net.Http.Json
+@using SzarnysegedShared.DTOs.ForumDTOs
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject SzarnysegedP.Services.AuthService AuthService
+
+<PageTitle>Bejegyzés – Szárnysegéd</PageTitle>
+
+@if (isLoading)
+{
+    <div class="forum-loading">
+        <p>Bejegyzés betöltése...</p>
+    </div>
+}
+else if (bejegyzes == null)
+{
+    <div class="forum-page">
+        <div class="forum-card">
+            <p class="forum-empty">A bejegyzés nem található.</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="forum-page">
+        <div class="forum-detail-header">
+            <button type="button" class="forum-back-btn" @onclick="BackToForum">
+                ← Vissza a fórumhoz
+            </button>
+        </div>
+
+        <div class="forum-detail-layout">
+            <section class="forum-detail-main">
+                <article class="forum-post-card forum-post-card-detail">
+                    <div class="forum-post-top">
+                        <div class="forum-post-user" @onclick="() => OpenProfil(bejegyzes.FelhasznaloNev)">
+                            @if (!string.IsNullOrWhiteSpace(bejegyzes.AvatarUrl))
+                            {
+                                <img class="forum-avatar"
+                                     src="@bejegyzes.AvatarUrl"
+                                     alt="@bejegyzes.FelhasznaloNev"
+                                     onerror="this.style.display='none'" />
+                            }
+                            else
+                            {
+                                <div class="forum-avatar forum-avatar-monogram">
+                                    @GetMonogram(bejegyzes.TeljesNev, bejegyzes.FelhasznaloNev)
+                                </div>
+                            }
+
+                            <div class="forum-user-meta">
+                                <div class="forum-user-name">
+                                    @(string.IsNullOrWhiteSpace(bejegyzes.TeljesNev)
+                                        ? bejegyzes.FelhasznaloNev
+                                        : bejegyzes.TeljesNev)
+                                </div>
+                                <div class="forum-user-handle">
+                                    @("@"+bejegyzes.FelhasznaloNev) · @FormatDatum(bejegyzes.Letrehozva)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-post-body">
+                        @if (!string.IsNullOrWhiteSpace(bejegyzes.Cim))
+                        {
+                            <h1 class="forum-post-title forum-post-title-detail">@bejegyzes.Cim</h1>
+                        }
+
+                        <div class="forum-post-text forum-post-text-detail">
+                            @RenderTartalom(bejegyzes)
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(bejegyzes.KepUrl))
+                        {
+                            <div class="forum-post-image-wrap">
+                                <img class="forum-post-image"
+                                     src="@bejegyzes.KepUrl"
+                                     alt="@bejegyzes.Cim"
+                                     onerror="this.style.display='none'" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(bejegyzes.SpotSlug))
+                        {
+                            <div class="forum-post-tags">
+                                <a class="forum-tag"
+                                   href="@($"/terkep?spot={bejegyzes.SpotSlug}")">
+                                    #@bejegyzes.SpotSlug
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </article>
+
+                <div class="forum-card forum-comments-card">
+                    <div class="forum-comments-header">
+                        <h3>Kommentek</h3>
+                        <span>@kommentekDarab db</span>
+                    </div>
+
+                    @if (isLoggedIn)
+                    {
+                        <div class="forum-comment-form">
+                            @if (!string.IsNullOrWhiteSpace(commentMessage))
+                            {
+                                <div class="forum-message">@commentMessage</div>
+                            }
+
+                            <div class="forum-field">
+                                <label>Új komment</label>
+                                <textarea @bind="ujKommentTartalom"
+                                          rows="4"
+                                          placeholder="Írd le a véleményedet vagy segíts a kérdezőnek..."></textarea>
+                            </div>
+
+                            <div class="forum-actions">
+                                <button type="button"
+                                        class="btn-primary-custom"
+                                        @onclick="CreateKomment"
+                                        disabled="@isCreatingComment">
+                                    @(isCreatingComment ? "Küldés..." : "Komment küldése")
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="forum-login-notice">
+                            Kommenteléshez jelentkezz be.
+                        </div>
+                    }
+
+                    @if (kommentek.Count == 0)
+                    {
+                        <p class="forum-empty">Még nincsenek kommentek.</p>
+                    }
+                    else
+                    {
+                        <div class="forum-comment-list">
+                            @foreach (var komment in kommentek)
+                            {
+                                @RenderKomment(komment, 0)
+                            }
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <aside class="forum-detail-sidebar">
+                <div class="forum-card">
+                    <h3>Bejegyzés adatai</h3>
+
+                    <div class="forum-meta-list">
+                        <div class="forum-meta-item">
+                            <span class="forum-meta-label">Szerző</span>
+                            <button type="button"
+                                    class="forum-link-btn"
+                                    @onclick="() => OpenProfil(bejegyzes.FelhasznaloNev)">
+                                @("@"+bejegyzes.FelhasznaloNev)
+                            </button>
+                        </div>
+
+                        <div class="forum-meta-item">
+                            <span class="forum-meta-label">Dátum</span>
+                            <span>@FormatDatum(bejegyzes.Letrehozva)</span>
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(bejegyzes.SpotNev))
+                        {
+                            <div class="forum-meta-item">
+                                <span class="forum-meta-label">Spot</span>
+                                <a class="forum-inline-tag" href="@($"/terkep?spot={bejegyzes.SpotSlug}")">
+                                    @bejegyzes.SpotNev
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public int BejegyzesId { get; set; }
+
+    private BejegyzesListaDto? bejegyzes;
+    private List<KommentDto> kommentek = new();
+
+    private bool isLoading = true;
+    private bool isLoggedIn = false;
+    private bool isCreatingComment = false;
+
+    private string ujKommentTartalom = "";
+    private string commentMessage = "";
+
+    private int kommentekDarab => CountComments(kommentek);
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+
+        isLoggedIn = await AuthService.IsLoggedIn();
+        await AuthService.SetAuthorizationHeader();
+
+        await LoadBejegyzes();
+        await LoadKommentek();
+
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private async Task LoadBejegyzes()
+    {
+        bejegyzes = await Http.GetFromJsonAsync<BejegyzesListaDto>($"api/forum/bejegyzesek/{BejegyzesId}");
+    }
+
+    private async Task LoadKommentek()
+    {
+        var result = await Http.GetFromJsonAsync<List<KommentDto>>($"api/forum/bejegyzesek/{BejegyzesId}/kommentek");
+        kommentek = result ?? new List<KommentDto>();
+    }
+
+    private async Task CreateKomment()
+    {
+        if (isCreatingComment || string.IsNullOrWhiteSpace(ujKommentTartalom))
+            return;
+
+        isCreatingComment = true;
+        commentMessage = "";
+
+        try
+        {
+            await AuthService.SetAuthorizationHeader();
+
+            var dto = new KommentLetrehozasDto
+            {
+                BejegyzesID = BejegyzesId,
+                SzuloKommentID = null,
+                Tartalom = ujKommentTartalom
+            };
+
+            var response = await Http.PostAsJsonAsync("api/forum/kommentek", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                ujKommentTartalom = "";
+                await LoadKommentek();
+            }
+            else
+            {
+                commentMessage = "A komment mentése nem sikerült.";
+            }
+        }
+        catch
+        {
+            commentMessage = "Hiba történt a komment küldése közben.";
+        }
+        finally
+        {
+            isCreatingComment = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task CreateValasz(int kommentId)
+    {
+        var replyBox = kommentekValaszDobozok.FirstOrDefault(x => x.KommentID == kommentId);
+        if (replyBox == null || string.IsNullOrWhiteSpace(replyBox.Tartalom))
+            return;
+
+        replyBox.IsKulding = true;
+        replyBox.Message = "";
+
+        try
+        {
+            await AuthService.SetAuthorizationHeader();
+
+            var dto = new KommentLetrehozasDto
+            {
+                BejegyzesID = BejegyzesId,
+                SzuloKommentID = kommentId,
+                Tartalom = replyBox.Tartalom
+            };
+
+            var response = await Http.PostAsJsonAsync("api/forum/kommentek", dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                replyBox.Tartalom = "";
+                replyBox.Megnyitva = false;
+                await LoadKommentek();
+            }
+            else
+            {
+                replyBox.Message = "A válasz mentése nem sikerült.";
+            }
+        }
+        catch
+        {
+            replyBox.Message = "Hiba történt a válasz küldése közben.";
+        }
+        finally
+        {
+            replyBox.IsKulding = false;
+            StateHasChanged();
+        }
+    }
+
+    private readonly List<ValaszDobozAllapot> kommentekValaszDobozok = new();
+
+    private ValaszDobozAllapot GetValaszDoboz(int kommentId)
+    {
+        var existing = kommentekValaszDobozok.FirstOrDefault(x => x.KommentID == kommentId);
+        if (existing != null)
+            return existing;
+
+        var created = new ValaszDobozAllapot { KommentID = kommentId };
+        kommentekValaszDobozok.Add(created);
+        return created;
+    }
+
+    private RenderFragment RenderKomment(KommentDto komment, int level) => builder =>
+    {
+        var seq = 0;
+        var allapot = GetValaszDoboz(komment.KommentID);
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", $"forum-comment-item level-{Math.Min(level, 3)}");
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-comment-header");
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-post-user");
+        builder.AddAttribute(seq++, "onclick", EventCallback.Factory.Create(this, () => OpenProfil(komment.FelhasznaloNev)));
+
+        if (!string.IsNullOrWhiteSpace(komment.AvatarUrl))
+        {
+            builder.OpenElement(seq++, "img");
+            builder.AddAttribute(seq++, "class", "forum-avatar forum-avatar-small");
+            builder.AddAttribute(seq++, "src", komment.AvatarUrl);
+            builder.AddAttribute(seq++, "alt", komment.FelhasznaloNev);
+            builder.AddAttribute(seq++, "onerror", "this.style.display='none'");
+            builder.CloseElement();
+        }
+        else
+        {
+            builder.OpenElement(seq++, "div");
+            builder.AddAttribute(seq++, "class", "forum-avatar forum-avatar-small forum-avatar-monogram");
+            builder.AddContent(seq++, GetMonogram(komment.TeljesNev, komment.FelhasznaloNev));
+            builder.CloseElement();
+        }
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-user-meta");
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-user-name");
+        builder.AddContent(seq++, string.IsNullOrWhiteSpace(komment.TeljesNev) ? komment.FelhasznaloNev : komment.TeljesNev);
+        builder.CloseElement();
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-user-handle");
+        builder.AddContent(seq++, $"@{komment.FelhasznaloNev} · {FormatDatum(komment.Letrehozva)}");
+        builder.CloseElement();
+
+        builder.CloseElement();
+        builder.CloseElement();
+        builder.CloseElement();
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-comment-body");
+        builder.AddMarkupContent(seq++, (komment.Tartalom ?? "").Replace("\n", "<br>"));
+        builder.CloseElement();
+
+        builder.OpenElement(seq++, "div");
+        builder.AddAttribute(seq++, "class", "forum-comment-actions");
+
+        if (isLoggedIn)
+        {
+            builder.OpenElement(seq++, "button");
+            builder.AddAttribute(seq++, "type", "button");
+            builder.AddAttribute(seq++, "class", "forum-footer-btn");
+            builder.AddAttribute(seq++, "onclick", EventCallback.Factory.Create(this, () =>
+            {
+                allapot.Megnyitva = !allapot.Megnyitva;
+            }));
+            builder.AddContent(seq++, allapot.Megnyitva ? "Mégse" : "Válasz");
+            builder.CloseElement();
+        }
+
+        builder.CloseElement();
+
+        if (isLoggedIn && allapot.Megnyitva)
+        {
+            builder.OpenElement(seq++, "div");
+            builder.AddAttribute(seq++, "class", "forum-reply-box");
+
+            if (!string.IsNullOrWhiteSpace(allapot.Message))
+            {
+                builder.OpenElement(seq++, "div");
+                builder.AddAttribute(seq++, "class", "forum-message");
+                builder.AddContent(seq++, allapot.Message);
+                builder.CloseElement();
+            }
+
+            builder.OpenElement(seq++, "textarea");
+            builder.AddAttribute(seq++, "class", "forum-reply-textarea");
+            builder.AddAttribute(seq++, "placeholder", "Írj választ...");
+            builder.AddAttribute(seq++, "value", BindConverter.FormatValue(allapot.Tartalom));
+            builder.AddAttribute(seq++, "onchange", EventCallback.Factory.CreateBinder<string>(this, value => allapot.Tartalom = value, allapot.Tartalom));
+            builder.CloseElement();
+
+            builder.OpenElement(seq++, "div");
+            builder.AddAttribute(seq++, "class", "forum-actions");
+
+            builder.OpenElement(seq++, "button");
+            builder.AddAttribute(seq++, "type", "button");
+            builder.AddAttribute(seq++, "class", "btn-primary-custom");
+            builder.AddAttribute(seq++, "disabled", allapot.IsKulding);
+            builder.AddAttribute(seq++, "onclick", EventCallback.Factory.Create(this, () => CreateValasz(komment.KommentID)));
+            builder.AddContent(seq++, allapot.IsKulding ? "Küldés..." : "Válasz küldése");
+            builder.CloseElement();
+
+            builder.CloseElement();
+            builder.CloseElement();
+        }
+
+        if (komment.Valaszok != null && komment.Valaszok.Count > 0)
+        {
+            builder.OpenElement(seq++, "div");
+            builder.AddAttribute(seq++, "class", "forum-comment-children");
+
+            foreach (var valasz in komment.Valaszok)
+            {
+                builder.AddContent(seq++, RenderKomment(valasz, level + 1));
+            }
+
+            builder.CloseElement();
+        }
+
+        builder.CloseElement();
+    };
+
+    private void BackToForum()
+    {
+        Navigation.NavigateTo("/forum");
+    }
+
+    private void OpenProfil(string? felhasznaloNev)
+    {
+        if (string.IsNullOrWhiteSpace(felhasznaloNev))
+            return;
+
+        Navigation.NavigateTo($"/profil/{felhasznaloNev}");
+    }
+
+    private MarkupString RenderTartalom(BejegyzesListaDto bejegyzes)
+    {
+        var text = bejegyzes.Tartalom ?? "";
+
+        if (!string.IsNullOrWhiteSpace(bejegyzes.SpotSlug))
+        {
+            var tag = "#" + bejegyzes.SpotSlug;
+            if (text.Contains(tag, StringComparison.OrdinalIgnoreCase))
+            {
+                var encodedUrl = $"/terkep?spot={bejegyzes.SpotSlug}";
+                text = text.Replace(tag, $"<a class=\"forum-inline-tag\" href=\"{encodedUrl}\">{tag}</a>", StringComparison.OrdinalIgnoreCase);
+            }
+        }
+
+        text = text.Replace("\n", "<br>");
+        return new MarkupString(text);
+    }
+
+    private string GetMonogram(string? teljesNev, string? felhasznaloNev)
+    {
+        if (!string.IsNullOrWhiteSpace(teljesNev))
+        {
+            var parts = teljesNev.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length >= 2)
+                return $"{parts[0][0]}{parts[1][0]}".ToUpper();
+
+            return parts[0][0].ToString().ToUpper();
+        }
+
+        if (!string.IsNullOrWhiteSpace(felhasznaloNev))
+            return felhasznaloNev[0].ToString().ToUpper();
+
+        return "F";
+    }
+
+    private string FormatDatum(DateTime dateTime)
+    {
+        return dateTime.ToLocalTime().ToString("yyyy. MM. dd. HH:mm");
+    }
+
+    private int CountComments(List<KommentDto> lista)
+    {
+        var sum = 0;
+
+        foreach (var item in lista)
+        {
+            sum++;
+            if (item.Valaszok != null && item.Valaszok.Count > 0)
+                sum += CountComments(item.Valaszok);
+        }
+
+        return sum;
+    }
+
+    private class ValaszDobozAllapot
+    {
+        public int KommentID { get; set; }
+        public bool Megnyitva { get; set; }
+        public bool IsKulding { get; set; }
+        public string Tartalom { get; set; } = "";
+        public string Message { get; set; } = "";
+    }
+}

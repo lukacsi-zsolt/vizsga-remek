@@ -127,6 +127,70 @@
         }
       }
     },
+    "/api/Auth/upload-avatar": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/upload-cover": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Felhasznalok": {
       "get": {
         "tags": [
@@ -252,6 +316,225 @@
         }
       }
     },
+    "/api/Forum/bejegyzesek": {
+      "get": {
+        "tags": [
+          "Forum"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BejegyzesListaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BejegyzesListaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BejegyzesListaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Forum"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BejegyzesLetrehozasDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BejegyzesLetrehozasDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BejegyzesLetrehozasDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Forum/bejegyzesek/{id}": {
+      "get": {
+        "tags": [
+          "Forum"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BejegyzesListaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BejegyzesListaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BejegyzesListaDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Forum/bejegyzesek/{id}/kommentek": {
+      "get": {
+        "tags": [
+          "Forum"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KommentDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KommentDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KommentDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Forum/kommentek": {
+      "post": {
+        "tags": [
+          "Forum"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KommentLetrehozasDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KommentLetrehozasDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KommentLetrehozasDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Forum/upload-image": {
+      "post": {
+        "tags": [
+          "Forum"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Hirek": {
       "get": {
         "tags": [
@@ -362,6 +645,52 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Kovetesek/{kovetettFelhasznaloId}": {
+      "post": {
+        "tags": [
+          "Kovetesek"
+        ],
+        "parameters": [
+          {
+            "name": "kovetettFelhasznaloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Kovetesek/allapot/{felhasznaloId}": {
+      "get": {
+        "tags": [
+          "Kovetesek"
+        ],
+        "parameters": [
+          {
+            "name": "felhasznaloId",
             "in": "path",
             "required": true,
             "schema": {
@@ -630,6 +959,88 @@
   },
   "components": {
     "schemas": {
+      "BejegyzesLetrehozasDto": {
+        "type": "object",
+        "properties": {
+          "cim": {
+            "type": "string",
+            "nullable": true
+          },
+          "tartalom": {
+            "type": "string",
+            "nullable": true
+          },
+          "kepUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BejegyzesListaDto": {
+        "type": "object",
+        "properties": {
+          "bejegyzesID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cim": {
+            "type": "string",
+            "nullable": true
+          },
+          "tartalom": {
+            "type": "string",
+            "nullable": true
+          },
+          "kepUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "letrehozva": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "felhasznaloID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "felhasznaloNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "teljesNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "spotNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotSlug": {
+            "type": "string",
+            "nullable": true
+          },
+          "kommentekSzama": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateFelhasznaloDto": {
         "required": [
           "email",
@@ -796,6 +1207,75 @@
         },
         "additionalProperties": false
       },
+      "KommentDto": {
+        "type": "object",
+        "properties": {
+          "kommentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bejegyzesID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "szuloKommentID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "felhasznaloID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "felhasznaloNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "teljesNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "tartalom": {
+            "type": "string",
+            "nullable": true
+          },
+          "letrehozva": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "valaszok": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KommentDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "KommentLetrehozasDto": {
+        "type": "object",
+        "properties": {
+          "bejegyzesID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "szuloKommentID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tartalom": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginDTO": {
         "type": "object",
         "properties": {
@@ -818,6 +1298,10 @@
             "format": "int32"
           },
           "nev": {
+            "type": "string",
+            "nullable": true
+          },
+          "slug": {
             "type": "string",
             "nullable": true
           },
@@ -845,6 +1329,21 @@
           },
           "szabalyok": {
             "type": "string",
+            "nullable": true
+          },
+          "lat": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "lon": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "letrehozoFelhasznaloID": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
