@@ -1,0 +1,9 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-G6750M1\\SQLFEHER;Database=SzarnysegedDB;User Id=sa;Password=Sactzjr23;TrustServerCertificate=True"
+  },
+  "Jwt": {
+    "Key": "2f5aaa0e3fbff3396cc4fdfb42da8544",
+    "Issuer": "Szarnyseged"
+  }
+}
