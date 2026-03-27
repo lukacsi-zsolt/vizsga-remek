@@ -3235,23 +3235,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lukac\\.nuget\\packages\\": {},
+    "C:\\Users\\fcsro\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
+      "projectUniqueName": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
       "projectName": "SzarnysegedP",
-      "projectPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
-      "packagesPath": "C:\\Users\\lukac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\obj\\",
+      "projectPath": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\SzarnysegedP.csproj",
+      "packagesPath": "C:\\Users\\fcsro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lukac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fcsro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3266,8 +3266,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
-              "projectPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj"
+            "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj": {
+              "projectPath": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj"
             }
           }
         }
@@ -3282,7 +3282,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -3312,7 +3312,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

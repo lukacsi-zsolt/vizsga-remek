@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>efdifbmpwb</Fingerprint>
-      <Integrity>ei++SMO8VKtwGkGzYkf1dHI+CVvOaUyePzs1rkbppg8=</Integrity>
+      <Fingerprint>3n95udhljn</Fingerprint>
+      <Integrity>8b1WIMbwHQ/YjpOhYgtyzCDqrjUFitDcSwh+VBg4d30=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</OriginalItemSpec>
@@ -336,8 +336,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xh424zafzc</Fingerprint>
-      <Integrity>RdMbsPQWJ1N69dIY3bJudQ3Iu0uGXbMKx6F5tzrG9y8=</Integrity>
+      <Fingerprint>ufg9ph3wii</Fingerprint>
+      <Integrity>eoib23Ssbrp0WbdOcwbPLMDBMSALr/ORhOfv9bsQ87Y=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\terkep.js'))</OriginalItemSpec>
@@ -354,8 +354,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vqbzxozgtn</Fingerprint>
-      <Integrity>N3ciMx/SN+9f5l8oFCNN9u04gr/mIM2e/xMYbAwhAwM=</Integrity>
+      <Fingerprint>dvl34hazie</Fingerprint>
+      <Integrity>eVmxrhYX+kRkadfzp8n65+JT9J+0um20ZyXi5iew8lg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\weather.js'))</OriginalItemSpec>

@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png",
+      "PackagePath": "staticwebassets\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png",
+      "PackagePath": "staticwebassets\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png",
+      "PackagePath": "staticwebassets\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg",
+      "PackagePath": "staticwebassets\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg",
+      "PackagePath": "staticwebassets\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp",
+      "PackagePath": "staticwebassets\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ErnyosKozoApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ErnyosKozoApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ErnyosKozoApi.props",
+      "PackagePath": "build\\ErnyosKozoApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ErnyosKozoApi.props",
+      "PackagePath": "buildMultiTargeting\\ErnyosKozoApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ErnyosKozoApi.props",
+      "PackagePath": "buildTransitive\\ErnyosKozoApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,1 +1,949 @@
-{"Version":1,"Hash":"hhY9NGloXkPb6l5qa5FMwkxXjheK70hgJ8DoAqBmWWY=","Source":"ErnyosKozoApi","BasePath":"_content/ErnyosKozoApi","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[{"Name":"ErnyosKozoApi\\wwwroot","Source":"ErnyosKozoApi","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","Pattern":"**"}],"Assets":[{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"twonc78o0i","Integrity":"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png","FileLength":59599,"LastWriteTime":"2026-03-26T16:30:32+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"939fzuak4p","Integrity":"O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png","FileLength":16879,"LastWriteTime":"2026-03-26T16:23:56+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"twonc78o0i","Integrity":"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png","FileLength":59599,"LastWriteTime":"2026-03-26T16:44:20+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"xh6tmebvar","Integrity":"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png","FileLength":108273,"LastWriteTime":"2026-03-26T16:44:34+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"xh6tmebvar","Integrity":"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png","FileLength":108273,"LastWriteTime":"2026-03-26T16:31:04+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692#[.{fingerprint}]?.png","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"xh6tmebvar","Integrity":"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png","FileLength":108273,"LastWriteTime":"2026-03-26T18:44:04+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec#[.{fingerprint}]?.jpg","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"z6c58j1v6m","Integrity":"BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg","FileLength":38282,"LastWriteTime":"2026-03-26T18:34:13+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267#[.{fingerprint}]?.jpg","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"ugpouk6d6w","Integrity":"EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg","FileLength":49985,"LastWriteTime":"2026-03-26T19:24:36+00:00"},{"Identity":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp","SourceId":"ErnyosKozoApi","SourceType":"Discovered","ContentRoot":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\","BasePath":"_content/ErnyosKozoApi","RelativePath":"uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf#[.{fingerprint}]?.webp","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"6vnb4ucvas","Integrity":"kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp","FileLength":73744,"LastWriteTime":"2026-03-26T18:50:40+00:00"}],"Endpoints":[{"Route":"uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"59599"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:30:32 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="}]},{"Route":"uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.twonc78o0i.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"59599"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:30:32 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"twonc78o0i"},{"Name":"label","Value":"uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png"},{"Name":"integrity","Value":"sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="}]},{"Route":"uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.939fzuak4p.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"16879"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:23:56 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"939fzuak4p"},{"Name":"label","Value":"uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.png"},{"Name":"integrity","Value":"sha256-O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw="}]},{"Route":"uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"16879"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:23:56 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw="}]},{"Route":"uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"59599"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:44:20 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="}]},{"Route":"uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.twonc78o0i.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"59599"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:44:20 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"twonc78o0i"},{"Name":"label","Value":"uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.png"},{"Name":"integrity","Value":"sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="}]},{"Route":"uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:44:34 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.xh6tmebvar.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:44:34 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"xh6tmebvar"},{"Name":"label","Value":"uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.png"},{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:31:04 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.xh6tmebvar.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 16:31:04 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"xh6tmebvar"},{"Name":"label","Value":"uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png"},{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:44:04 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.xh6tmebvar.png","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"108273"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:44:04 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"xh6tmebvar"},{"Name":"label","Value":"uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.png"},{"Name":"integrity","Value":"sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="}]},{"Route":"uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.jpg","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"38282"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\"BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:34:13 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw="}]},{"Route":"uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.z6c58j1v6m.jpg","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"38282"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\"BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:34:13 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"z6c58j1v6m"},{"Name":"label","Value":"uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.jpg"},{"Name":"integrity","Value":"sha256-BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw="}]},{"Route":"uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"49985"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\"EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 19:24:36 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0="}]},{"Route":"uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.ugpouk6d6w.jpg","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"49985"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\"EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 19:24:36 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"ugpouk6d6w"},{"Name":"label","Value":"uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg"},{"Name":"integrity","Value":"sha256-EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0="}]},{"Route":"uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.6vnb4ucvas.webp","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"73744"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\"kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:50:40 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"6vnb4ucvas"},{"Name":"label","Value":"uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp"},{"Name":"integrity","Value":"sha256-kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg="}]},{"Route":"uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp","AssetFile":"C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"73744"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\"kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=\""},{"Name":"Last-Modified","Value":"Thu, 26 Mar 2026 18:50:40 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg="}]}]}
+{
+  "Version": 1,
+  "Hash": "GcKj7JEq0g1Pb/oyo0So394ABzuhLeSYiSChnix3zvk=",
+  "Source": "ErnyosKozoApi",
+  "BasePath": "_content/ErnyosKozoApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ErnyosKozoApi\\wwwroot",
+      "Source": "ErnyosKozoApi",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "twonc78o0i",
+      "Integrity": "I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "939fzuak4p",
+      "Integrity": "O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "twonc78o0i",
+      "Integrity": "I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xh6tmebvar",
+      "Integrity": "JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xh6tmebvar",
+      "Integrity": "JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xh6tmebvar",
+      "Integrity": "JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z6c58j1v6m",
+      "Integrity": "BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ugpouk6d6w",
+      "Integrity": "EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp",
+      "SourceId": "ErnyosKozoApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\",
+      "BasePath": "_content/ErnyosKozoApi",
+      "RelativePath": "uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6vnb4ucvas",
+      "Integrity": "kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59599"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.twonc78o0i.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59599"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "twonc78o0i"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/avatars/0b7c1d56-69cc-459f-a35b-723cddfc9ef3.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.939fzuak4p.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16879"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "939fzuak4p"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatars/49a26d63-058e-47db-9759-869ba2b674dc.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\49a26d63-058e-47db-9759-869ba2b674dc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16879"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O0n5898ZgWHW0ZVGeKmHhL4tKDBUX5Uk101jHnqaOgw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59599"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.twonc78o0i.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\avatars\\5b740e64-cd54-421d-aec9-8846dfb3c860.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59599"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "twonc78o0i"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/avatars/5b740e64-cd54-421d-aec9-8846dfb3c860.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I5pK8ymAfezECf/XmtHnr+VyJnQidjO3ICbvxR0BgHw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.xh6tmebvar.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\13d0ea9c-91b2-402f-a47c-27b998d300ac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xh6tmebvar"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/covers/13d0ea9c-91b2-402f-a47c-27b998d300ac.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.xh6tmebvar.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\covers\\cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xh6tmebvar"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/covers/cd11fb92-3fc5-4c8b-b53c-eb8989fe146c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.xh6tmebvar.png",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\2fc28ce9-9429-4bad-b11f-17e97d855692.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xh6tmebvar"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/forum/2fc28ce9-9429-4bad-b11f-17e97d855692.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQSzaxFFAd81+RcVcIeikJ3ylZqDyV5e7DrXUH6q5VI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.jpg",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38282"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.z6c58j1v6m.jpg",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\78151de2-47ba-4770-a195-13c9b25af0ec.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38282"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z6c58j1v6m"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/forum/78151de2-47ba-4770-a195-13c9b25af0ec.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BS8e7xyrmgSbWC9pmXYe3iSQ7uPDvWcMeXhcOoZh4kw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49985"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.ugpouk6d6w.jpg",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49985"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ugpouk6d6w"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/forum/9607fa72-25a4-4c1d-bf54-db8bad78a267.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EhvvqMYl4Be3BAJE+WJvyWi+L5LxDqZO10wjvgUJaN0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.6vnb4ucvas.webp",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6vnb4ucvas"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/forum/9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp",
+      "AssetFile": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\wwwroot\\uploads\\forum\\9e293f5d-b3f1-41d8-96c8-d6bccb97d4cf.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Mar 2026 08:43:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kolGDJEiPpMPE/knKS3JtMPhhePItZ6M2g9elDfRclg="
+        }
+      ]
+    }
+  ]
+}

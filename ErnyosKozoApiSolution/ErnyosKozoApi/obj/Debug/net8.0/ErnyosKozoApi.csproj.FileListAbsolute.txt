@@ -964,3 +964,4 @@ C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi
 C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\ref\ErnyosKozoApi.dll
 C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\bin\Debug\net8.0\ErnyosKozoApi.staticwebassets.runtime.json
 C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\bin\Debug\net8.0\ErnyosKozoApi.staticwebassets.runtime.json
