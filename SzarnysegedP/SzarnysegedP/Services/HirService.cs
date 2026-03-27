@@ -15,4 +15,9 @@ public class HirService
         return await _http.GetFromJsonAsync<List<HirDto>>("api/hirek")
                ?? new List<HirDto>();
     }
+
+    public async Task<HirDto?> GetHirByIdAsync(int id)
+    {
+        return await _http.GetFromJsonAsync<HirDto>($"api/hirek/{id}");
+    }
 }

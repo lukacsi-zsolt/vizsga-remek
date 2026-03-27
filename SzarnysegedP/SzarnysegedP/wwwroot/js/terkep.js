@@ -1,5 +1,4 @@
 ﻿console.log("terkep.js loaded");
-window.__terkep_script_loaded = true;
 
 window.__mapbox_initializing = window.__mapbox_initializing || false;
 window.__mapbox_initialized = window.__mapbox_initialized || false;
@@ -7,15 +6,6 @@ window.__mapbox_map = window.__mapbox_map || null;
 window.__mapbox_spot_slug = window.__mapbox_spot_slug || null;
 window.__mapbox_dotnet_ref = window.__mapbox_dotnet_ref || null;
 window.__mapbox_markers = window.__mapbox_markers || [];
-
-window.addEventListener("error", function (evt) {
-    console.error("Global error event:", evt.message, evt.filename + ":" + evt.lineno + ":" + evt.colno, evt.error);
-});
-
-window.addEventListener("unhandledrejection", function (evt) {
-    console.error("Unhandled promise rejection:", evt.reason);
-});
-
 window.__api_base_url = window.__api_base_url || "";
 
 window.setMapboxConfig = function (apiKey, spotSlug, apiBaseUrl) {
@@ -55,14 +45,12 @@ async function getWind(lat, lon) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            console.warn("Wind API returned non-ok status:", response.status);
             return "N/A";
         }
 
         const data = await response.json();
         return data?.current_weather?.windspeed ?? "N/A";
-    } catch (err) {
-        console.warn("Wind fetch failed:", err);
+    } catch {
         return "N/A";
     }
 }
@@ -99,10 +87,7 @@ function clearMarkers() {
 
 async function renderSpotok(map, spotok) {
     const tbody = document.getElementById("spot-list");
-
-    if (tbody) {
-        tbody.innerHTML = "";
-    }
+    if (tbody) tbody.innerHTML = "";
 
     clearMarkers();
 
@@ -110,10 +95,7 @@ async function renderSpotok(map, spotok) {
     const selectedSlug = window.__mapbox_spot_slug;
 
     for (const spot of spotok) {
-        if (spot.lat == null || spot.lon == null) {
-            console.warn("Spot koordináta nélkül kihagyva:", spot);
-            continue;
-        }
+        if (spot.lat == null || spot.lon == null) continue;
 
         const color = getMarkerColor(spot);
         const ws = await getWind(spot.lat, spot.lon);
@@ -141,23 +123,19 @@ async function renderSpotok(map, spotok) {
             });
         }
 
-        try {
-            const popupHtml = `
-                <strong>${spot.nev ?? "Névtelen spot"}</strong><br>
-                ${spot.orszag ?? "Ismeretlen ország"}<br>
-                Magasság: ${formatMagassag(spot.magassag)}<br>
-                Szél: ${ws} ${ws === "N/A" ? "" : "km/h"}
-            `;
+        const popupHtml = `
+            <strong>${spot.nev ?? "Névtelen spot"}</strong><br>
+            ${spot.orszag ?? "Ismeretlen ország"}<br>
+            Magasság: ${formatMagassag(spot.magassag)}<br>
+            Szél: ${ws} ${ws === "N/A" ? "" : "km/h"}
+        `;
 
-            const marker = new mapboxgl.Marker({ color })
-                .setLngLat([spot.lon, spot.lat])
-                .setPopup(new mapboxgl.Popup().setHTML(popupHtml))
-                .addTo(map);
+        const marker = new mapboxgl.Marker({ color })
+            .setLngLat([spot.lon, spot.lat])
+            .setPopup(new mapboxgl.Popup().setHTML(popupHtml))
+            .addTo(map);
 
-            window.__mapbox_markers.push(marker);
-        } catch (markerError) {
-            console.warn("Failed adding marker for", spot.nev, markerError);
-        }
+        window.__mapbox_markers.push(marker);
 
         if (selectedSlug && spot.slug === selectedSlug) {
             spotToZoom = spot;
@@ -165,7 +143,6 @@ async function renderSpotok(map, spotok) {
     }
 
     if (spotToZoom) {
-        console.log("Zooming to selected spot:", spotToZoom.slug);
         map.flyTo({
             center: [spotToZoom.lon, spotToZoom.lat],
             zoom: 11,
@@ -176,10 +153,7 @@ async function renderSpotok(map, spotok) {
 
 window.reloadMapboxSpots = async function () {
     const map = window.__mapbox_map;
-    if (!map) {
-        console.warn("reloadMapboxSpots: map not initialized");
-        return;
-    }
+    if (!map) return;
 
     const spotok = await getSpotokFromApi();
     await renderSpotok(map, spotok);
@@ -188,72 +162,45 @@ window.reloadMapboxSpots = async function () {
 window.initMapbox = async function (containerId) {
     console.log("initMapbox called with containerId:", containerId);
 
-    if (window.__mapbox_initialized) {
-        console.log("initMapbox: already initialized - skipping");
+    if (window.__mapbox_initialized || window.__mapbox_initializing) {
         return;
     }
 
-    if (window.__mapbox_initializing) {
-        console.log("initMapbox: initialization already in progress - skipping");
-        return;
+    if (!window.mapboxgl) {
+        throw new Error("mapboxgl még nincs betöltve.");
+    }
+
+    const container = document.getElementById(containerId);
+    if (!container) {
+        throw new Error(`A(z) "${containerId}" konténer nem található.`);
     }
 
     window.__mapbox_initializing = true;
 
     try {
-        if (!window.mapboxgl) {
-            console.error("mapboxgl not found. Ensure Mapbox JS is loaded.");
-            window.__mapbox_initializing = false;
-            return;
-        }
-
-        const container = document.getElementById(containerId);
-        if (!container) {
-            console.error(`container "${containerId}" not found.`);
-            window.__mapbox_initializing = false;
-            return;
-        }
-
-        if (!container.style.height || container.style.height === "") {
-            container.style.height = "600px";
-        }
-
         mapboxgl.accessToken = window.apiKey;
 
-        let map;
-        try {
-            map = new mapboxgl.Map({
-                container: containerId,
-                style: "mapbox://styles/mapbox/outdoors-v12",
-                center: [19.0402, 47.4979],
-                zoom: 6
-            });
-        } catch (ex) {
-            console.error("Failed to create Mapbox map:", ex);
-            window.__mapbox_initializing = false;
-            return;
-        }
+        const map = new mapboxgl.Map({
+            container: containerId,
+            style: "mapbox://styles/mapbox/outdoors-v12",
+            center: [19.0402, 47.4979],
+            zoom: 6
+        });
 
         window.__mapbox_map = map;
 
         map.on("load", async () => {
-            console.log("Mapbox map loaded.");
-
             try {
                 map.addControl(new mapboxgl.NavigationControl());
                 map.scrollZoom.disable();
 
                 map.on("click", async (e) => {
                     if (window.__mapbox_dotnet_ref) {
-                        try {
-                            await window.__mapbox_dotnet_ref.invokeMethodAsync(
-                                "HandleMapClick",
-                                e.lngLat.lat,
-                                e.lngLat.lng
-                            );
-                        } catch (err) {
-                            console.error("Map click -> .NET callback hiba:", err);
-                        }
+                        await window.__mapbox_dotnet_ref.invokeMethodAsync(
+                            "HandleMapClick",
+                            e.lngLat.lat,
+                            e.lngLat.lng
+                        );
                     }
                 });
 
@@ -261,17 +208,15 @@ window.initMapbox = async function (containerId) {
                 await renderSpotok(map, spotok);
 
                 window.__mapbox_initialized = true;
-            } catch (err) {
-                console.error("Error while rendering spotok:", err);
-                window.__mapbox_initialized = false;
             } finally {
                 window.__mapbox_initializing = false;
             }
         });
 
-        map.on("error", (e) => console.error("Mapbox error event:", e));
-    } catch (e) {
-        console.error("initMapbox top-level error:", e);
+        map.on("error", (e) => console.error("Mapbox error:", e));
+    } catch (err) {
         window.__mapbox_initializing = false;
+        console.error("initMapbox hiba:", err);
+        throw err;
     }
 };

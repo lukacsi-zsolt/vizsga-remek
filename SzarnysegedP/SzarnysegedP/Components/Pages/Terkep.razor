@@ -4,7 +4,6 @@
 @using System.Net.Http.Json
 @inject IJSRuntime JS
 @inject IConfiguration Config
-@inject HttpClient Http
 @inject IHttpClientFactory HttpClientFactory
 
 <style>
@@ -82,7 +81,7 @@
     .spot-field label {
         font-size: 12px;
         font-weight: 700;
-        color: var(--brown, #5c4a32);
+        color: #5c4a32;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
@@ -94,17 +93,8 @@
         border-radius: 8px;
         padding: 12px 14px;
         font-size: 14px;
-        font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
         color: #2e2416;
         background: #fff;
-        transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .spot-field input:focus,
-    .spot-field textarea:focus {
-        outline: none;
-        border-color: #2d5a3d;
-        box-shadow: 0 0 0 3px rgba(45,90,61,0.12);
     }
 
     .spot-field textarea {
@@ -148,13 +138,6 @@
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
-        transition: background 0.2s, border-color 0.2s, transform 0.15s;
-    }
-
-    .spot-cancel-btn:hover {
-        background: #f5f0e8;
-        border-color: rgba(92,74,50,0.32);
-        transform: translateY(-1px);
     }
 </style>
 
@@ -264,7 +247,7 @@
     </div>
 </div>
 
-<script src="/js/terkep.js"></script>
+
 
 @code {
     [SupplyParameterFromQuery(Name = "spot")]
@@ -276,7 +259,6 @@
     private string formMessage = "";
 
     private UjSpotModel ujSpot = new();
-
     private DotNetObjectReference<Terkep>? _objRef;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -289,11 +271,27 @@
 
         _objRef = DotNetObjectReference.Create(this);
 
-        await JS.InvokeVoidAsync("setMapboxConfig", apiKey, SpotSlug, apiBaseUrl);
-        await JS.InvokeVoidAsync("setMapboxDotNetRef", _objRef);
-        await JS.InvokeVoidAsync("initMapbox", "map");
+        const int maxAttempts = 20;
+        const int delayMs = 250;
 
-        _initialized = true;
+        for (int i = 0; i < maxAttempts; i++)
+        {
+            try
+            {
+                await JS.InvokeVoidAsync("setMapboxConfig", apiKey, SpotSlug, apiBaseUrl);
+                await JS.InvokeVoidAsync("setMapboxDotNetRef", _objRef);
+                await JS.InvokeVoidAsync("initMapbox", "map");
+
+                _initialized = true;
+                break;
+            }
+            catch
+            {
+                await Task.Delay(delayMs);
+            }
+        }
+
+        StateHasChanged();
     }
 
     private void ToggleCreateForm()

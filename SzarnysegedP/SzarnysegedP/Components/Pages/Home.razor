@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
 <PageTitle>Főoldal</PageTitle>
 
@@ -60,17 +61,23 @@
                     <div class="weather-val" id="weather-temp">–</div>
                     <div class="weather-unit">Hőmérséklet</div>
                 </div>
+
                 <div class="col-auto d-none d-sm-block weather-divider mx-3" style="height:60px;"></div>
+
                 <div class="col-6 col-sm-3 weather-item">
                     <div class="weather-val" id="weather-wind">–</div>
                     <div class="weather-unit">Szél</div>
                 </div>
+
                 <div class="col-auto d-none d-sm-block weather-divider mx-3" style="height:60px;"></div>
+
                 <div class="col-6 col-sm-3 weather-item">
                     <div class="weather-val" id="weather-visibility">–</div>
                     <div class="weather-unit">Látótávolság</div>
                 </div>
+
                 <div class="col-auto d-none d-sm-block weather-divider mx-3" style="height:60px;"></div>
+
                 <div class="col-6 col-sm-3 weather-item">
                     <div class="weather-val" id="weather-sky">–</div>
                     <div class="weather-unit">Égbolt</div>
@@ -118,3 +125,13 @@
         </div>
     </div>
 </section>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("loadWeather");
+        }
+    }
+}
