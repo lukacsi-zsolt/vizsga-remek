@@ -1,82 +1,199 @@
 ﻿@page "/Hirek"
-@* @inject HirService HirService *@
-@using SzarnysegedShared.DTOs
 @using SzarnysegedShared.DTOs.HirDTOs
 @inject HirService HirService
 @inject NavigationManager Nav
+
 <PageTitle>Hírek</PageTitle>
+
 <style>
-    #hirek-container {
-        max-width: 900px;
-        margin: 50px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
+    .hirek-page {
+        background: #f5f0e8;
+        min-height: calc(100vh - 64px);
+        padding: 48px 20px 72px;
     }
 
-    .hir-kartya {
+    .hirek-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .hirek-hero {
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    .hirek-hero h1 {
+        margin: 0 0 10px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(34px, 5vw, 52px);
+        color: #2e2416;
+        font-weight: 700;
+    }
+
+    .hirek-hero p {
+        margin: 0;
+        color: #7a6e5f;
+        font-size: 15px;
+    }
+
+    .hirek-state {
+        max-width: 700px;
+        margin: 30px auto 0;
+        background: white;
+        border: 1px solid rgba(92,74,50,0.10);
+        border-radius: 12px;
+        padding: 28px;
+        text-align: center;
+        color: #5c4a32;
+        box-shadow: 0 8px 24px rgba(92,74,50,0.08);
+    }
+
+    .hirek-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .hir-card {
+        background: #ffffff;
+        border: 1px solid rgba(92,74,50,0.10);
+        border-radius: 14px;
+        padding: 28px 30px;
+        box-shadow: 0 10px 28px rgba(92,74,50,0.08);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hir-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 38px rgba(92,74,50,0.14);
+        border-color: rgba(45,90,61,0.22);
+    }
+
+    .hir-topline {
         display: flex;
         align-items: center;
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        transition: all 0.3s ease;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
     }
 
-        .hir-kartya:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        }
-
-        .hir-kartya img {
-            width: 250px;
-            height: 180px;
-            object-fit: cover;
-        }
-
-    .hir-tartalom {
-        padding: 25px;
-        flex: 1;
+    .hir-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(45,90,61,0.08);
+        color: #2d5a3d;
+        border: 1px solid rgba(45,90,61,0.16);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
     }
 
-        .hir-tartalom h3 {
-            margin-bottom: 15px;
-            color: #1b4332;
+    .hir-date {
+        color: #7a6e5f;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .hir-title {
+        margin: 0 0 14px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(26px, 3vw, 34px);
+        line-height: 1.18;
+        color: #2e2416;
+        font-weight: 700;
+    }
+
+    .hir-excerpt {
+        margin: 0 0 18px;
+        color: #5c4a32;
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .hir-readmore {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #2d5a3d;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .hir-readmore::after {
+        content: "→";
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    @@media (max-width: 768px) {
+        .hirek-page {
+            padding: 34px 16px 56px;
         }
 
-        .hir-tartalom p {
-            color: #555;
-            margin-bottom: 15px;
+        .hir-card {
+            padding: 22px 20px;
+            border-radius: 12px;
         }
 
-    .tovabb {
-        color: #2d6a4f;
-        font-weight: bold;
+        .hir-title {
+            font-size: 28px;
+        }
+
+        .hir-excerpt {
+            font-size: 14px;
+        }
     }
 </style>
 
-<section id="hirek-container">
-    @if (hirek != null)
-    {
-        foreach(var hir in hirek)
+<section class="hirek-page">
+    <div class="hirek-wrap">
+        <div class="hirek-hero">
+            <h1>Hírek</h1>
+            <p>Friss információk és események a siklóernyős közösségből.</p>
+        </div>
+
+        @if (hirek == null)
         {
-            <div class="hir-kartya" onclick="location.href='hir1.html'">
-                <img src="@hir.KepUrl" alt="Hír kép">
-                <div class="hir-tartalom">
-                    <h3>@hir.Cim</h3>
-                    <p>@hir.Tartalom</p>
-                    <small>@hir.Datum.ToShortDateString()</small>
-                    <span class="tovabb">Tovább olvasom →</span>
-                </div>
+            <div class="hirek-state">Betöltés...</div>
+        }
+        else if (!hirek.Any())
+        {
+            <div class="hirek-state">Jelenleg még nincsenek elérhető hírek.</div>
+        }
+        else
+        {
+            <div class="hirek-grid">
+                @foreach (var hir in hirek.OrderByDescending(x => x.Datum))
+                {
+                    <article class="hir-card" @onclick="() => OpenHir(hir.HirID)">
+                        <div class="hir-topline">
+                            @if (!string.IsNullOrWhiteSpace(hir.Kategoria))
+                            {
+                                <span class="hir-tag">@hir.Kategoria</span>
+                            }
+                            else
+                            {
+                                <span class="hir-tag">Hír</span>
+                            }
+
+                            <span class="hir-date">@hir.Datum.ToString("yyyy. MM. dd.")</span>
+                        </div>
+
+                        <h2 class="hir-title">@hir.Cim</h2>
+
+                        <p class="hir-excerpt">@ShortenText(hir.Tartalom, 220)</p>
+
+                        <span class="hir-readmore">Tovább olvasom</span>
+                    </article>
+                }
             </div>
         }
-    }
-    else
-    {
-        <p>Betöltés...</p>
-    }
+    </div>
 </section>
 
 @code {
@@ -85,5 +202,23 @@
     protected override async Task OnInitializedAsync()
     {
         hirek = await HirService.GetHirekAsync();
+    }
+
+    private void OpenHir(int hirId)
+    {
+        Nav.NavigateTo($"/Hirek/{hirId}");
+    }
+
+    private string ShortenText(string? text, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return "";
+
+        var cleaned = text.Replace("\r\n", " ").Replace("\n", " ").Trim();
+
+        if (cleaned.Length <= maxLength)
+            return cleaned;
+
+        return cleaned.Substring(0, maxLength).Trim() + "...";
     }
 }

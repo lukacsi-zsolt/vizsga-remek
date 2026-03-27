@@ -16,5 +16,5 @@ wwwroot\images\nap.png
 wwwroot\images\repul.jpg
 wwwroot\images\sikloernyos.png
 wwwroot\js\scrollTo.js
-wwwroot\js\terkep.js
 wwwroot\js\weather.js
+wwwroot\js\terkep.js

@@ -5,13 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukac\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\js\\terkep.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\js\\terkep.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukac\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\components\\pages\\terkep.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5298A265-B4E7-10C3-2AE7-F180D3C5F962}|..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\ErnyosKozoApi.csproj|c:\\users\\lukac\\documents\\github\\vizsga-remek\\ernyoskozoapisolution\\ernyoskozoapi\\controllers\\spotokcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,35 +32,9 @@
               "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\js\\terkep.js",
               "ToolTip": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\terkep.js",
               "RelativeToolTip": "SzarnysegedP\\wwwroot\\js\\terkep.js",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAvwFYAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-26T21:46:40.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Terkep.razor",
-              "DocumentMoniker": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Terkep.razor",
-              "RelativeDocumentMoniker": "SzarnysegedP\\Components\\Pages\\Terkep.razor",
-              "ToolTip": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\Components\\Pages\\Terkep.razor",
-              "RelativeToolTip": "SzarnysegedP\\Components\\Pages\\Terkep.razor",
-              "ViewState": "AgIAAEsBAAAAAAAAAAAkwGsBAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T21:46:01.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SpotokController.cs",
-              "DocumentMoniker": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\SpotokController.cs",
-              "RelativeDocumentMoniker": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\SpotokController.cs",
-              "ToolTip": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\SpotokController.cs",
-              "RelativeToolTip": "..\\ErnyosKozoApiSolution\\ErnyosKozoApi\\Controllers\\SpotokController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T21:45:05.31Z",
+              "WhenOpened": "2026-03-27T09:46:20.434Z",
               "EditorCaption": ""
             }
           ]
