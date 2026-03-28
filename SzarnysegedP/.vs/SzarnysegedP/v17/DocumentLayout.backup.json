@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|c:\\users\\lukac\\documents\\github\\vizsga-remek\\szarnysegedp\\szarnysegedp\\wwwroot\\js\\terkep.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1568D395-803B-4E72-9C42-AA304F470DE3}|SzarnysegedP\\SzarnysegedP.csproj|solutionrelative:szarnysegedp\\wwwroot\\js\\terkep.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -23,19 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "terkep.js",
-              "DocumentMoniker": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\terkep.js",
-              "RelativeDocumentMoniker": "SzarnysegedP\\wwwroot\\js\\terkep.js",
-              "ToolTip": "C:\\Users\\lukac\\Documents\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\terkep.js",
-              "RelativeToolTip": "SzarnysegedP\\wwwroot\\js\\terkep.js",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-27T09:46:20.434Z",
-              "EditorCaption": ""
             }
           ]
         }

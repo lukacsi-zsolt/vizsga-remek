@@ -1,5 +1,6 @@
 ﻿using ErnyosKozoApi.Data;
 using ErnyosKozoApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,6 +46,7 @@ namespace ErnyosKozoApi.Controllers
             return Ok(spot);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(Spot spot)
         {
