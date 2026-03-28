@@ -408,6 +408,7 @@
     private bool isReady;
     private bool isAdmin;
     private string activeTab = "users";
+    private bool shouldRenderChart;
 
     private AdminDashboardDto? dashboard;
     private List<AdminUserDto> users = new();
@@ -423,19 +424,26 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (!firstRender)
-            return;
-
-        isAdmin = await AuthService.IsAdmin();
-        isReady = true;
-
-        if (isAdmin)
+        if (firstRender)
         {
-            await LoadAll();
-            await RenderChart();
+            isAdmin = await AuthService.IsAdmin();
+            isReady = true;
+
+            if (isAdmin)
+            {
+                await LoadAll();
+                shouldRenderChart = true;
+            }
+
+            StateHasChanged();
+            return;
         }
 
-        StateHasChanged();
+        if (shouldRenderChart && isAdmin && dashboard != null)
+        {
+            shouldRenderChart = false;
+            await RenderChart();
+        }
     }
 
     private async Task LoadAll()
@@ -452,8 +460,6 @@
     {
         if (dashboard == null || dashboard.Last7Days.Count == 0)
             return;
-
-        await Task.Delay(100);
 
         await JS.InvokeVoidAsync(
             "renderAdminChart",
@@ -475,7 +481,7 @@
         {
             newNews = new CreateHirDto { Datum = DateTime.Today };
             await LoadAll();
-            await RenderChart();
+            shouldRenderChart = true;
             StateHasChanged();
         }
     }
@@ -506,7 +512,7 @@
     {
         await AdminService.DeleteUser(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 
@@ -514,7 +520,7 @@
     {
         await AdminService.DeleteNews(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 
@@ -522,7 +528,7 @@
     {
         await AdminService.DeleteSpot(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 
@@ -530,7 +536,7 @@
     {
         await AdminService.ApproveSpotSuggestion(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 
@@ -538,7 +544,7 @@
     {
         await AdminService.DeleteSpotSuggestion(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 
@@ -546,7 +552,7 @@
     {
         await AdminService.DeletePost(id);
         await LoadAll();
-        await RenderChart();
+        shouldRenderChart = true;
         StateHasChanged();
     }
 

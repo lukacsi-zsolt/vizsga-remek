@@ -161,18 +161,42 @@ namespace ErnyosKozoApi.Controllers
             var guard = EnsureAdmin();
             if (guard != null) return guard;
 
+            var currentUserIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (int.TryParse(currentUserIdClaim, out int currentUserId) && currentUserId == id)
+                return BadRequest("Saját admin fiókodat innen nem törölheted.");
+
             var user = await _context.Felhasznalok.FindAsync(id);
             if (user == null) return NotFound();
 
-            var userComments = await _context.Kommentek.Where(x => x.FelhasznaloID == id).ToListAsync();
-            var userPosts = await _context.Bejegyzesek.Where(x => x.FelhasznaloID == id).ToListAsync();
-            var follows = await _context.Kovetesek
+            var userPosts = await _context.Bejegyzesek
+                .Where(x => x.FelhasznaloID == id)
+                .ToListAsync();
+
+            var userComments = await _context.Kommentek
+                .Where(x => x.FelhasznaloID == id)
+                .ToListAsync();
+
+            var userFollows = await _context.Kovetesek
                 .Where(x => x.KovetoFelhasznaloID == id || x.KovetettFelhasznaloID == id)
                 .ToListAsync();
 
+            var userSuggestions = await _context.SpotJavaslatok
+                .Where(x => x.BekuldoFelhasznaloID == id)
+                .ToListAsync();
+
+            var createdSpots = await _context.Spotok
+                .Where(x => x.LetrehozoFelhasznaloID == id)
+                .ToListAsync();
+
+            foreach (var spot in createdSpots)
+            {
+                spot.LetrehozoFelhasznaloID = null;
+            }
+
             _context.Kommentek.RemoveRange(userComments);
             _context.Bejegyzesek.RemoveRange(userPosts);
-            _context.Kovetesek.RemoveRange(follows);
+            _context.Kovetesek.RemoveRange(userFollows);
+            _context.SpotJavaslatok.RemoveRange(userSuggestions);
             _context.Felhasznalok.Remove(user);
 
             await _context.SaveChangesAsync();

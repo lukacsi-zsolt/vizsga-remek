@@ -242,22 +242,23 @@
     .terkep-modal-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(15,45,31,0.48);
+        background: rgba(15,45,31,0.22);
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
+        justify-content: flex-end;
+        align-items: stretch;
+        padding: 0;
         z-index: 3000;
+        pointer-events: none;
     }
 
     .terkep-modal {
-        width: min(760px, 100%);
-        max-height: 90vh;
+        width: min(460px, 100%);
+        height: 100vh;
         overflow: auto;
         background: var(--white);
-        border-radius: 14px;
-        box-shadow: 0 18px 50px rgba(0,0,0,0.22);
-        border: 1px solid rgba(92,74,50,0.12);
+        box-shadow: -12px 0 36px rgba(0,0,0,0.18);
+        border-left: 1px solid rgba(92,74,50,0.12);
+        pointer-events: auto;
     }
 
     .terkep-modal-head {
@@ -410,9 +411,9 @@
         box-sizing: border-box;
     }
 
-        .terkep-layout > * {
-            min-width: 0;
-        }
+    .terkep-layout > * {
+        min-width: 0;
+    }
 
     .spot-table-wrap {
         width: 100%;
@@ -499,6 +500,24 @@
             font-size: 12px !important;
         }
     }
+    @@media (max-width: 700px) {
+        .terkep-modal-backdrop {
+            align-items: flex-end;
+            justify-content: center;
+            background: rgba(15,45,31,0.35);
+            pointer-events: auto;
+        }
+
+        .terkep-modal {
+            width: 100%;
+            max-height: 88vh;
+            height: auto;
+            border-left: none;
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            box-shadow: 0 -12px 36px rgba(0,0,0,0.2);
+        }
+    }
 
 
 </style>
@@ -561,7 +580,7 @@
                     </div>
 
                     <div class="terkep-search">
-                        <input placeholder="Keresés..." @bind="searchText" @bind:event="oninput" />
+                        <input placeholder="Keresés..." value="@searchText" @oninput="HandleSearchInput" />
                     </div>
 
                     @if (filteredSpotok.Count == 0)
@@ -633,13 +652,14 @@
 
 @if (showModal)
 {
-    <div class="terkep-modal-backdrop" @onclick="CloseModal">
-        <div class="terkep-modal" @onclick:stopPropagation="true">
-            <div class="terkep-modal-head">
+    <div class="terkep-modal-backdrop">
+        <div class="terkep-modal">
+            <div class="terkep-modal-head" style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;">
                 <h2>@(isAdminCreateMode ? "Új spot hozzáadása" : "Spot javaslása")</h2>
                 <p>
                     Töltsd ki az adatokat, majd kattints a térképre a koordináták gyors megadásához.
                 </p>
+                <button class="terkep-btn-muted" type="button" @onclick="CloseModal">✕</button>
             </div>
 
             <div class="terkep-modal-body">
@@ -1026,5 +1046,11 @@
             Lat = Lat,
             Lon = Lon
         };
+    }
+    private async Task HandleSearchInput(ChangeEventArgs e)
+    {
+        searchText = e.Value?.ToString() ?? "";
+        await RefreshJsSpotsAsync();
+        StateHasChanged();
     }
 }

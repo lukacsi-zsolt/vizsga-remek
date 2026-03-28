@@ -1,11 +1,19 @@
-﻿window.renderAdminChart = function (canvasId, labels, users, posts, news, suggestions) {
+﻿window.renderAdminChart = async function (canvasId, labels, users, posts, news, suggestions) {
+    console.log(`renderAdminChart meghívva canvasId: ${canvasId}`);
     const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
+    if (!canvas) {
+        console.log(`Canvas id "${canvasId}" nem található.`);
+        return;
+    } 
 
     const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    if (!ctx) {
+        console.log(`Nem sikerült 2D kontextust létrehozni a canvas id "${canvasId}"-hez.`);
+        return;
+    }
 
     if (canvas._chartInstance) {
+        console.log(`Meglévő chart instance "${canvasId}"-en törölve.`);
         canvas._chartInstance.destroy();
     }
 
