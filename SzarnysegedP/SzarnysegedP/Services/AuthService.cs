@@ -56,7 +56,14 @@ namespace SzarnysegedP.Services
 
         public async Task<string?> GetToken()
         {
-            return await _localStorage.GetItemAsync<string>("token");
+            try
+            {
+                return await _localStorage.GetItemAsync<string>("token");
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public async Task<bool> IsLoggedIn()
@@ -192,6 +199,31 @@ namespace SzarnysegedP.Services
 
             var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
             return result?.ImageUrl;
+        }
+        public async Task<bool> IsAdmin()
+        {
+            try
+            {
+                var token = await GetToken();
+
+                if (string.IsNullOrWhiteSpace(token))
+                    return false;
+
+                var handler = new JwtSecurityTokenHandler();
+
+                if (!handler.CanReadToken(token))
+                    return false;
+
+                var jwt = handler.ReadJwtToken(token);
+
+                var adminValue = jwt.Claims.FirstOrDefault(c => c.Type == "isAdmin")?.Value;
+
+                return bool.TryParse(adminValue, out var isAdmin) && isAdmin;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public class ImageUploadResponse
         {

@@ -1,0 +1,106 @@
+﻿/* ====== TÉRKÉP ERŐS MOBIL FIX ====== */
+
+html, body {
+    overflow-x: hidden;
+}
+
+.terkep-page,
+.terkep-wrap,
+.terkep-layout,
+.terkep-card,
+.terkep-map-card,
+.terkep-side,
+.terkep-side-card {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+    .terkep-layout > * {
+        min-width: 0;
+    }
+
+.spot-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.spot-table {
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .terkep-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .terkep-map-card,
+    .terkep-side {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .terkep-side {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    #mapbox-map {
+        width: 100% !important;
+        height: 420px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .terkep-page {
+        padding: 18px 10px 36px !important;
+    }
+
+    .terkep-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .terkep-card,
+    .terkep-map-card,
+    .terkep-side-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 10px !important;
+        padding: 12px !important;
+        overflow: hidden;
+    }
+
+    .terkep-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .terkep-actions > * {
+        width: 100% !important;
+    }
+
+    #mapbox-map {
+        height: 320px !important;
+    }
+
+    .spot-table {
+        min-width: 0 !important;
+        table-layout: fixed;
+    }
+
+    .spot-table thead th,
+    .spot-table tbody td {
+        font-size: 12px !important;
+        padding: 9px 8px !important;
+        word-break: break-word;
+    }
+
+    .spot-name-cell {
+        font-size: 12px !important;
+    }
+}

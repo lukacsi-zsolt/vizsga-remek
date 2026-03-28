@@ -2,7 +2,8 @@ wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
 wwwroot\css\MainLayout.css
-wwwroot\js\weather.js
+wwwroot\css\style.css
+wwwroot\css\terkep-extra.css
 wwwroot\favicon.png
 wwwroot\images\erdo.png
 wwwroot\images\felepites.jpg
@@ -15,6 +16,7 @@ wwwroot\images\map.jpg
 wwwroot\images\nap.png
 wwwroot\images\repul.jpg
 wwwroot\images\sikloernyos.png
+wwwroot\js\admin-chart.js
 wwwroot\js\scrollTo.js
-wwwroot\css\style.css
 wwwroot\js\terkep.js
+wwwroot\js\weather.js

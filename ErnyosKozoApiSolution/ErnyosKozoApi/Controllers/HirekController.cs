@@ -1,8 +1,9 @@
 ﻿using ErnyosKozoApi.Data;
+using ErnyosKozoApi.Helpers;
 using ErnyosKozoApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SzarnysegedShared.DTOs;
 using SzarnysegedShared.DTOs.HirDTOs;
 
 namespace ErnyosKozoApi.Controllers
@@ -18,11 +19,11 @@ namespace ErnyosKozoApi.Controllers
             _context = context;
         }
 
-        // GET: api/Hirek
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var hirek = await _context.Hirek
+                .OrderByDescending(h => h.Datum)
                 .Select(h => new HirDto
                 {
                     HirID = h.HirID,
@@ -37,7 +38,6 @@ namespace ErnyosKozoApi.Controllers
             return Ok(hirek);
         }
 
-        // GET: api/Hirek/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -59,17 +59,20 @@ namespace ErnyosKozoApi.Controllers
             return Ok(hir);
         }
 
-        // POST: api/Hirek
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateHirDto dto)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             var hir = new Hir
             {
                 Cim = dto.Cim,
                 Tartalom = dto.Tartalom,
                 KepUrl = dto.KepUrl,
                 Kategoria = dto.Kategoria,
-                Datum = dto.Datum
+                Datum = dto.Datum == default ? DateTime.UtcNow : dto.Datum
             };
 
             _context.Hirek.Add(hir);
@@ -78,10 +81,13 @@ namespace ErnyosKozoApi.Controllers
             return CreatedAtAction(nameof(Get), new { id = hir.HirID }, hir);
         }
 
-        // PUT: api/Hirek/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, UpdateHirDto dto)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             var hir = await _context.Hirek.FindAsync(id);
             if (hir == null) return NotFound();
 
@@ -96,10 +102,13 @@ namespace ErnyosKozoApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Hirek/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             var hir = await _context.Hirek.FindAsync(id);
             if (hir == null) return NotFound();
 

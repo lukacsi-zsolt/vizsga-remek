@@ -10,9 +10,9 @@ namespace ErnyosKozoApi.Data
 
         public DbSet<Felhasznalo> Felhasznalok { get; set; }
         public DbSet<Spot> Spotok { get; set; }
+        public DbSet<SpotJavaslat> SpotJavaslatok { get; set; }
         public DbSet<Utvonal> Utvonalak { get; set; }
         public DbSet<Hir> Hirek { get; set; }
-
         public DbSet<Bejegyzes> Bejegyzesek { get; set; }
         public DbSet<Komment> Kommentek { get; set; }
         public DbSet<Kovetes> Kovetesek { get; set; }

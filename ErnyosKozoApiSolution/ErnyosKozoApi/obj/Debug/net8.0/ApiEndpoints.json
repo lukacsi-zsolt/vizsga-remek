@@ -1,5 +1,166 @@
 [
   {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/Admin/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetNews",
+    "RelativePath": "api/Admin/news",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetPosts",
+    "RelativePath": "api/Admin/posts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetSpotSuggestions",
+    "RelativePath": "api/Admin/spot-suggestions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "DeleteSpotSuggestion",
+    "RelativePath": "api/Admin/spot-suggestions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "ApproveSpotSuggestion",
+    "RelativePath": "api/Admin/spot-suggestions/{id}/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetSpots",
+    "RelativePath": "api/Admin/spots",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Admin/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/Admin/users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SzarnysegedShared.DTOs.AdminDTOs.AdminUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Admin/users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "RemoveAvatar",
+    "RelativePath": "api/Admin/users/{id}/remove-avatar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.AdminController",
+    "Method": "RemoveCover",
+    "RelativePath": "api/Admin/users/{id}/remove-cover",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErnyosKozoApi.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -179,6 +340,86 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
+    "Method": "GetKovetettek",
+    "RelativePath": "api/Felhasznalok/{id}/kovetettek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
+    "Method": "GetKovetok",
+    "RelativePath": "api/Felhasznalok/{id}/kovetok",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
+    "Method": "GetFelhasznaloPosztok",
+    "RelativePath": "api/Felhasznalok/{id}/posztok",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
+    "Method": "GetProfilStatisztika",
+    "RelativePath": "api/Felhasznalok/{id}/statisztika",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.FelhasznalokController",
+    "Method": "GetByUsername",
+    "RelativePath": "api/Felhasznalok/nev/{felhasznalonev}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "felhasznalonev",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
     "Method": "GetBejegyzesek",
     "RelativePath": "api/Forum/bejegyzesek",
@@ -242,6 +483,22 @@
   },
   {
     "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "DeleteBejegyzes",
+    "RelativePath": "api/Forum/bejegyzesek/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
     "Method": "GetKommentek",
     "RelativePath": "api/Forum/bejegyzesek/{id}/kommentek",
     "HttpMethod": "GET",
@@ -277,6 +534,22 @@
       {
         "Name": "dto",
         "Type": "SzarnysegedShared.DTOs.ForumDTOs.KommentLetrehozasDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.ForumController",
+    "Method": "DeleteKomment",
+    "RelativePath": "api/Forum/kommentek/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -483,6 +756,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErnyosKozoApi.Controllers.SpotokController",
+    "Method": "SuggestSpot",
+    "RelativePath": "api/Spotok/javaslat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ErnyosKozoApi.Models.SpotJavaslat",
         "IsRequired": true
       }
     ],

@@ -83,6 +83,9 @@ namespace ErnyosKozoApi.Migrations
                     b.Property<string>("Helyszin")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Klub")
                         .HasColumnType("nvarchar(max)");
 
@@ -235,6 +238,58 @@ namespace ErnyosKozoApi.Migrations
                     b.HasKey("SpotID");
 
                     b.ToTable("Spotok");
+                });
+
+            modelBuilder.Entity("ErnyosKozoApi.Models.SpotJavaslat", b =>
+                {
+                    b.Property<int>("SpotJavaslatID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpotJavaslatID"));
+
+                    b.Property<string>("AdminMegjegyzes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("AtlagSzel")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("BekuldoFelhasznaloID")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Feldolgozva")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("HelyLeiras")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Lat")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("Letrehozva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double?>("Lon")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("Magassag")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Megye")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nev")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Orszag")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Szabalyok")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SpotJavaslatID");
+
+                    b.ToTable("SpotJavaslatok");
                 });
 
             modelBuilder.Entity("ErnyosKozoApi.Models.Utvonal", b =>
