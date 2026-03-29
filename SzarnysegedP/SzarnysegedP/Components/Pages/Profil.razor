@@ -1,13 +1,16 @@
 ﻿@page "/profil"
 @page "/profil/{FelhasznaloNev}"
-
-@using SzarnysegedShared.DTOs.FelhasznaloDTOs
-@using Microsoft.AspNetCore.Components
-@inject SzarnysegedP.Services.AuthService AuthService
-@inject NavigationManager Navigation
 @rendermode InteractiveServer
 
-<PageTitle>@(mockFelhasznalo.TeljesNev) – Szárnysegéd</PageTitle>
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components
+@using SzarnysegedShared.DTOs.FelhasznaloDTOs
+@using SzarnysegedShared.DTOs.ForumDTOs
+@inject SzarnysegedP.Services.AuthService AuthService
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<PageTitle>@(profil?.TeljesNev ?? "Profil") – Szárnysegéd</PageTitle>
 
 @if (isLoading)
 {
@@ -15,222 +18,284 @@
         <p>Profil betöltése...</p>
     </div>
 }
+else if (profil == null)
+{
+    <div style="padding: 40px; text-align: center;">
+        <p>A felhasználó nem található.</p>
+    </div>
+}
 else
 {
-    <!-- ====== COVER + AVATAR ====== -->
-    <div class="profil-cover" style="background-image: url('@mockFelhasznalo.CoverUrl')">
+    <div class="profil-cover" style="background-image: url('@GetCoverUrl()')">
         <div class="profil-cover-overlay"></div>
     </div>
 
     <div class="profil-wrapper">
-
-    <!-- ====== PROFIL FEJLÉC ====== -->
-    <div class="profil-fejlec">
-        <div class="profil-avatar-wrap">
-            @if (!string.IsNullOrWhiteSpace(mockFelhasznalo.AvatarUrl))
-            {
-                <img class="profil-avatar"
-                     src="@mockFelhasznalo.AvatarUrl"
-                     alt="@mockFelhasznalo.TeljesNev" />
-            }
-            else
-            {
-                <div class="profil-avatar profil-avatar-monogram">
-                    @GetMonogram()
-                </div>
-            }
-        </div>
-
-        <div class="profil-info">
-            <h1 class="profil-nev">@mockFelhasznalo.TeljesNev</h1>
-            <p class="profil-handle">@("@"+mockFelhasznalo.FelhasznaloNev) · Csatlakozott: @mockFelhasznalo.Csatlakozott</p>
-
-            <div class="profil-badge-sor">
-                <span class="profil-badge">@mockFelhasznalo.Szint</span>
-                <span class="profil-badge profil-badge-outline">@mockFelhasznalo.Sportag</span>
-                @foreach (var helyszin in mockFelhasznalo.KedvencHelyek)
+        <div class="profil-fejlec">
+            <div class="profil-avatar-wrap">
+                @if (!string.IsNullOrWhiteSpace(profil.AvatarUrl))
                 {
-                    <span class="profil-badge profil-badge-outline">@helyszin</span>
+                    <img class="profil-avatar" src="@profil.AvatarUrl" alt="@profil.TeljesNev" />
+                }
+                else
+                {
+                    <div class="profil-avatar profil-avatar-monogram">
+                        @GetMonogram()
+                    </div>
+                }
+            </div>
+
+            <div class="profil-info">
+                <h1 class="profil-nev">@profil.TeljesNev</h1>
+                <p class="profil-handle">
+                    @("@"+profil.FelhasznaloNev)
+                    @if (profil.SzuletesiDatum.HasValue)
+                    {
+                        <span> · Születési dátum: @profil.SzuletesiDatum.Value.ToString("yyyy. MM. dd.")</span>
+                    }
+                </p>
+
+                <div class="profil-badge-sor">
+                    <span class="profil-badge">@(stats?.Posztok ?? 0) poszt</span>
+                    <span class="profil-badge profil-badge-outline">@(stats?.Kommentek ?? 0) komment</span>
+                    <span class="profil-badge profil-badge-outline">@(stats?.Kovetok ?? 0) követő</span>
+                    <span class="profil-badge profil-badge-outline">@(stats?.Kovetettek ?? 0) követett</span>
+                </div>
+            </div>
+
+            <div class="profil-akciok">
+                @if (sajatProfil)
+                {
+                    <a href="/profil/szerkesztes" class="btn-primary-custom">Profil szerkesztése</a>
+                }
+                else if (aktualisUser != null && profil.FelhasznaloID != aktualisUser.FelhasznaloID)
+                {
+                    <button class="btn-primary-custom" @onclick="KovetesValtas">
+                        @(koveti ? "Követés leállítása" : "Követés")
+                    </button>
                 }
             </div>
         </div>
 
-        <div class="profil-akciok">
-            <a href="/profil/szerkesztes" class="btn-primary-custom">Profil szerkesztése</a>
-        </div>
-    </div>
-
-        <!-- ====== FŐ TARTALOM ====== -->
         <div class="profil-main">
-
-            <!-- SIDEBAR -->
             <aside class="profil-sidebar">
-
-                <!-- Rólam -->
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Rólam</h3>
-                    <p class="profil-bio">@mockFelhasznalo.Bio</p>
+                    <p class="profil-bio">
+                        @(string.IsNullOrWhiteSpace(profil.Bio) ? "A felhasználó még nem adott meg bemutatkozást." : profil.Bio)
+                    </p>
 
                     <div class="profil-reszletek">
-                        <div class="profil-reszlet-sor">
-                            <svg class="profil-ikon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M8 9A3 3 0 1 0 8 3a3 3 0 0 0 0 6z" />
-                                <path d="M8 9c-3.3 0-6 1.8-6 4h12c0-2.2-2.7-4-6-4z" />
-                            </svg>
-                            <span>@mockFelhasznalo.Helyszin</span>
-                        </div>
+                        @if (!string.IsNullOrWhiteSpace(profil.Helyszin))
+                        {
+                            <div class="profil-reszlet-sor">
+                                <svg class="profil-ikon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M8 9A3 3 0 1 0 8 3a3 3 0 0 0 0 6z" />
+                                    <path d="M8 9c-3.3 0-6 1.8-6 4h12c0-2.2-2.7-4-6-4z" />
+                                </svg>
+                                <span>@profil.Helyszin</span>
+                            </div>
+                        }
 
-                        @if (!string.IsNullOrEmpty(mockFelhasznalo.Klub))
+                        @if (!string.IsNullOrWhiteSpace(profil.Klub))
                         {
                             <div class="profil-reszlet-sor">
                                 <svg class="profil-ikon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M2 12V6l6-4 6 4v6l-6 3-6-3z" />
                                 </svg>
-                                <span>@mockFelhasznalo.Klub</span>
+                                <span>@profil.Klub</span>
                             </div>
                         }
 
-                        @if (!string.IsNullOrEmpty(mockFelhasznalo.Email))
+                        @if (sajatProfil && !string.IsNullOrWhiteSpace(profil.Email))
                         {
                             <div class="profil-reszlet-sor">
                                 <svg class="profil-ikon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M2 4h12v8H2z" />
                                     <path d="M2 4l6 4 6-4" />
                                 </svg>
-                                <span>@mockFelhasznalo.Email</span>
+                                <span>@profil.Email</span>
                             </div>
                         }
                     </div>
                 </div>
 
-                <!-- Statisztikák -->
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Statisztikák</h3>
 
                     <div class="profil-stat-sor">
                         <div class="profil-stat">
-                            <div class="profil-stat-szam">@mockFelhasznalo.RepulesekSzama</div>
-                            <div class="profil-stat-cimke">Repülés</div>
+                            <div class="profil-stat-szam">@(stats?.Posztok ?? 0)</div>
+                            <div class="profil-stat-cimke">Poszt</div>
                         </div>
                         <div class="profil-stat">
-                            <div class="profil-stat-szam">@mockFelhasznalo.LevegobenOrak<span style="font-size:16px">h</span></div>
-                            <div class="profil-stat-cimke">Levegőben</div>
+                            <div class="profil-stat-szam">@(stats?.Kommentek ?? 0)</div>
+                            <div class="profil-stat-cimke">Komment</div>
                         </div>
                         <div class="profil-stat">
-                            <div class="profil-stat-szam">@mockFelhasznalo.HelyszinekSzama</div>
-                            <div class="profil-stat-cimke">Helyszín</div>
+                            <div class="profil-stat-szam">@(stats?.Kovetok ?? 0)</div>
+                            <div class="profil-stat-cimke">Követő</div>
                         </div>
                     </div>
 
                     <div class="profil-szint-wrap">
                         <div class="profil-szint-sor">
-                            <span>Tapasztalati szint</span>
-                            <span>@mockFelhasznalo.Szint → @mockFelhasznalo.KovetkezoSzint</span>
+                            <span>Követett felhasználók</span>
+                            <span>@(stats?.Kovetettek ?? 0)</span>
                         </div>
                         <div class="profil-szint-sav">
-                            <div class="profil-szint-tolt" style="width: @(mockFelhasznalo.SzintSzazalek)%"></div>
+                            <div class="profil-szint-tolt" style="width:@GetFollowProgress()%"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Kedvenc helyszínek -->
                 <div class="profil-card">
-                    <h3 class="profil-card-cim">Kedvenc helyszínek</h3>
+                    <h3 class="profil-card-cim">Követi</h3>
 
-                    @foreach (var spot in mockHelyszinek)
+                    @if (kovetettek.Count == 0)
                     {
-                        <div class="profil-spot">
-                            <div class="profil-spot-ikon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5">
-                                    <path d="M12 22s-8-6-8-13a8 8 0 0 1 16 0c0 7-8 13-8 13z" />
-                                    <circle cx="12" cy="9" r="2.5" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="profil-spot-nev">@spot.Nev</p>
-                                <p class="profil-spot-helyszin">@spot.Helyszin · @spot.Nehezseg</p>
-                            </div>
-                        </div>
+                        <p class="profil-bio">Még nem követ senkit.</p>
                     }
-                </div>
-
-            </aside>
-
-            <!-- FŐ TARTALOM -->
-            <section class="profil-tartalom">
-
-                <!-- Tabok -->
-                <div class="profil-card" style="padding: 0;">
-                    <div class="profil-tabok">
-                        <button class="profil-tab @(AktivTab == "posztok" ? "aktiv" : "")"
-                                @onclick='() => TabValt("posztok")'>
-                            Bejegyzések
-                        </button>
-                        <button class="profil-tab @(AktivTab == "naplo" ? "aktiv" : "")"
-                                @onclick='() => TabValt("naplo")'>
-                            Repülési napló
-                        </button>
-                        <button class="profil-tab @(AktivTab == "kedveltek" ? "aktiv" : "")"
-                                @onclick='() => TabValt("kedveltek")'>
-                            Kedveltek
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tab tartalom -->
-                @if (AktivTab == "posztok")
-                {
-                    <div class="profil-posztok-racs">
-                        @foreach (var poszt in mockPosztok)
+                    else
+                    {
+                        @foreach (var user in kovetettek)
                         {
-                            <div class="profil-poszt-kartya">
-                                @if (!string.IsNullOrEmpty(poszt.KepUrl))
-                                {
-                                    <div class="profil-poszt-kep" style="background-image: url('@poszt.KepUrl')"></div>
-                                }
-
-                                <div class="profil-poszt-body">
-                                    <p class="profil-poszt-cim">@poszt.Cim</p>
-                                    <p class="profil-poszt-meta">@poszt.Datum · @poszt.Helyszin</p>
-                                    <p class="profil-poszt-szoveg">@poszt.Szoveg</p>
-
-                                    <div class="profil-poszt-footer">
-                                        <span class="profil-akcio">
-                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                                                <path d="M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6H2l2-2.5" />
-                                            </svg>
-                                            @poszt.Kommentek hozzászólás
-                                        </span>
-
-                                        <span class="profil-akcio">
-                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                                                <path d="M11 2c1.7 0 3 1.3 3 3 0 3.5-5 9-6 9S2 8.5 2 5c0-1.7 1.3-3 3-3 .9 0 1.7.4 2.3 1L8 4l.7-.7C9.3 2.4 10.1 2 11 2z" />
-                                            </svg>
-                                            @poszt.Likok
-                                        </span>
-                                    </div>
+                            <div class="profil-spot">
+                                <div class="profil-spot-ikon">
+                                    @if (!string.IsNullOrWhiteSpace(user.AvatarUrl))
+                                    {
+                                        <img src="@user.AvatarUrl" alt="@user.TeljesNev" style="width:40px;height:36px;border-radius:6px;object-fit:cover;" />
+                                    }
+                                    else
+                                    {
+                                        <span style="color:white;font-weight:700;">@GetMonogram(user.TeljesNev)</span>
+                                    }
+                                </div>
+                                <div>
+                                    <p class="profil-spot-nev">@user.TeljesNev</p>
+                                    <p class="profil-spot-helyszin">
+                                        <a href="/profil/@user.FelhasznaloNev">@("@"+user.FelhasznaloNev)</a>
+                                    </p>
                                 </div>
                             </div>
                         }
-                    </div>
-                }
-                else if (AktivTab == "naplo")
-                {
-                    <div class="profil-card">
-                        <p style="color: var(--brown-light); font-size: 14px; text-align: center; padding: 40px 0;">
-                            A repülési napló a következő lépésben készül el. 🪂
-                        </p>
-                    </div>
-                }
-                else if (AktivTab == "kedveltek")
-                {
-                    <div class="profil-card">
-                        <p style="color: var(--brown-light); font-size: 14px; text-align: center; padding: 40px 0;">
-                            Még nincsenek kedvelt bejegyzések.
-                        </p>
-                    </div>
-                }
+                    }
+                </div>
 
+                <div class="profil-card">
+                    <h3 class="profil-card-cim">Követők</h3>
+
+                    @if (kovetok.Count == 0)
+                    {
+                        <p class="profil-bio">Még nincsenek követői.</p>
+                    }
+                    else
+                    {
+                        @foreach (var user in kovetok)
+                        {
+                            <div class="profil-spot">
+                                <div class="profil-spot-ikon">
+                                    @if (!string.IsNullOrWhiteSpace(user.AvatarUrl))
+                                    {
+                                        <img src="@user.AvatarUrl" alt="@user.TeljesNev" style="width:40px;height:36px;border-radius:6px;object-fit:cover;" />
+                                    }
+                                    else
+                                    {
+                                        <span style="color:white;font-weight:700;">@GetMonogram(user.TeljesNev)</span>
+                                    }
+                                </div>
+                                <div>
+                                    <p class="profil-spot-nev">@user.TeljesNev</p>
+                                    <p class="profil-spot-helyszin">
+                                        <a href="/profil/@user.FelhasznaloNev">@("@"+user.FelhasznaloNev)</a>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </aside>
+
+            <section class="profil-tartalom">
+                <div class="profil-card" style="padding: 0;">
+                    <div class="profil-tabok">
+                        <button class="profil-tab @(aktivTab == "posztok" ? "aktiv" : "")"
+                                @onclick='() => aktivTab = "posztok"'>
+                            Bejegyzések
+                        </button>
+                        <button class="profil-tab @(aktivTab == "kedveltek" ? "aktiv" : "")"
+                                @onclick='() => aktivTab = "kedveltek"'>
+                            Információ
+                        </button>
+                    </div>
+                </div>
+
+                @if (aktivTab == "posztok")
+                {
+                    @if (posztok.Count == 0)
+                    {
+                        <div class="profil-card">
+                            <p style="color: var(--brown-light); font-size: 14px; text-align: center; padding: 40px 0;">
+                                Ennek a felhasználónak még nincs fórumbejegyzése.
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="profil-posztok-racs">
+                            @foreach (var poszt in posztok)
+                            {
+                                <div class="profil-poszt-kartya" @onclick='() => OpenPost(poszt.BejegyzesID)' style="cursor:pointer;">
+                                    @if (!string.IsNullOrWhiteSpace(poszt.KepUrl))
+                                    {
+                                        <div class="profil-poszt-kep" style="background-image: url('@poszt.KepUrl')"></div>
+                                    }
+
+                                    <div class="profil-poszt-body">
+                                        <p class="profil-poszt-cim">@poszt.Cim</p>
+                                        <p class="profil-poszt-meta">
+                                            @poszt.Letrehozva.ToString("yyyy. MM. dd.")
+                                            @if (!string.IsNullOrWhiteSpace(poszt.SpotNev))
+                                            {
+                                                <span> · @poszt.SpotNev</span>
+                                            }
+                                        </p>
+                                        <p class="profil-poszt-szoveg">@Shorten(poszt.Tartalom, 140)</p>
+
+                                        <div class="profil-poszt-footer">
+                                            <span class="profil-akció">
+                                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                    <path d="M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6H2l2-2.5" />
+                                                </svg>
+                                                @poszt.KommentekSzama hozzászólás
+                                            </span>
+
+                                            <span class="profil-akció">
+                                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                    <circle cx="8" cy="8" r="5.5" />
+                                                </svg>
+                                                @("@"+poszt.FelhasznaloNev)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else if (aktivTab == "kedveltek")
+                {
+                    <div class="profil-card">
+                        <div class="info-section" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                            <h2>Felhasználói adatok</h2>
+                            <p><strong>Teljes név:</strong> @profil.TeljesNev</p>
+                            <p><strong>Felhasználónév:</strong> @("@"+profil.FelhasznaloNev)</p>
+                            <p><strong>Helyszín:</strong> @(string.IsNullOrWhiteSpace(profil.Helyszin) ? "Nincs megadva" : profil.Helyszin)</p>
+                            <p><strong>Klub:</strong> @(string.IsNullOrWhiteSpace(profil.Klub) ? "Nincs megadva" : profil.Klub)</p>
+                            <p><strong>Bemutatkozás:</strong> @(string.IsNullOrWhiteSpace(profil.Bio) ? "Nincs megadva" : profil.Bio)</p>
+                        </div>
+                    </div>
+                }
             </section>
         </div>
     </div>
@@ -239,164 +304,201 @@ else
 @code {
     [Parameter] public string? FelhasznaloNev { get; set; }
 
-    private string AktivTab = "posztok";
-    private bool Kovetett = false;
     private bool isLoading = true;
+    private string aktivTab = "posztok";
 
-    private FelhasznaloDTO? currentUser;
+    private FelhasznaloDTO? profil;
+    private FelhasznaloDTO? aktualisUser;
 
-    // később majd lehet valódi összehasonlítás:
-    // bejelentkezett user neve == route user neve
-    private bool SajatProfil => string.IsNullOrEmpty(FelhasznaloNev);
+    private ProfilStats stats = new();
+    private List<BejegyzesListaDto> posztok = new();
+    private List<FelhasznaloDTO> kovetok = new();
+    private List<FelhasznaloDTO> kovetettek = new();
+
+    private bool koveti;
+
+    private bool sajatProfil =>
+        aktualisUser != null &&
+        profil != null &&
+        aktualisUser.FelhasznaloID == profil.FelhasznaloID;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
             return;
 
-        currentUser = await AuthService.GetCurrentUser();
-
-        if (currentUser == null)
-        {
-            Navigation.NavigateTo("/login", forceLoad: true);
-            return;
-        }
-
-        mockFelhasznalo.TeljesNev = currentUser.TeljesNev ?? "Ismeretlen felhasználó";
-        mockFelhasznalo.FelhasznaloNev = currentUser.FelhasznaloNev ?? "felhasznalo";
-        mockFelhasznalo.Email = currentUser.Email ?? "";
-        mockFelhasznalo.Bio = currentUser.Bio ?? "";
-        mockFelhasznalo.Helyszin = currentUser.Helyszin ?? "";
-        mockFelhasznalo.Klub = currentUser.Klub ?? "";
-
-        mockFelhasznalo.AvatarUrl = string.IsNullOrWhiteSpace(currentUser.AvatarUrl)
-            ? "/images/avatar-placeholder.png"
-            : currentUser.AvatarUrl;
-
-        mockFelhasznalo.CoverUrl = string.IsNullOrWhiteSpace(currentUser.CoverUrl)
-            ? "/images/kodos.jpg"
-            : currentUser.CoverUrl;
-
+        aktualisUser = await AuthService.GetCurrentUser();
+        await LoadProfileAsync();
         isLoading = false;
         StateHasChanged();
     }
 
-    private void TabValt(string tab) => AktivTab = tab;
-
-    private void Kovet() => Kovetett = !Kovetett;
-
-    private FelhasznaloModel mockFelhasznalo = new()
+    protected override async Task OnParametersSetAsync()
     {
-        TeljesNev = "Kovács Péter",
-        FelhasznaloNev = "kovacspeter",
-        Csatlakozott = "2023 tavaszán",
-        Bio = "Siklóernyős pilóta 4 éve. Elsősorban a Velence-hegységben és a Pilisben repülök. Szeretem a termikus repülést és a hegyitúrákat.",
-        Helyszin = "Velence-hegység, HU",
-        Klub = "Dunántúli Siklóernyős Egyesület",
-        Szint = "P2 pilóta",
-        KovetkezoSzint = "P3",
-        SzintSzazalek = 62,
-        Sportag = "Siklóernyős",
-        KedvencHelyek = new() { "Velence-hegység", "Pilis" },
-        RepulesekSzama = 142,
-        LevegobenOrak = 87,
-        HelyszinekSzama = 34,
-        AvatarUrl = "/images/avatar-placeholder.png",
-        CoverUrl = "/images/kodos.jpg",
-        Email = ""
-    };
-
-    private List<HelyszinModel> mockHelyszinek = new()
-    {
-        new() { Nev = "Velencei-tó felett", Helyszin = "Velence, Fejér m.", Nehezseg = "Könnyű" },
-        new() { Nev = "Dobogókő", Helyszin = "Pilis, Pest m.", Nehezseg = "Közepes" },
-        new() { Nev = "Badacsony", Helyszin = "Balaton-felvidék", Nehezseg = "Haladó" },
-    };
-
-    private List<PosztModel> mockPosztok = new()
-    {
-        new()
+        if (!isLoading && aktualisUser != null)
         {
-            Cim = "Tökéletes szombat a Pilisben",
-            Datum = "2025. április 12.",
-            Helyszin = "Dobogókő",
-            Szoveg = "3 óra termikus repülés, semmi szél, gyönyörű kilátás a Dunakanyarra.",
-            KepUrl = "/images/kep.jpg",
-            Kommentek = 14,
-            Likok = 41
-        },
-        new()
-        {
-            Cim = "Első Badacsony repülés ✓",
-            Datum = "2025. március 29.",
-            Helyszin = "Badacsony",
-            Szoveg = "Régóta terveztem, végre megvolt. Kicsit erős szél, de a leszállás szép volt.",
-            KepUrl = "/images/kep2.jpg",
-            Kommentek = 9,
-            Likok = 67
-        },
-        new()
-        {
-            Cim = "Kérdés a közösségnek",
-            Datum = "2025. március 15.",
-            Helyszin = "",
-            Szoveg = "Valaki repült már a Mátrában tavasszal? Ajánlás?",
-            KepUrl = "",
-            Kommentek = 23,
-            Likok = 18
-        },
-    };
-
-    private class FelhasznaloModel
-    {
-        public string TeljesNev { get; set; } = "";
-        public string FelhasznaloNev { get; set; } = "";
-        public string Csatlakozott { get; set; } = "";
-        public string Bio { get; set; } = "";
-        public string Helyszin { get; set; } = "";
-        public string Klub { get; set; } = "";
-        public string Szint { get; set; } = "";
-        public string KovetkezoSzint { get; set; } = "";
-        public int SzintSzazalek { get; set; }
-        public string Sportag { get; set; } = "";
-        public List<string> KedvencHelyek { get; set; } = new();
-        public int RepulesekSzama { get; set; }
-        public int LevegobenOrak { get; set; }
-        public int HelyszinekSzama { get; set; }
-        public string AvatarUrl { get; set; } = "";
-        public string CoverUrl { get; set; } = "";
-        public string Email { get; set; } = "";
+            await LoadProfileAsync();
+            StateHasChanged();
+        }
     }
 
-    private class HelyszinModel
+    private async Task LoadProfileAsync()
     {
-        public string Nev { get; set; } = "";
-        public string Helyszin { get; set; } = "";
-        public string Nehezseg { get; set; } = "";
+        profil = null;
+        stats = new ProfilStats();
+        posztok = new();
+        kovetok = new();
+        kovetettek = new();
+        koveti = false;
+
+        try
+        {
+            if (string.IsNullOrWhiteSpace(FelhasznaloNev))
+            {
+                profil = aktualisUser;
+            }
+            else
+            {
+                profil = await Http.GetFromJsonAsync<FelhasznaloDTO>($"api/felhasznalok/nev/{FelhasznaloNev}");
+            }
+
+            if (profil == null)
+                return;
+        }
+        catch
+        {
+            profil = null;
+            return;
+        }
+
+        try
+        {
+            stats = await Http.GetFromJsonAsync<ProfilStats>($"api/felhasznalok/{profil.FelhasznaloID}/statisztika") ?? new ProfilStats();
+        }
+        catch
+        {
+            stats = new ProfilStats();
+        }
+
+        try
+        {
+            posztok = await Http.GetFromJsonAsync<List<BejegyzesListaDto>>($"api/felhasznalok/{profil.FelhasznaloID}/posztok") ?? new();
+        }
+        catch
+        {
+            posztok = new();
+        }
+
+        try
+        {
+            kovetok = await Http.GetFromJsonAsync<List<FelhasznaloDTO>>($"api/felhasznalok/{profil.FelhasznaloID}/kovetok") ?? new();
+        }
+        catch
+        {
+            kovetok = new();
+        }
+
+        try
+        {
+            kovetettek = await Http.GetFromJsonAsync<List<FelhasznaloDTO>>($"api/felhasznalok/{profil.FelhasznaloID}/kovetettek") ?? new();
+        }
+        catch
+        {
+            kovetettek = new();
+        }
+
+        if (aktualisUser != null && !sajatProfil)
+        {
+            try
+            {
+                await AuthService.SetAuthorizationHeader();
+                var result = await Http.GetFromJsonAsync<KovetesAllapotDto>($"api/kovetesek/allapot/{profil.FelhasznaloID}");
+                koveti = result?.koveti ?? false;
+            }
+            catch
+            {
+                koveti = false;
+            }
+        }
     }
 
-    private class PosztModel
+    private async Task KovetesValtas()
     {
-        public string Cim { get; set; } = "";
-        public string Datum { get; set; } = "";
-        public string Helyszin { get; set; } = "";
-        public string Szoveg { get; set; } = "";
-        public string KepUrl { get; set; } = "";
-        public int Kommentek { get; set; }
-        public int Likok { get; set; }
+        if (profil == null || aktualisUser == null || sajatProfil)
+            return;
+
+        await AuthService.SetAuthorizationHeader();
+        var response = await Http.PostAsync($"api/kovetesek/{profil.FelhasznaloID}", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<KovetesAllapotDto>();
+            koveti = result?.koveti ?? false;
+
+            stats = await Http.GetFromJsonAsync<ProfilStats>($"api/felhasznalok/{profil.FelhasznaloID}/statisztika") ?? new ProfilStats();
+            kovetok = await Http.GetFromJsonAsync<List<FelhasznaloDTO>>($"api/felhasznalok/{profil.FelhasznaloID}/kovetok") ?? new();
+        }
+    }
+
+    private void OpenPost(int postId)
+    {
+        Navigation.NavigateTo($"/forum/bejegyzes/{postId}");
+    }
+
+    private string GetCoverUrl()
+    {
+        if (profil == null || string.IsNullOrWhiteSpace(profil.CoverUrl))
+            return "/images/kodos.jpg";
+
+        return profil.CoverUrl;
     }
 
     private string GetMonogram()
     {
-        if (string.IsNullOrWhiteSpace(mockFelhasznalo.TeljesNev))
+        return GetMonogram(profil?.TeljesNev);
+    }
+
+    private string GetMonogram(string? fullName)
+    {
+        if (string.IsNullOrWhiteSpace(fullName))
             return "F";
 
-        var parts = mockFelhasznalo.TeljesNev
-            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var parts = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         if (parts.Length >= 2)
             return $"{parts[0][0]}{parts[1][0]}".ToUpper();
 
         return parts[0][0].ToString().ToUpper();
+    }
+
+    private string Shorten(string? text, int max)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return "";
+
+        var cleaned = text.Replace("\r", " ").Replace("\n", " ").Trim();
+        if (cleaned.Length <= max)
+            return cleaned;
+
+        return cleaned[..max].Trim() + "...";
+    }
+
+    private int GetFollowProgress()
+    {
+        var value = stats.Kovetettek * 10;
+        return Math.Clamp(value, 0, 100);
+    }
+
+    private class ProfilStats
+    {
+        public int Posztok { get; set; }
+        public int Kommentek { get; set; }
+        public int Kovetok { get; set; }
+        public int Kovetettek { get; set; }
+    }
+
+    private class KovetesAllapotDto
+    {
+        public bool koveti { get; set; }
     }
 }

@@ -2597,3 +2597,172 @@ main {
         font-size: 15px;
     }
 }
+/* ====== TÉRKÉP RESPONSIVE KIEGÉSZÍTÉS ====== */
+
+@media (max-width: 1200px) {
+    .terkep-wrap {
+        max-width: 100%;
+    }
+
+    .terkep-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .terkep-side {
+        order: 2;
+    }
+
+    .terkep-map-card {
+        order: 1;
+    }
+
+    #mapbox-map {
+        height: 520px;
+    }
+}
+
+@media (max-width: 900px) {
+    .terkep-page {
+        padding: 28px 16px 48px;
+    }
+
+    .terkep-hero {
+        margin-bottom: 22px;
+    }
+
+    .terkep-hero h1 {
+        font-size: clamp(28px, 7vw, 40px);
+        line-height: 1.15;
+    }
+    
+    .terkep-hero p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .terkep-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .terkep-actions .terkep-btn-admin,
+    .terkep-actions .terkep-btn-secondary,
+    .terkep-actions .btn-secondary-custom {
+        width: 100%;
+        text-align: center;
+    }
+
+    .terkep-map-card,
+    .terkep-side-card {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    #mapbox-map {
+        height: 430px;
+        border-radius: 8px;
+    }
+
+    .terkep-map-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .terkep-side-head h2,
+    .terkep-map-head h2,
+    .terkep-modal-head h2 {
+        font-size: 21px;
+    }
+
+    .spot-table {
+        min-width: 100%;
+    }
+
+    .spot-table thead th,
+    .spot-table tbody td {
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+
+    .spot-name-cell {
+        gap: 6px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 640px) {
+    .terkep-page {
+        padding: 22px 12px 42px;
+    }
+
+    .terkep-hero h1 {
+        font-size: 30px;
+    }
+
+    .terkep-hero p {
+        font-size: 13px;
+    }
+
+    .terkep-map-card,
+    .terkep-side-card {
+        padding: 12px;
+    }
+
+    #mapbox-map {
+        height: 340px;
+    }
+
+    .spot-table-wrap {
+        overflow-x: auto;
+    }
+
+    .spot-table {
+        min-width: 520px;
+    }
+
+    .terkep-help-item {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .terkep-modal-backdrop {
+        padding: 10px;
+    }
+
+    .terkep-modal {
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 10px;
+    }
+
+    .terkep-modal-head {
+        padding: 18px 16px 8px;
+    }
+
+    .terkep-modal-body {
+        padding: 14px 16px 18px;
+    }
+
+    .terkep-form-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .terkep-form-field input,
+    .terkep-form-field textarea {
+        font-size: 14px;
+        padding: 11px 12px;
+    }
+
+    .terkep-modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .terkep-btn-admin,
+    .terkep-btn-secondary,
+    .terkep-btn-muted {
+        width: 100%;
+    }
+}

@@ -1,10 +1,11 @@
 ﻿using ErnyosKozoApi.Data;
+using ErnyosKozoApi.Helpers;
 using ErnyosKozoApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SzarnysegedShared.DTOs.ForumDTOs;
 using System.Security.Claims;
+using SzarnysegedShared.DTOs.ForumDTOs;
 
 namespace ErnyosKozoApi.Controllers
 {
@@ -210,6 +211,39 @@ namespace ErnyosKozoApi.Controllers
 
             var imageUrl = $"/uploads/forum/{fileName}";
             return Ok(new { imageUrl });
+        }
+        [Authorize]
+        [HttpDelete("bejegyzesek/{id}")]
+        public async Task<IActionResult> DeleteBejegyzes(int id)
+        {
+            if (!User.IsAdmin())
+                return Forbid();
+
+            var bejegyzes = await _context.Bejegyzesek.FindAsync(id);
+            if (bejegyzes == null)
+                return NotFound();
+
+            _context.Bejegyzesek.Remove(bejegyzes);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [Authorize]
+        [HttpDelete("kommentek/{id}")]
+        public async Task<IActionResult> DeleteKomment(int id)
+        {
+            if (!User.IsAdmin())
+                return Forbid();
+
+            var komment = await _context.Kommentek.FindAsync(id);
+            if (komment == null)
+                return NotFound();
+
+            _context.Kommentek.Remove(komment);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }

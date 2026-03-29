@@ -7,6 +7,8 @@ window.__mapbox_spot_slug = window.__mapbox_spot_slug || null;
 window.__mapbox_dotnet_ref = window.__mapbox_dotnet_ref || null;
 window.__mapbox_markers = window.__mapbox_markers || [];
 window.__api_base_url = window.__api_base_url || "";
+window.__spot_data_cache = window.__spot_data_cache || [];
+window.__map_click_selection_enabled = window.__map_click_selection_enabled || false;
 
 window.setMapboxConfig = function (apiKey, spotSlug, apiBaseUrl) {
     window.apiKey = apiKey;
@@ -21,7 +23,19 @@ window.setMapboxDotNetRef = function (dotnetRef) {
     console.log("Mapbox dotnet ref set.");
 };
 
+window.setInitialSpotData = function (spotok) {
+    window.__spot_data_cache = Array.isArray(spotok) ? spotok : [];
+};
+
+window.enableMapClickSelection = function (enabled) {
+    window.__map_click_selection_enabled = !!enabled;
+};
+
 async function getSpotokFromApi() {
+    if (window.__spot_data_cache && window.__spot_data_cache.length > 0) {
+        return window.__spot_data_cache;
+    }
+
     try {
         const response = await fetch(`${window.__api_base_url}api/spotok`);
         if (!response.ok) {
@@ -44,9 +58,7 @@ async function getWind(lat, lon) {
 
     try {
         const response = await fetch(url);
-        if (!response.ok) {
-            return "N/A";
-        }
+        if (!response.ok) return "N/A";
 
         const data = await response.json();
         return data?.current_weather?.windspeed ?? "N/A";
@@ -103,36 +115,49 @@ async function renderSpotok(map, spotok) {
         if (tbody) {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-                <td style="display:flex;align-items:center;">
-                    <div style="background-color:${color};width:12px;height:12px;margin-right:6px;border-radius:2px;"></div>
-                    ${spot.nev ?? "Névtelen spot"}
+                <td>
+                    <div class="spot-name-cell">
+                        <div class="spot-color-dot" style="background-color:${color};"></div>
+                        ${spot.nev ?? "Névtelen spot"}
+                    </div>
                 </td>
                 <td>${formatOrszag(spot.orszag)}</td>
                 <td>${formatMagassag(spot.magassag)}</td>
-                <td>${ws} ${ws === "N/A" ? "" : "km/h"}</td>
+                <td>${ws}${ws === "N/A" ? "" : " km/h"}</td>
             `;
             tbody.appendChild(tr);
 
-            tr.style.cursor = "pointer";
             tr.addEventListener("click", () => {
                 map.flyTo({
                     center: [spot.lon, spot.lat],
                     zoom: 11,
                     essential: true
                 });
+
+                const currentMarker = window.__mapbox_markers.find(m => {
+                    const lngLat = m.getLngLat();
+                    return lngLat.lng === spot.lon && lngLat.lat === spot.lat;
+                });
+
+                if (currentMarker && currentMarker.getPopup()) {
+                    currentMarker.togglePopup();
+                }
             });
         }
 
         const popupHtml = `
-            <strong>${spot.nev ?? "Névtelen spot"}</strong><br>
-            ${spot.orszag ?? "Ismeretlen ország"}<br>
-            Magasság: ${formatMagassag(spot.magassag)}<br>
-            Szél: ${ws} ${ws === "N/A" ? "" : "km/h"}
+            <div style="min-width:200px;">
+                <strong style="font-size:15px;">${spot.nev ?? "Névtelen spot"}</strong><br>
+                <span style="color:#6b5b4d;">${spot.orszag ?? "Ismeretlen ország"}${spot.megye ? ` / ${spot.megye}` : ""}</span><br><br>
+                <strong>Magasság:</strong> ${formatMagassag(spot.magassag)}<br>
+                <strong>Szél:</strong> ${ws}${ws === "N/A" ? "" : " km/h"}
+                ${spot.helyLeiras ? `<br><br><span style="color:#6b5b4d;">${spot.helyLeiras}</span>` : ""}
+            </div>
         `;
 
         const marker = new mapboxgl.Marker({ color })
             .setLngLat([spot.lon, spot.lat])
-            .setPopup(new mapboxgl.Popup().setHTML(popupHtml))
+            .setPopup(new mapboxgl.Popup({ offset: 16 }).setHTML(popupHtml))
             .addTo(map);
 
         window.__mapbox_markers.push(marker);
@@ -157,6 +182,22 @@ window.reloadMapboxSpots = async function () {
 
     const spotok = await getSpotokFromApi();
     await renderSpotok(map, spotok);
+};
+
+window.disposeMapbox = function () {
+    try {
+        clearMarkers();
+
+        if (window.__mapbox_map) {
+            window.__mapbox_map.remove();
+        }
+    } catch {
+    }
+
+    window.__mapbox_map = null;
+    window.__mapbox_initialized = false;
+    window.__mapbox_initializing = false;
+    window.__mapbox_dotnet_ref = null;
 };
 
 window.initMapbox = async function (containerId) {
@@ -195,7 +236,7 @@ window.initMapbox = async function (containerId) {
                 map.scrollZoom.disable();
 
                 map.on("click", async (e) => {
-                    if (window.__mapbox_dotnet_ref) {
+                    if (window.__map_click_selection_enabled && window.__mapbox_dotnet_ref) {
                         await window.__mapbox_dotnet_ref.invokeMethodAsync(
                             "HandleMapClick",
                             e.lngLat.lat,

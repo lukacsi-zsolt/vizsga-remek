@@ -1,5 +1,7 @@
 ﻿using ErnyosKozoApi.Data;
+using ErnyosKozoApi.Helpers;
 using ErnyosKozoApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,9 +47,38 @@ namespace ErnyosKozoApi.Controllers
             return Ok(spot);
         }
 
+        [Authorize]
+        [HttpPost("javaslat")]
+        public async Task<IActionResult> SuggestSpot(SpotJavaslat dto)
+        {
+            var userId = User.GetUserId();
+            if (userId == null)
+                return Unauthorized();
+
+            if (string.IsNullOrWhiteSpace(dto.Nev))
+                return BadRequest("A spot neve kötelező.");
+
+            if (dto.Lat == null || dto.Lon == null)
+                return BadRequest("A koordináták kötelezőek.");
+
+            dto.SpotJavaslatID = 0;
+            dto.BekuldoFelhasznaloID = userId;
+            dto.Letrehozva = DateTime.UtcNow;
+            dto.Feldolgozva = false;
+
+            _context.SpotJavaslatok.Add(dto);
+            await _context.SaveChangesAsync();
+
+            return Ok(dto);
+        }
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(Spot spot)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             if (string.IsNullOrWhiteSpace(spot.Nev))
                 return BadRequest("A spot neve kötelező.");
 
@@ -55,15 +86,11 @@ namespace ErnyosKozoApi.Controllers
                 return BadRequest("A koordináták kötelezőek.");
 
             if (string.IsNullOrWhiteSpace(spot.Slug))
-            {
                 spot.Slug = Slugify(spot.Nev);
-            }
 
             var slugExists = await _context.Spotok.AnyAsync(s => s.Slug == spot.Slug);
             if (slugExists)
-            {
                 spot.Slug = $"{spot.Slug}-{Guid.NewGuid().ToString("N")[..6]}";
-            }
 
             _context.Spotok.Add(spot);
             await _context.SaveChangesAsync();
@@ -71,9 +98,13 @@ namespace ErnyosKozoApi.Controllers
             return Ok(spot);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Spot spot)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             if (id != spot.SpotID) return BadRequest();
 
             _context.Entry(spot).State = EntityState.Modified;
@@ -81,9 +112,13 @@ namespace ErnyosKozoApi.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
+            if (!User.IsAdmin())
+                return Forbid();
+
             var spot = await _context.Spotok.FindAsync(id);
             if (spot == null) return NotFound();
 

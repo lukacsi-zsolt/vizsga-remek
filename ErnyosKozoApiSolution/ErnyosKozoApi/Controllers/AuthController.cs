@@ -4,13 +4,12 @@ using SzarnysegedShared.DTOs.FelhasznaloDTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Http;
-using System.IO;
 
 
 namespace ErnyosKozoApi.Controllers
@@ -45,24 +44,26 @@ namespace ErnyosKozoApi.Controllers
 
             if (result == PasswordVerificationResult.Failed)
                 return Unauthorized();
-            //token csinalas innentol
+
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.FelhasznaloNev),
-                new Claim(ClaimTypes.NameIdentifier, user.FelhasznaloID.ToString())
+                new Claim(ClaimTypes.Name, user.FelhasznaloNev ?? string.Empty),
+                new Claim(ClaimTypes.NameIdentifier, user.FelhasznaloID.ToString()),
+                new Claim("isAdmin", user.IsAdmin.ToString())
             };
 
             var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(_config["Jwt:Key"])
+                Encoding.UTF8.GetBytes(_config["Jwt:Key"]!)
             );
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.Now.AddHours(1),
+                expires: DateTime.Now.AddHours(6),
                 signingCredentials: creds
             );
+
             return Ok(new TokenResponse
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token)
@@ -81,7 +82,9 @@ namespace ErnyosKozoApi.Controllers
                 FelhasznaloNev = dto.FelhasznaloNev,
                 TeljesNev = dto.TeljesNev,
                 Email = dto.Email,
-                SzuletesiDatum = dto.SzuletesiDatum
+                SzuletesiDatum = dto.SzuletesiDatum,
+                RegDatum = DateTime.UtcNow,
+                IsAdmin = false
             };
 
             user.PasswordHash = _hasher.HashPassword(user, dto.Password);
@@ -91,6 +94,7 @@ namespace ErnyosKozoApi.Controllers
 
             return Ok();
         }
+
         [HttpGet("me")]
         public async Task<ActionResult<FelhasznaloDTO>> Me()
         {
@@ -115,7 +119,8 @@ namespace ErnyosKozoApi.Controllers
                     Helyszin = x.Helyszin,
                     Klub = x.Klub,
                     AvatarUrl = x.AvatarUrl,
-                    CoverUrl = x.CoverUrl
+                    CoverUrl = x.CoverUrl,
+                    IsAdmin = x.IsAdmin
                 })
                 .FirstOrDefaultAsync();
 
@@ -124,6 +129,7 @@ namespace ErnyosKozoApi.Controllers
 
             return Ok(user);
         }
+
         [HttpPut("profile")]
         public async Task<IActionResult> UpdateProfile(UpdateFelhasznaloDto dto)
         {
@@ -154,8 +160,16 @@ namespace ErnyosKozoApi.Controllers
             user.Bio = dto.Bio;
             user.Helyszin = dto.Helyszin;
             user.Klub = dto.Klub;
-            user.AvatarUrl = $"{Request.Scheme}://{Request.Host}/uploads/avatars/{dto.AvatarUrl}";
-            user.CoverUrl = $"{Request.Scheme}://{Request.Host}/uploads/covers/{dto.CoverUrl}";
+
+            if (dto.AvatarUrl == null)
+                user.AvatarUrl = null;
+            else if (!string.IsNullOrWhiteSpace(dto.AvatarUrl))
+                user.AvatarUrl = $"{Request.Scheme}://{Request.Host}/uploads/avatars/{dto.AvatarUrl}";
+
+            if (dto.CoverUrl == null)
+                user.CoverUrl = null;
+            else if (!string.IsNullOrWhiteSpace(dto.CoverUrl))
+                user.CoverUrl = $"{Request.Scheme}://{Request.Host}/uploads/covers/{dto.CoverUrl}";
 
             await _context.SaveChangesAsync();
 
@@ -169,7 +183,6 @@ namespace ErnyosKozoApi.Controllers
                 return BadRequest("No file");
 
             var folder = Path.Combine("wwwroot", "uploads", "avatars");
-
             if (!Directory.Exists(folder))
                 Directory.CreateDirectory(folder);
 
@@ -179,16 +192,16 @@ namespace ErnyosKozoApi.Controllers
             using var stream = new FileStream(filePath, FileMode.Create);
             await file.CopyToAsync(stream);
 
-            var url = $"{fileName}";
-
-            return Ok(new { imageUrl = url });
+            return Ok(new { imageUrl = fileName });
         }
 
         [HttpPost("upload-cover")]
         public async Task<IActionResult> UploadCover(IFormFile file)
         {
-            var folder = Path.Combine("wwwroot", "uploads", "covers");
+            if (file == null || file.Length == 0)
+                return BadRequest("No file");
 
+            var folder = Path.Combine("wwwroot", "uploads", "covers");
             if (!Directory.Exists(folder))
                 Directory.CreateDirectory(folder);
 
@@ -198,10 +211,7 @@ namespace ErnyosKozoApi.Controllers
             using var stream = new FileStream(filePath, FileMode.Create);
             await file.CopyToAsync(stream);
 
-            var url = $"{fileName}";
-
-            return Ok(new { imageUrl = url });
+            return Ok(new { imageUrl = fileName });
         }
-
     }
 }

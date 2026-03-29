@@ -1,0 +1,570 @@
+﻿@page "/Admin"
+@using SzarnysegedP.Services
+@using SzarnysegedShared.DTOs.AdminDTOs
+@using SzarnysegedShared.DTOs.HirDTOs
+@using SzarnysegedShared.DTOs.ForumDTOs
+@inject AdminService AdminService
+@inject AuthService AuthService
+@inject IJSRuntime JS
+@inject NavigationManager Nav
+
+<PageTitle>Admin</PageTitle>
+
+<style>
+    .admin-page {
+        background: var(--cream);
+        min-height: 100vh;
+        padding: 40px 20px 70px;
+    }
+
+    .admin-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .admin-hero {
+        margin-bottom: 28px;
+    }
+
+    .admin-hero h1 {
+        margin: 0 0 8px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(34px, 5vw, 48px);
+        color: var(--text-dark);
+    }
+
+    .admin-hero p {
+        margin: 0;
+        color: var(--brown-light);
+    }
+
+    .admin-grid-stats {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .admin-stat-card, .admin-card {
+        background: white;
+        border: 1px solid rgba(92,74,50,0.10);
+        border-radius: 12px;
+        box-shadow: 0 8px 26px rgba(92,74,50,0.08);
+    }
+
+    .admin-stat-card {
+        padding: 20px;
+    }
+
+    .admin-stat-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .8px;
+        color: var(--brown-light);
+        margin-bottom: 10px;
+    }
+
+    .admin-stat-value {
+        font-size: 34px;
+        font-family: 'Playfair Display', serif;
+        color: var(--green-mid);
+        font-weight: 700;
+    }
+
+    .admin-main-grid {
+        display: grid;
+        grid-template-columns: 1.2fr .8fr;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .admin-card {
+        padding: 24px;
+    }
+
+    .admin-card h2 {
+        margin: 0 0 16px;
+        font-family: 'Playfair Display', serif;
+        color: var(--text-dark);
+        font-size: 26px;
+    }
+
+    .admin-chart-wrap {
+        height: 360px;
+    }
+
+    .admin-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+    }
+
+    .admin-tab {
+        border: 1px solid rgba(92,74,50,0.14);
+        background: white;
+        color: var(--brown);
+        border-radius: 999px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .admin-tab.active {
+        background: var(--green-mid);
+        color: white;
+        border-color: var(--green-mid);
+    }
+
+    .admin-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .admin-item {
+        border: 1px solid rgba(92,74,50,0.10);
+        border-radius: 10px;
+        padding: 16px;
+        background: #fff;
+    }
+
+    .admin-item h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+        color: var(--text-dark);
+    }
+
+    .admin-item p {
+        margin: 0 0 8px;
+        color: var(--brown);
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .admin-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .admin-btn-primary, .admin-btn-danger, .admin-btn-muted {
+        border: none;
+        border-radius: 6px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .admin-btn-primary {
+        background: var(--green-mid);
+        color: white;
+    }
+
+    .admin-btn-danger {
+        background: #a12f2f;
+        color: white;
+    }
+
+    .admin-btn-muted {
+        background: var(--cream);
+        color: var(--brown);
+        border: 1px solid rgba(92,74,50,0.14);
+    }
+
+    .admin-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .admin-form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .admin-form-field.full {
+        grid-column: 1 / -1;
+    }
+
+    .admin-form-field label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--brown);
+    }
+
+    .admin-form-field input, .admin-form-field textarea {
+        border: 1px solid rgba(92,74,50,0.14);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .admin-form-field textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    @@media (max-width: 950px) {
+        .admin-grid-stats,
+        .admin-main-grid,
+        .admin-form-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="admin-page">
+    <div class="admin-wrap">
+        @if (!isReady)
+        {
+            <div class="admin-card"><p>Betöltés...</p></div>
+        }
+        else if (!isAdmin)
+        {
+            <div class="admin-card">
+                <h2>Nincs hozzáférés</h2>
+                <p>Ez az oldal csak adminok számára érhető el.</p>
+            </div>
+        }
+        else
+        {
+            <div class="admin-hero">
+                <h1>Admin felület</h1>
+                <p>Felhasználók, hírek, spotok és fórum tartalmak kezelése egy helyen.</p>
+            </div>
+
+            @if (dashboard != null)
+            {
+                <div class="admin-grid-stats">
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Felhasználók</div>
+                        <div class="admin-stat-value">@dashboard.UsersCount</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Posztok</div>
+                        <div class="admin-stat-value">@dashboard.PostsCount</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Hírek</div>
+                        <div class="admin-stat-value">@dashboard.NewsCount</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Spotok</div>
+                        <div class="admin-stat-value">@dashboard.SpotsCount</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Javaslatok</div>
+                        <div class="admin-stat-value">@dashboard.SpotSuggestionsCount</div>
+                    </div>
+                </div>
+
+                <div class="admin-main-grid">
+                    <div class="admin-card">
+                        <h2>Utolsó 7 nap aktivitása</h2>
+                        <div class="admin-chart-wrap">
+                            <canvas id="adminStatsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h2>Új hír létrehozása</h2>
+
+                        <div class="admin-form-grid">
+                            <div class="admin-form-field full">
+                                <label>Cím</label>
+                                <input @bind="newNews.Cim" />
+                            </div>
+
+                            <div class="admin-form-field">
+                                <label>Kategória</label>
+                                <input @bind="newNews.Kategoria" />
+                            </div>
+
+                            <div class="admin-form-field">
+                                <label>Dátum</label>
+                                <input type="date" @bind="newNews.Datum" />
+                            </div>
+
+                            <div class="admin-form-field full">
+                                <label>Tartalom</label>
+                                <textarea @bind="newNews.Tartalom"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="admin-actions">
+                            <button class="admin-btn-primary" @onclick="CreateNews">Hír létrehozása</button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="admin-card">
+                <div class="admin-tabs">
+                    <button class="admin-tab @(activeTab == "users" ? "active" : "")" @onclick='() => activeTab = "users"'>Felhasználók</button>
+                    <button class="admin-tab @(activeTab == "news" ? "active" : "")" @onclick='() => activeTab = "news"'>Hírek</button>
+                    <button class="admin-tab @(activeTab == "spots" ? "active" : "")" @onclick='() => activeTab = "spots"'>Spotok</button>
+                    <button class="admin-tab @(activeTab == "suggestions" ? "active" : "")" @onclick='() => activeTab = "suggestions"'>Spot javaslatok</button>
+                    <button class="admin-tab @(activeTab == "posts" ? "active" : "")" @onclick='() => activeTab = "posts"'>Fórum</button>
+                </div>
+
+                @if (activeTab == "users")
+                {
+                    <div class="admin-list">
+                        @foreach (var user in users)
+                        {
+                            <div class="admin-item">
+                                <h3>@user.FelhasznaloNev (@user.TeljesNev)</h3>
+                                <p>@user.Email</p>
+                                <p>Admin: @(user.IsAdmin ? "Igen" : "Nem")</p>
+
+                                <div class="admin-actions">
+                                    <button class="admin-btn-muted" @onclick="() => ToggleAdmin(user)">Admin váltás</button>
+                                    <button class="admin-btn-muted" @onclick="() => RemoveAvatar(user.FelhasznaloID)">Avatar törlése</button>
+                                    <button class="admin-btn-muted" @onclick="() => RemoveCover(user.FelhasznaloID)">Borítókép törlése</button>
+                                    <button class="admin-btn-danger" @onclick="() => DeleteUser(user.FelhasznaloID)">Felhasználó törlése</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else if (activeTab == "news")
+                {
+                    <div class="admin-list">
+                        @foreach (var item in news)
+                        {
+                            <div class="admin-item">
+                                <h3>@item.Cim</h3>
+                                <p>@item.Datum.ToString("yyyy. MM. dd.") - @item.Kategoria</p>
+                                <p>@Shorten(item.Tartalom, 180)</p>
+
+                                <div class="admin-actions">
+                                    <button class="admin-btn-danger" @onclick="() => DeleteNews(item.HirID)">Törlés</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else if (activeTab == "spots")
+                {
+                    <div class="admin-list">
+                        @foreach (var spot in spots)
+                        {
+                            <div class="admin-item">
+                                <h3>@spot.Nev</h3>
+                                <p>@spot.Orszag / @spot.Megye</p>
+                                <p>Lat: @spot.Lat | Lon: @spot.Lon</p>
+                                <div class="admin-actions">
+                                    <button class="admin-btn-danger" @onclick="() => DeleteSpot(spot.SpotID)">Törlés</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else if (activeTab == "suggestions")
+                {
+                    <div class="admin-list">
+                        @foreach (var s in suggestions)
+                        {
+                            <div class="admin-item">
+                                <h3>@s.Nev</h3>
+                                <p>@s.Orszag / @s.Megye</p>
+                                <p>@s.HelyLeiras</p>
+                                <div class="admin-actions">
+                                    <button class="admin-btn-primary" @onclick="() => ApproveSuggestion(s.SpotJavaslatID)">Elfogadás</button>
+                                    <button class="admin-btn-danger" @onclick="() => DeleteSuggestion(s.SpotJavaslatID)">Törlés</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else if (activeTab == "posts")
+                {
+                    <div class="admin-list">
+                        @foreach (var post in posts)
+                        {
+                            <div class="admin-item">
+                                <h3>@post.Cim</h3>
+                                <p>@post.FelhasznaloNev - @post.Letrehozva.ToString("yyyy. MM. dd. HH:mm")</p>
+                                <p>@Shorten(post.Tartalom, 180)</p>
+
+                                <div class="admin-actions">
+                                    <button class="admin-btn-danger" @onclick="() => DeletePost(post.BejegyzesID)">Poszt törlése</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    private bool isReady;
+    private bool isAdmin;
+    private string activeTab = "users";
+    private bool shouldRenderChart;
+
+    private AdminDashboardDto? dashboard;
+    private List<AdminUserDto> users = new();
+    private List<HirDto> news = new();
+    private List<Spot> spots = new();
+    private List<SpotJavaslat> suggestions = new();
+    private List<BejegyzesListaDto> posts = new();
+
+    private CreateHirDto newNews = new()
+    {
+        Datum = DateTime.Today
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            isAdmin = await AuthService.IsAdmin();
+            isReady = true;
+
+            if (isAdmin)
+            {
+                await LoadAll();
+                shouldRenderChart = true;
+            }
+
+            StateHasChanged();
+            return;
+        }
+
+        if (shouldRenderChart && isAdmin && dashboard != null)
+        {
+            shouldRenderChart = false;
+            await RenderChart();
+        }
+    }
+
+    private async Task LoadAll()
+    {
+        dashboard = await AdminService.GetDashboard();
+        users = await AdminService.GetUsers();
+        news = await AdminService.GetNews();
+        spots = await AdminService.GetSpots();
+        suggestions = await AdminService.GetSpotSuggestions();
+        posts = await AdminService.GetPosts();
+    }
+
+    private async Task RenderChart()
+    {
+        if (dashboard == null || dashboard.Last7Days.Count == 0)
+            return;
+
+        await JS.InvokeVoidAsync(
+            "renderAdminChart",
+            "adminStatsChart",
+            dashboard.Last7Days.Select(x => x.Label).ToArray(),
+            dashboard.Last7Days.Select(x => x.Users).ToArray(),
+            dashboard.Last7Days.Select(x => x.Posts).ToArray(),
+            dashboard.Last7Days.Select(x => x.News).ToArray(),
+            dashboard.Last7Days.Select(x => x.Suggestions).ToArray()
+        );
+    }
+
+    private async Task CreateNews()
+    {
+        if (string.IsNullOrWhiteSpace(newNews.Cim) || string.IsNullOrWhiteSpace(newNews.Tartalom))
+            return;
+
+        if (await AdminService.CreateNews(newNews))
+        {
+            newNews = new CreateHirDto { Datum = DateTime.Today };
+            await LoadAll();
+            shouldRenderChart = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ToggleAdmin(AdminUserDto user)
+    {
+        user.IsAdmin = !user.IsAdmin;
+        await AdminService.UpdateUser(user);
+        await LoadAll();
+        StateHasChanged();
+    }
+
+    private async Task RemoveAvatar(int id)
+    {
+        await AdminService.RemoveAvatar(id);
+        await LoadAll();
+        StateHasChanged();
+    }
+
+    private async Task RemoveCover(int id)
+    {
+        await AdminService.RemoveCover(id);
+        await LoadAll();
+        StateHasChanged();
+    }
+
+    private async Task DeleteUser(int id)
+    {
+        await AdminService.DeleteUser(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private async Task DeleteNews(int id)
+    {
+        await AdminService.DeleteNews(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private async Task DeleteSpot(int id)
+    {
+        await AdminService.DeleteSpot(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private async Task ApproveSuggestion(int id)
+    {
+        await AdminService.ApproveSpotSuggestion(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private async Task DeleteSuggestion(int id)
+    {
+        await AdminService.DeleteSpotSuggestion(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private async Task DeletePost(int id)
+    {
+        await AdminService.DeletePost(id);
+        await LoadAll();
+        shouldRenderChart = true;
+        StateHasChanged();
+    }
+
+    private string Shorten(string? text, int max)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return "";
+
+        var cleaned = text.Replace("\r", " ").Replace("\n", " ").Trim();
+        if (cleaned.Length <= max)
+            return cleaned;
+
+        return cleaned[..max].Trim() + "...";
+    }
+}

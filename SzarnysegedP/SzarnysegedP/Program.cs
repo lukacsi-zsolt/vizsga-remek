@@ -22,6 +22,7 @@ builder.Services.AddScoped(sp =>
 });
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<AdminService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddAuthorizationCore();
 

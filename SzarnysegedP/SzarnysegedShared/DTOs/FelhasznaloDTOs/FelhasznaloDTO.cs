@@ -12,7 +12,7 @@
         public string? Klub { get; set; }
         public string? AvatarUrl { get; set; }
         public string? CoverUrl { get; set; }
-        // ide nehogy jelszo hash keruljon
+        public bool IsAdmin { get; set; }
+        //jelszo hash meg mindig ne keruljon ide
     }
 }
-
