@@ -7,19 +7,27 @@ using SzarnysegedShared.DTOs.FelhasznaloDTOs;
 
 namespace SzarnysegedP.Services
 {
+    // ===== AUTENTIKÁCIÓS SZOLGÁLTATÁS =====
     public class AuthService
     {
+        // HttpClient: az API-val való kommunikációhoz
         private readonly HttpClient _http;
+        // ILocalStorageService: a böngésző localStorage-ába ír/olvas
+        // A JWT tokent itt tároljuk, így oldal újratöltés után is megmarad
         private readonly ILocalStorageService _localStorage;
 
+        // ===== ESEMÉNY (EVENT) =====
         public event Action? AuthStateChanged;
 
+        // Konstruktor – DI-ból kapjuk a HttpClient-et és a localStorage szolgáltatást
         public AuthService(HttpClient http, ILocalStorageService localStorage)
         {
             _http = http;
             _localStorage = localStorage;
         }
 
+        // ===== BEJELENTKEZÉS =====
+        // A LoginDTO-t elküldi az API-nak, és ha sikeres, eltárolja a JWT tokent
         public async Task<bool> Login(LoginDTO dto)
         {
             var response = await _http.PostAsJsonAsync("api/auth/login", dto);
@@ -41,12 +49,14 @@ namespace SzarnysegedP.Services
             return true;
         }
 
+        // ===== REGISZTRÁCIÓ =====
         public async Task<bool> Register(CreateFelhasznaloDto dto)
         {
             var response = await _http.PostAsJsonAsync("api/auth/register", dto);
             return response.IsSuccessStatusCode;
         }
 
+        // ===== KIJELENTKEZÉS =====
         public async Task Logout()
         {
             await _localStorage.RemoveItemAsync("token");
@@ -54,6 +64,7 @@ namespace SzarnysegedP.Services
             AuthStateChanged?.Invoke();
         }
 
+        // ===== TOKEN LEKÉRÉSE =====
         public async Task<string?> GetToken()
         {
             try
@@ -66,12 +77,14 @@ namespace SzarnysegedP.Services
             }
         }
 
+        // ===== BEJELENTKEZVE VAN-E =====
         public async Task<bool> IsLoggedIn()
         {
             var token = await GetToken();
             return !string.IsNullOrWhiteSpace(token);
         }
 
+        // ===== FELHASZNÁLÓNÉV KIOLVASÁSA A TOKENBŐL =====
         public async Task<string?> GetUsernameFromToken()
         {
             var token = await GetToken();
@@ -92,6 +105,7 @@ namespace SzarnysegedP.Services
                 c.Type == "name")?.Value;
         }
 
+        // ===== FELHASZNÁLÓ ID KIOLVASÁSA A TOKENBŐL =====
         public async Task<int?> GetUserIdFromToken()
         {
             var token = await GetToken();
@@ -116,6 +130,7 @@ namespace SzarnysegedP.Services
             return null;
         }
 
+        // ===== AUTHORIZATION HEADER BEÁLLÍTÁSA =====
         public async Task SetAuthorizationHeader()
         {
             var token = await GetToken();
@@ -127,6 +142,7 @@ namespace SzarnysegedP.Services
             }
         }
 
+        // ===== BEJELENTKEZETT FELHASZNÁLÓ ADATAI =====
         public async Task<FelhasznaloDTO?> GetCurrentUser()
         {
             await SetAuthorizationHeader();
@@ -139,6 +155,7 @@ namespace SzarnysegedP.Services
             return await response.Content.ReadFromJsonAsync<FelhasznaloDTO>();
         }
 
+        // ===== PROFIL FRISSÍTÉSE =====
         public async Task<bool> UpdateProfile(UpdateFelhasznaloDto dto)
         {
             await SetAuthorizationHeader();
@@ -147,6 +164,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // ===== AVATAR (PROFILKÉP) FELTÖLTÉSE =====
         public async Task<string?> UploadAvatar(Stream fileStream, string fileName)
         {
             await SetAuthorizationHeader();
@@ -165,6 +183,7 @@ namespace SzarnysegedP.Services
             return result?.ImageUrl;
         }
 
+        // ===== BORÍTÓKÉP FELTÖLTÉSE =====
         public async Task<string?> UploadCover(Stream fileStream, string fileName)
         {
             await SetAuthorizationHeader();
@@ -182,6 +201,8 @@ namespace SzarnysegedP.Services
             var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
             return result?.ImageUrl;
         }
+
+        // ===== FÓRUM KÉP FELTÖLTÉSE =====
         public async Task<string?> UploadForumImage(Stream fileStream, string fileName)
         {
             await SetAuthorizationHeader();
@@ -200,6 +221,8 @@ namespace SzarnysegedP.Services
             var result = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
             return result?.ImageUrl;
         }
+
+        // ===== ADMIN JOGOSULTSÁG ELLENŐRZÉSE =====
         public async Task<bool> IsAdmin()
         {
             try
@@ -225,6 +248,8 @@ namespace SzarnysegedP.Services
                 return false;
             }
         }
+
+        // ===== BELSŐ SEGÉDOSZTÁLY =====
         public class ImageUploadResponse
         {
             public string? ImageUrl { get; set; }

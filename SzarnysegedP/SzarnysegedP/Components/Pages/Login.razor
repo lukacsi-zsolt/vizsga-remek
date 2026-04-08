@@ -6,6 +6,8 @@
 @rendermode InteractiveServer
 
 <style>
+@* ===== CSS VÁLTOZÓK (CUSTOM PROPERTIES) ===== *@
+@* Központi színdefiníciók – egy helyen módosíthatók az egész oldal színei *@
 :root {
         --bg: #f0ece4;
         --surface: #ffffff;
@@ -21,8 +23,10 @@
         --radius: 10px;
     }
 
+    @* Reset – alapértelmezett margók/paddingek nullázása *@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    @* Teljes képernyős wrapper – a kártyát középre igazítja (Flexbox) *@
     .login-wrapper {
         min-height: 100vh;
         display: flex;
@@ -36,6 +40,7 @@
         padding: 24px;
     }
 
+    @* Login kártya – a fő tartalom konténere *@
     .login-card {
         width: 100%;
         max-width: 420px;
@@ -47,6 +52,7 @@
         animation: cardIn 0.45s cubic-bezier(0.16,1,0.3,1) both;
     }
 
+    @* Belépő animáció definíció *@
     @@keyframes cardIn {
         from { opacity: 0; transform: translateY(16px); }
         to   { opacity: 1; transform: translateY(0); }
@@ -62,6 +68,7 @@
         justify-content: center;
     }
 
+    @* Cím: serif betűtípussal az elegáns megjelenésért *@
     .brand-title {
         font-family: 'Playfair Display', serif;
         font-size: 30px;
@@ -80,9 +87,11 @@
         font-style: italic;
     }
 
+    @* Űrlap elrendezés: függőleges Flexbox, 18px gap az elemek között *@
     .login-form { display: flex; flex-direction: column; gap: 18px; }
     .field-group { display: flex; flex-direction: column; gap: 7px; }
 
+    @* Label stílus: kiskapitális, halvány szín *@
     .field-label {
         font-size: 11px;
         font-weight: 500;
@@ -91,8 +100,10 @@
         text-transform: uppercase;
     }
 
+    @* Input wrapper: relatív pozícionálás az ikon abszolút elhelyezéséhez *@
     .input-wrapper { position: relative; display: flex; align-items: center; }
 
+    @* Input mező bal oldalán lévő ikon *@
     .input-icon {
         position: absolute;
         left: 13px;
@@ -103,6 +114,7 @@
         transition: color 0.2s;
     }
 
+    @* Az input mező stílusa *@
     .field-input {
         width: 100%;
         background: #fafaf8;
@@ -119,14 +131,17 @@
 
     .field-input::placeholder { color: #b0aa9e; }
 
+    @* Fókuszált input: zöld szegély és enyhe zöld árnyék *@
     .field-input:focus {
         border-color: var(--border-focus);
         background: #ffffff;
         box-shadow: 0 0 0 3px var(--accent-glow);
     }
 
+    @* Fókuszált input ikonja is zöldre vált *@
     .input-wrapper:focus-within .input-icon { color: var(--accent); }
 
+    @* Hibaüzenet sáv: piros háttér, enyhe rázás animáció *@
     .error-banner {
         display: flex;
         align-items: center;
@@ -140,12 +155,14 @@
         animation: shakeIn 0.3s ease;
     }
 
+    @* Rázás animáció: balra-jobbra mozgás *@
     @@keyframes shakeIn {
         0%, 100% { transform: translateX(0); }
         25% { transform: translateX(-5px); }
         75% { transform: translateX(5px); }
     }
 
+    @* Bejelentkezés gomb *@
     .login-btn {
         display: flex;
         align-items: center;
@@ -176,6 +193,7 @@
     .login-btn:active:not(:disabled) { transform: translateY(0); box-shadow: 0 2px 8px rgba(46,102,72,0.25); }
     .login-btn:disabled, .login-btn.loading { opacity: 0.65; cursor: not-allowed; }
 
+    @* Forgó töltés animáció (spinner) *@
     .spinner {
         width: 14px;
         height: 14px;
@@ -189,20 +207,26 @@
     @@keyframes spin { to { transform: rotate(360deg); } }
 </style>
 
+@* ===== OLDAL CÍME ===== *@
 <PageTitle>Bejelentkezés</PageTitle>
 
+@* ===== HTML STRUKTÚRA ===== *@
 <div class="login-wrapper">
     <div class="login-card">
+        @* Branding rész: logó, cím, alcím *@
         <div class="login-brand">
             <div class="brand-icon">✦</div>
             <h1 class="brand-title">Szárnysegéd</h1>
             <p class="brand-sub">Üdvözöljük újra</p>
         </div>
 
+        @* Bejelentkezési űrlap *@
         <div class="login-form">
+            @* Felhasználónév mező *@
             <div class="field-group">
                 <label class="field-label">Felhasználónév</label>
                 <div class="input-wrapper">
+                    @* SVG ikon: személy ikon *@
                     <span class="input-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -216,16 +240,19 @@
                            autocomplete="username" />
                 </div>
             </div>
-
+            
+            @* Jelszó mező *@
             <div class="field-group">
                 <label class="field-label">Jelszó</label>
                 <div class="input-wrapper">
+                    @* SVG ikon: lakat ikon *@
                     <span class="input-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                     </span>
+                    @* type="password": a beírt karakterek rejtve maradnak *@
                     <input class="field-input"
                            type="password"
                            @bind="model.Password"
@@ -235,6 +262,7 @@
                 </div>
             </div>
 
+            @* ===== FELTÉTELES HIBAÜZENET ===== *@
             @if (!string.IsNullOrEmpty(errorMessage))
             {
                 <div class="error-banner">
@@ -246,7 +274,7 @@
                     @errorMessage
                 </div>
             }
-
+            @* ===== BEJELENTKEZÉS GOMB ===== *@
             <button class="login-btn @(isLoading ? "loading" : "")"
                     @onclick="LoginUser"
                     disabled="@isLoading">
@@ -268,16 +296,7 @@
     </div>
 </div>
 
-@* 
-<input @bind="model.Username" placeholder="Felhasználónév" />
-<input type="password" @bind="model.Password" placeholder="Jelszó" />
-
-<button @onclick="LoginUser">Login</button>
-
- *@
-
-
-
+@* ===== C# KÓDBLOKK ===== *@
 @code {
     LoginDTO model = new();
     bool isLoading = false;

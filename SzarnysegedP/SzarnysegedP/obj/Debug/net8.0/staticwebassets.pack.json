@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\css\\terkep-extra.css",
+      "PackagePath": "staticwebassets\\css\\terkep-extra.css"
+    },
+    {
       "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
@@ -71,6 +75,10 @@
     {
       "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\images\\sikloernyos.png",
       "PackagePath": "staticwebassets\\images\\sikloernyos.png"
+    },
+    {
+      "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\admin-chart.js",
+      "PackagePath": "staticwebassets\\js\\admin-chart.js"
     },
     {
       "Id": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedP\\wwwroot\\js\\scrollTo.js",

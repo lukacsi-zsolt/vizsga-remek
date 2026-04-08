@@ -5,34 +5,42 @@ using SzarnysegedShared.DTOs.HirDTOs;
 
 namespace SzarnysegedP.Services
 {
+    // ===== ADMIN SZOLGÁLTATÁS =====
+    // A kliens oldali admin műveletek központi osztálya
     public class AdminService
     {
         private readonly HttpClient _http;
         private readonly AuthService _auth;
 
+        // Konstruktor – DI-ból kapjuk mindkét függőséget
         public AdminService(HttpClient http, AuthService auth)
         {
             _http = http;
             _auth = auth;
         }
 
+        // ===== SEGÉDMETÓDUS: AUTENTIKÁCIÓ ELŐKÉSZÍTÉSE =====
         private async Task Prepare()
         {
             await _auth.SetAuthorizationHeader();
         }
 
+        // ===== DASHBOARD =====
         public async Task<AdminDashboardDto?> GetDashboard()
         {
             await Prepare();
             return await _http.GetFromJsonAsync<AdminDashboardDto>("api/admin/dashboard");
         }
 
+        // ===== FELHASZNÁLÓ KEZELÉS =====
+        // Összes felhasználó lekérdezése
         public async Task<List<AdminUserDto>> GetUsers()
         {
             await Prepare();
             return await _http.GetFromJsonAsync<List<AdminUserDto>>("api/admin/users") ?? new();
         }
 
+        // Felhasználó adatainak módosítása
         public async Task<bool> UpdateUser(AdminUserDto dto)
         {
             await Prepare();
@@ -40,6 +48,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Avatar eltávolítása
         public async Task<bool> RemoveAvatar(int userId)
         {
             await Prepare();
@@ -47,6 +56,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Borítókép eltávolítása
         public async Task<bool> RemoveCover(int userId)
         {
             await Prepare();
@@ -54,6 +64,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Felhasználó törlése
         public async Task<bool> DeleteUser(int userId)
         {
             await Prepare();
@@ -61,6 +72,8 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // ===== HÍREK KEZELÉS =====
+        // Hírek listázása (admin felületre)
         public async Task<List<HirDto>> GetNews()
         {
             await Prepare();
@@ -74,6 +87,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Hír módosítása
         public async Task<bool> UpdateNews(int id, UpdateHirDto dto)
         {
             await Prepare();
@@ -81,6 +95,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Hír törlése
         public async Task<bool> DeleteNews(int id)
         {
             await Prepare();
@@ -88,12 +103,15 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // ===== SPOT KEZELÉS =====
+        // Összes spot lekérdezése
         public async Task<List<Spot>> GetSpots()
         {
             await Prepare();
             return await _http.GetFromJsonAsync<List<Spot>>("api/admin/spots") ?? new();
         }
 
+        // Spot módosítása – a SpotokController PUT végpontját hívja
         public async Task<bool> UpdateSpot(Spot dto)
         {
             await Prepare();
@@ -101,6 +119,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Spot törlése
         public async Task<bool> DeleteSpot(int id)
         {
             await Prepare();
@@ -108,12 +127,15 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // ===== SPOT JAVASLATOK KEZELÉS =====
+        // Összes javaslat lekérdezése
         public async Task<List<SpotJavaslat>> GetSpotSuggestions()
         {
             await Prepare();
             return await _http.GetFromJsonAsync<List<SpotJavaslat>>("api/admin/spot-suggestions") ?? new();
         }
 
+        // Javaslat elfogadása – az API Spot-tá alakítja és publikálja
         public async Task<bool> ApproveSpotSuggestion(int id)
         {
             await Prepare();
@@ -121,6 +143,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Javaslat törlése (elutasítás)
         public async Task<bool> DeleteSpotSuggestion(int id)
         {
             await Prepare();
@@ -128,12 +151,15 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // ===== BEJEGYZÉSEK ÉS KOMMENTEK KEZELÉS =====
+        // Összes bejegyzés lekérdezése
         public async Task<List<BejegyzesListaDto>> GetPosts()
         {
             await Prepare();
             return await _http.GetFromJsonAsync<List<BejegyzesListaDto>>("api/admin/posts") ?? new();
         }
 
+        // Bejegyzés törlése – a ForumController DELETE végpontját hívja
         public async Task<bool> DeletePost(int id)
         {
             await Prepare();
@@ -141,6 +167,7 @@ namespace SzarnysegedP.Services
             return response.IsSuccessStatusCode;
         }
 
+        // Komment törlése
         public async Task<bool> DeleteComment(int id)
         {
             await Prepare();
@@ -149,6 +176,8 @@ namespace SzarnysegedP.Services
         }
     }
 
+    // ===== KLIENS OLDALI MODELL OSZTÁLYOK =====
+    // Spot modell a kliens oldalon
     public class Spot
     {
         public int SpotID { get; set; }
@@ -165,6 +194,7 @@ namespace SzarnysegedP.Services
         public int? LetrehozoFelhasznaloID { get; set; }
     }
 
+    // SpotJavaslat modell a kliens oldalon
     public class SpotJavaslat
     {
         public int SpotJavaslatID { get; set; }

@@ -1,6 +1,16 @@
-﻿<Router AppAssembly="typeof(Program).Assembly">
+﻿<!-- ===== BLAZOR ROUTER KOMPONENS ===== -->
+<Router AppAssembly="typeof(Program).Assembly">
+    <!-- ===== FOUND – Ha az URL illeszkedik egy oldalhoz ===== -->
     <Found Context="routeData">
+        <!-- RouteView: a megtalált oldal komponens renderelése (megjelenítése) -->
+        <!-- RouteData: az aktuális útvonal adatai (pl. /forum → Forum.razor) -->
+        <!-- DefaultLayout: ha egy oldalon nincs layout megadva, ezt a layout-ot használja -->
+        <!-- typeof(Layout.MainLayout) → a Components/Layout/MainLayout.razor fájl -->
+        <!-- A MainLayout tartalmazza a közös elemeket (navbar, footer, Body) -->
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+        <!-- FocusOnNavigate: navigáció után az első h1 elemre helyezi a fókuszt -->
+        <!-- Ez akadálymentességi (accessibility) funkció – képernyőolvasók számára fontos -->
+        <!-- Selector="h1" → CSS szelektorral megadott elem kap fókuszt -->
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
     </Found>
 </Router>
