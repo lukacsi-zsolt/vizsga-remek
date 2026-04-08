@@ -7,6 +7,7 @@
 
 
 <style>
+    @* CSS változók *@
     :root {
         --bg: #f0ece4;
         --surface: #ffffff;
@@ -26,6 +27,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    @* Fix pozícionálás *@
     .reg-wrapper {
         position: fixed;
         inset: 0;
@@ -107,6 +109,7 @@
 
     .reg-form { display: flex; flex-direction: column; gap: 16px; }
     .field-group { display: flex; flex-direction: column; gap: 6px; }
+    @* Kétoszlopos elrendezés a Vezetéknév / Keresztnév mezőkhöz *@
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
     .field-label {
@@ -153,6 +156,7 @@
 
     .input-wrapper:focus-within .input-icon { color: var(--accent); }
 
+    @* Hibaüzenet sáv (ugyanaz mint a login oldalon) *@
     .error-banner {
         display: flex;
         align-items: center;
@@ -172,6 +176,7 @@
         75% { transform: translateX(5px); }
     }
 
+    @* Regisztráció gomb – ugyanaz a stílus mint a login gomb *@
     .reg-btn {
         display: flex;
         align-items: center;
@@ -202,6 +207,7 @@
     .reg-btn:active:not(:disabled) { transform: translateY(0); box-shadow: 0 2px 8px rgba(46,102,72,0.25); }
     .reg-btn:disabled, .reg-btn.loading { opacity: 0.65; cursor: not-allowed; }
 
+    @* Bejelentkezési link a kártya alján *@
     .login-link {
         text-align: center;
         font-size: 13px;
@@ -233,8 +239,10 @@
 
 <PageTitle>Regisztráció</PageTitle>
 
+@* ===== HTML STRUKTÚRA ===== *@
 <div class="reg-wrapper">
     <div class="reg-card">
+        @* Branding rész *@
         <div class="reg-brand">
             <div class="brand-icon">✦</div>
             <h1 class="brand-title">Szárnysegéd</h1>
@@ -242,13 +250,14 @@
         </div>
 
         <div class="reg-form">
-
+            @* Elválasztó: "Személyes adatok" szekció *@
             <div class="divider">
                 <div class="divider-line"></div>
                 <span class="divider-label">Személyes adatok</span>
                 <div class="divider-line"></div>
             </div>
 
+            @* ===== VEZETÉKNÉV / KERESZTNÉV ===== *@
             <div class="field-row">
                 <div class="field-group">
                     <label class="field-label">Vezetéknév</label>
@@ -282,6 +291,7 @@
                 </div>
             </div>
 
+            @* ===== SZÜLETÉSI DÁTUM ===== *@
             <div class="field-group">
                 <label class="field-label">Születési dátum</label>
                 <input class="field-input"
@@ -289,6 +299,7 @@
                        @bind="model.SzuletesiDatum" />
             </div>
 
+            @* ===== E-MAIL CÍM ===== *@
             <div class="field-group">
                 <label class="field-label">E-mail cím</label>
                 <div class="input-wrapper">
@@ -307,12 +318,14 @@
                 </div>
             </div>
 
+            @* Elválasztó: "Belépési adatok" szekció *@
             <div class="divider" style="margin-top: 4px;">
                 <div class="divider-line"></div>
                 <span class="divider-label">Belépési adatok</span>
                 <div class="divider-line"></div>
             </div>
 
+            @* ===== FELHASZNÁLÓNÉV ===== *@
             <div class="field-group">
                 <label class="field-label">Felhasználónév</label>
                 <div class="input-wrapper">
@@ -330,6 +343,7 @@
                 </div>
             </div>
 
+            @* ===== JELSZÓ ===== *@
             <div class="field-group">
                 <label class="field-label">Jelszó</label>
                 <div class="input-wrapper">
@@ -347,7 +361,8 @@
                            autocomplete="new-password" />
                 </div>
             </div>
-
+            
+            @* ===== JELSZÓ MEGERŐSÍTÉS ===== *@
             <div class="field-group">
                 <label class="field-label">Jelszó megerősítése</label>
                 <div class="input-wrapper">
@@ -408,6 +423,7 @@
 </div>
 
 @code {
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     CreateFelhasznaloDto model = new();
     string confirmPassword = "";
     bool isLoading = false;
@@ -415,12 +431,14 @@
     string firstName = "";
     string lastName = "";
 
+    // ===== REGISZTRÁCIÓ METÓDUS =====
     async Task RegisterUser()
     {
 
 
         if (isLoading) return;
 
+        // ===== KLIENS OLDALI VALIDÁCIÓ =====
         if (model.Password != confirmPassword)
         {
             errorMessage = "A két jelszó nem egyezik meg.";
