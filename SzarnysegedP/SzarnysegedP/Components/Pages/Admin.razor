@@ -10,6 +10,7 @@
 
 <PageTitle>Admin</PageTitle>
 
+@* ===== CSS STÍLUSOK ===== *@
 <style>
     .admin-page {
         background: var(--cream);
@@ -218,14 +219,17 @@
     }
 </style>
 
+@* ===== HTML STRUKTÚRA ===== *@
 <section class="admin-page">
     <div class="admin-wrap">
+        @* ===== BETÖLTÉS / JOGOSULTSÁG ELLENŐRZÉS ===== *@
         @if (!isReady)
         {
             <div class="admin-card"><p>Betöltés...</p></div>
         }
         else if (!isAdmin)
         {
+            @* Ha a felhasználó nem admin → hozzáférés megtagadva üzenet *@
             <div class="admin-card">
                 <h2>Nincs hozzáférés</h2>
                 <p>Ez az oldal csak adminok számára érhető el.</p>
@@ -233,11 +237,13 @@
         }
         else
         {
+            @* ===== ADMIN TARTALOM ===== *@
             <div class="admin-hero">
                 <h1>Admin felület</h1>
                 <p>Felhasználók, hírek, spotok és fórum tartalmak kezelése egy helyen.</p>
             </div>
 
+            @* ===== DASHBOARD STATISZTIKÁK ===== *@
             @if (dashboard != null)
             {
                 <div class="admin-grid-stats">
@@ -263,7 +269,9 @@
                     </div>
                 </div>
 
+                @* Diagram + Hír létrehozó form egymás mellett *@
                 <div class="admin-main-grid">
+                    @* --- Chart.js diagram --- *@
                     <div class="admin-card">
                         <h2>Utolsó 7 nap aktivitása</h2>
                         <div class="admin-chart-wrap">
@@ -271,6 +279,7 @@
                         </div>
                     </div>
 
+                    @* --- Új hír létrehozó form --- *@
                     <div class="admin-card">
                         <h2>Új hír létrehozása</h2>
 
@@ -303,7 +312,9 @@
                 </div>
             }
 
+            @* ===== TAB RENDSZER: TARTALMAK KEZELÉSE ===== *@
             <div class="admin-card">
+                @* Tab gombok – az activeTab változó határozza meg melyik aktív *@
                 <div class="admin-tabs">
                     <button class="admin-tab @(activeTab == "users" ? "active" : "")" @onclick='() => activeTab = "users"'>Felhasználók</button>
                     <button class="admin-tab @(activeTab == "news" ? "active" : "")" @onclick='() => activeTab = "news"'>Hírek</button>
@@ -312,6 +323,7 @@
                     <button class="admin-tab @(activeTab == "posts" ? "active" : "")" @onclick='() => activeTab = "posts"'>Fórum</button>
                 </div>
 
+                @* ===== FELHASZNÁLÓK TAB ===== *@
                 @if (activeTab == "users")
                 {
                     <div class="admin-list">
@@ -332,6 +344,7 @@
                         }
                     </div>
                 }
+                @* ===== HÍREK TAB ===== *@
                 else if (activeTab == "news")
                 {
                     <div class="admin-list">
@@ -349,6 +362,7 @@
                         }
                     </div>
                 }
+                @* ===== SPOTOK TAB ===== *@
                 else if (activeTab == "spots")
                 {
                     <div class="admin-list">
@@ -365,6 +379,7 @@
                         }
                     </div>
                 }
+                @* ===== SPOT JAVASLATOK TAB ===== *@
                 else if (activeTab == "suggestions")
                 {
                     <div class="admin-list">
@@ -382,6 +397,7 @@
                         }
                     </div>
                 }
+                @* ===== FÓRUM POSZTOK TAB ===== *@
                 else if (activeTab == "posts")
                 {
                     <div class="admin-list">
@@ -405,6 +421,7 @@
 </section>
 
 @code {
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private bool isReady;
     private bool isAdmin;
     private string activeTab = "users";
@@ -422,6 +439,7 @@
         Datum = DateTime.Today
     };
 
+    // ===== ÉLETCIKLUS =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -446,6 +464,7 @@
         }
     }
 
+    // ===== ÖSSZES ADAT BETÖLTÉSE =====
     private async Task LoadAll()
     {
         dashboard = await AdminService.GetDashboard();
@@ -456,6 +475,7 @@
         posts = await AdminService.GetPosts();
     }
 
+    // ===== CHART.JS DIAGRAM RAJZOLÁSA (JS INTEROP) =====
     private async Task RenderChart()
     {
         if (dashboard == null || dashboard.Last7Days.Count == 0)
@@ -472,6 +492,8 @@
         );
     }
 
+    // ===== CRUD MŰVELETEK =====
+    // Új hír létrehozása
     private async Task CreateNews()
     {
         if (string.IsNullOrWhiteSpace(newNews.Cim) || string.IsNullOrWhiteSpace(newNews.Tartalom))
@@ -486,6 +508,7 @@
         }
     }
 
+    // Admin jogosultság váltása (toggle)
     private async Task ToggleAdmin(AdminUserDto user)
     {
         user.IsAdmin = !user.IsAdmin;
@@ -494,6 +517,7 @@
         StateHasChanged();
     }
 
+    // Avatar eltávolítása
     private async Task RemoveAvatar(int id)
     {
         await AdminService.RemoveAvatar(id);
@@ -501,6 +525,7 @@
         StateHasChanged();
     }
 
+    // Borítókép eltávolítása
     private async Task RemoveCover(int id)
     {
         await AdminService.RemoveCover(id);
@@ -508,6 +533,7 @@
         StateHasChanged();
     }
 
+    // Felhasználó törlése
     private async Task DeleteUser(int id)
     {
         await AdminService.DeleteUser(id);
@@ -516,6 +542,7 @@
         StateHasChanged();
     }
 
+    // Hír törlése
     private async Task DeleteNews(int id)
     {
         await AdminService.DeleteNews(id);
@@ -524,6 +551,7 @@
         StateHasChanged();
     }
 
+    // Spot törlése
     private async Task DeleteSpot(int id)
     {
         await AdminService.DeleteSpot(id);
@@ -532,6 +560,7 @@
         StateHasChanged();
     }
 
+    // Spot javaslat elfogadása → Spot-tá alakul
     private async Task ApproveSuggestion(int id)
     {
         await AdminService.ApproveSpotSuggestion(id);
@@ -540,6 +569,7 @@
         StateHasChanged();
     }
 
+    // Spot javaslat törlése (elutasítás)
     private async Task DeleteSuggestion(int id)
     {
         await AdminService.DeleteSpotSuggestion(id);
@@ -548,6 +578,7 @@
         StateHasChanged();
     }
 
+    // Fórum bejegyzés törlése
     private async Task DeletePost(int id)
     {
         await AdminService.DeletePost(id);
@@ -556,6 +587,7 @@
         StateHasChanged();
     }
 
+    // ===== SEGÉDMETÓDUS: SZÖVEG RÖVIDÍTÉS =====
     private string Shorten(string? text, int max)
     {
         if (string.IsNullOrWhiteSpace(text))

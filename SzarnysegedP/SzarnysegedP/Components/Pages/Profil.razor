@@ -12,6 +12,7 @@
 
 <PageTitle>@(profil?.TeljesNev ?? "Profil") – Szárnysegéd</PageTitle>
 
+@* ===== FELTÉTELES RENDERELÉS ===== *@
 @if (isLoading)
 {
     <div style="padding: 40px; text-align: center;">
@@ -26,10 +27,12 @@ else if (profil == null)
 }
 else
 {
+    @* ===== BORÍTÓKÉP ===== *@
     <div class="profil-cover" style="background-image: url('@GetCoverUrl()')">
         <div class="profil-cover-overlay"></div>
     </div>
 
+    @* ===== PROFIL FEJLÉC (avatar + név + gombok) ===== *@
     <div class="profil-wrapper">
         <div class="profil-fejlec">
             <div class="profil-avatar-wrap">
@@ -47,6 +50,7 @@ else
 
             <div class="profil-info">
                 <h1 class="profil-nev">@profil.TeljesNev</h1>
+                @* A felhasználónév elé @ jelet teszünk *@
                 <p class="profil-handle">
                     @("@"+profil.FelhasznaloNev)
                     @if (profil.SzuletesiDatum.HasValue)
@@ -55,6 +59,7 @@ else
                     }
                 </p>
 
+                @* Statisztika badge-ek: posztok, kommentek, követők, követettek száma *@
                 <div class="profil-badge-sor">
                     <span class="profil-badge">@(stats?.Posztok ?? 0) poszt</span>
                     <span class="profil-badge profil-badge-outline">@(stats?.Kommentek ?? 0) komment</span>
@@ -63,6 +68,7 @@ else
                 </div>
             </div>
 
+            @* ===== AKCIÓ GOMBOK ===== *@
             <div class="profil-akciok">
                 @if (sajatProfil)
                 {
@@ -77,8 +83,11 @@ else
             </div>
         </div>
 
+        @* ===== FŐ TARTALOM: SIDEBAR + POSZTOK ===== *@
         <div class="profil-main">
+            @* ===== BAL OLDALI SIDEBAR ===== *@
             <aside class="profil-sidebar">
+                @* --- Rólam kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Rólam</h3>
                     <p class="profil-bio">
@@ -86,6 +95,7 @@ else
                     </p>
 
                     <div class="profil-reszletek">
+                        @* Csak akkor jelenítjük meg a mezőt, ha ki van töltve *@
                         @if (!string.IsNullOrWhiteSpace(profil.Helyszin))
                         {
                             <div class="profil-reszlet-sor">
@@ -106,7 +116,7 @@ else
                                 <span>@profil.Klub</span>
                             </div>
                         }
-
+                        @* Email CSAK a saját profilon látszik (adatvédelem) *@
                         @if (sajatProfil && !string.IsNullOrWhiteSpace(profil.Email))
                         {
                             <div class="profil-reszlet-sor">
@@ -120,6 +130,7 @@ else
                     </div>
                 </div>
 
+                @* --- Statisztikák kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Statisztikák</h3>
 
@@ -138,6 +149,7 @@ else
                         </div>
                     </div>
 
+                    @* Progress bar a követett felhasználók számához *@
                     <div class="profil-szint-wrap">
                         <div class="profil-szint-sor">
                             <span>Követett felhasználók</span>
@@ -149,6 +161,7 @@ else
                     </div>
                 </div>
 
+                @* --- Követettek kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Követi</h3>
 
@@ -182,6 +195,7 @@ else
                     }
                 </div>
 
+                @* --- Követők kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Követők</h3>
 
@@ -215,7 +229,8 @@ else
                     }
                 </div>
             </aside>
-
+            
+            @* ===== JOBB OLDALI FŐ TARTALOM ===== *@
             <section class="profil-tartalom">
                 <div class="profil-card" style="padding: 0;">
                     <div class="profil-tabok">
@@ -230,6 +245,7 @@ else
                     </div>
                 </div>
 
+                @* ===== BEJEGYZÉSEK TAB ===== *@
                 @if (aktivTab == "posztok")
                 {
                     @if (posztok.Count == 0)
@@ -283,6 +299,7 @@ else
                         </div>
                     }
                 }
+                @* ===== INFORMÁCIÓ TAB ===== *@
                 else if (aktivTab == "kedveltek")
                 {
                     <div class="profil-card">
@@ -302,8 +319,10 @@ else
 }
 
 @code {
+    // ===== ROUTE PARAMÉTER =====
     [Parameter] public string? FelhasznaloNev { get; set; }
 
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private bool isLoading = true;
     private string aktivTab = "posztok";
 
@@ -317,11 +336,13 @@ else
 
     private bool koveti;
 
+    // ===== SZÁMÍTOTT PROPERTY =====
     private bool sajatProfil =>
         aktualisUser != null &&
         profil != null &&
         aktualisUser.FelhasznaloID == profil.FelhasznaloID;
 
+    // ===== ÉLETCIKLUS: ELSŐ RENDERELÉS UTÁN =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -333,6 +354,7 @@ else
         StateHasChanged();
     }
 
+    // ===== ÉLETCIKLUS: PARAMÉTER VÁLTOZÁSKOR =====
     protected override async Task OnParametersSetAsync()
     {
         if (!isLoading && aktualisUser != null)
@@ -342,6 +364,7 @@ else
         }
     }
 
+    // ===== PROFIL ADATOK BETÖLTÉSE =====
     private async Task LoadProfileAsync()
     {
         profil = null;
@@ -422,6 +445,7 @@ else
         }
     }
 
+    // ===== KÖVETÉS / KIKÖVETÉS (TOGGLE) =====
     private async Task KovetesValtas()
     {
         if (profil == null || aktualisUser == null || sajatProfil)
@@ -440,11 +464,13 @@ else
         }
     }
 
+    // ===== NAVIGÁCIÓ BEJEGYZÉSRE =====
     private void OpenPost(int postId)
     {
         Navigation.NavigateTo($"/forum/bejegyzes/{postId}");
     }
 
+    // ===== SEGÉDMETÓDUSOK =====
     private string GetCoverUrl()
     {
         if (profil == null || string.IsNullOrWhiteSpace(profil.CoverUrl))
@@ -453,6 +479,7 @@ else
         return profil.CoverUrl;
     }
 
+    // Monogram: a név első betűiből készít rövidítést
     private string GetMonogram()
     {
         return GetMonogram(profil?.TeljesNev);
@@ -471,6 +498,7 @@ else
         return parts[0][0].ToString().ToUpper();
     }
 
+    // Szöveg rövidítése megadott maximális hosszra
     private string Shorten(string? text, int max)
     {
         if (string.IsNullOrWhiteSpace(text))
@@ -483,12 +511,16 @@ else
         return cleaned[..max].Trim() + "...";
     }
 
+    // Követési progress bar százalék kiszámítása
     private int GetFollowProgress()
     {
         var value = stats.Kovetettek * 10;
         return Math.Clamp(value, 0, 100);
     }
 
+    // ===== BELSŐ SEGÉDOSZTÁLYOK =====
+    // Ezek a JSON deszerializáláshoz kellenek (az API válaszának fogadásához)
+    // Profil statisztikák DTO-ja
     private class ProfilStats
     {
         public int Posztok { get; set; }
@@ -497,6 +529,7 @@ else
         public int Kovetettek { get; set; }
     }
 
+    // Követési állapot DTO-ja
     private class KovetesAllapotDto
     {
         public bool koveti { get; set; }

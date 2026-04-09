@@ -7,6 +7,7 @@
         padding: 0 !important;
     }
 </style>
+@* ===== BOOTSTRAP NAVBAR ===== *@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-xl w-100">
 
@@ -33,12 +34,14 @@
         <!-- Nav linkek -->
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="navbar-nav ms-auto">
+                @* Admin link: CSAK akkor jelenik meg, ha a felhasználó admin *@
                 @if (isAdmin)
                 {
                     <li class="nav-item">
                         <NavLink class="nav-link" href="admin">Admin Dashboard</NavLink>
                     </li>
                 }
+                @* Publikus menüpontok – mindig láthatók *@
                 <li class="nav-item">
                     <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Kezdőlap</NavLink>
                 </li>
@@ -55,6 +58,8 @@
                     <NavLink class="nav-link" href="Info">Info</NavLink>
                 </li>
 
+                @* ===== FIÓK DROPDOWN MENÜ ===== *@
+                @* Bootstrap dropdown: a gomb kattintásakor megjelenik a lenyíló menü *@
                 <li class="nav-item dropdown">
                     <button class="nav-link nav-link-account dropdown-toggle"
                             type="button"
@@ -64,17 +69,20 @@
                         Fiók
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownBtn">
+                        @* Feltételes menüelemek a bejelentkezési állapot alapján *@
                         @if (isLoggedIn)
                         {
                             <li>
                                 <a class="dropdown-item" href="/profil">Profil</a>
                             </li>
                             <li>
+                                @* A kijelentkezés @onclick esemény, nem link *@
                                 <button class="dropdown-item" @onclick="Logout">Kijelentkezés</button>
                             </li>
                         }
                         else
                         {
+                            @* Vendég felhasználó: Bejelentkezés + Regisztráció *@
                             <li><a class="dropdown-item" href="/login">Bejelentkezés</a></li>
                             <li><a class="dropdown-item" href="/register">Regisztráció</a></li>
                         }
@@ -87,14 +95,17 @@
 </nav>
 
 @code {
+    // Állapotváltozók: a menü tartalmát ezek határozzák meg
     private bool isLoggedIn;
     private bool isAdmin;
 
+    // ===== ÉLETCIKLUS: INICIALIZÁLÁS =====
     protected override void OnInitialized()
     {
         AuthService.AuthStateChanged += OnAuthStateChanged;
     }
 
+    // ===== ÉLETCIKLUS: ELSŐ RENDERELÉS UTÁN =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -105,6 +116,7 @@
         }
     }
 
+    // ===== ESEMÉNYKEZELŐ: AUTENTIKÁCIÓS ÁLLAPOT VÁLTOZÁS =====
     private async void OnAuthStateChanged()
     {
         isAdmin = await AuthService.IsAdmin();
@@ -112,12 +124,14 @@
         await InvokeAsync(StateHasChanged);
     }
 
+    // ===== KIJELENTKEZÉS =====
     private async Task Logout()
     {
         await AuthService.Logout();
         Navigation.NavigateTo("/", forceLoad: true);
     }
 
+    // ===== DISPOSE: ESEMÉNY LEIRATKOZÁS =====
     public void Dispose()
     {
         AuthService.AuthStateChanged -= OnAuthStateChanged;

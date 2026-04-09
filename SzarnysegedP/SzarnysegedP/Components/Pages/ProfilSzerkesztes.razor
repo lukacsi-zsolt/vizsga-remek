@@ -8,6 +8,7 @@
 
 <PageTitle>Profil szerkesztése – Szárnysegéd</PageTitle>
 
+@* ===== FELTÉTELES RENDERELÉS ===== *@
 @if (isLoading)
 {
     <div class="profil-edit-loading">
@@ -16,6 +17,8 @@
 }
 else
 {
+    @* ===== BORÍTÓKÉP ELŐNÉZET A FEJLÉCBEN ===== *@
+    @* A háttérkép dinamikusan változik, ahogy a felhasználó új borítóképet tölt fel *@
     <div class="profil-edit-hero" style="background-image: url('@GetCoverPreviewUrl()')">
         <div class="profil-edit-hero-overlay"></div>
         <div class="profil-edit-hero-inner">
@@ -25,13 +28,18 @@ else
     </div>
 
     <div class="profil-edit-wrapper">
+        @* Kétoszlopos elrendezés: bal oldalon előnézet, jobb oldalon szerkesztő űrlapok *@
         <div class="profil-edit-layout">
 
+            @* ===== BAL OLDAL: ÉLŐBEN FRISSÜLŐ ELŐNÉZET ===== *@
+            @* Az előnézet automatikusan frissül, ahogy a felhasználó gépel az inputokba *@
+            @* Ez a @bind kétirányú adatkötésnek köszönhető – a model változik → a UI frissül *@
             <aside class="profil-edit-side">
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Előnézet</h3>
 
                     <div class="profil-edit-preview">
+                        @* Avatar előnézet: ha van kép → megjelenítjük, ha nincs → monogram *@
                         @if (!string.IsNullOrWhiteSpace(model.AvatarUrl))
                         {
                             <img class="profil-edit-preview-avatar-img"
@@ -45,6 +53,7 @@ else
                             </div>
                         }
 
+                        @* Név előnézet: ha üres, placeholder szöveget mutat *@
                         <h4>@(string.IsNullOrWhiteSpace(model.TeljesNev) ? "Teljes név" : model.TeljesNev)</h4>
                         <p>
                             @if (!string.IsNullOrWhiteSpace(model.FelhasznaloNev))
@@ -57,11 +66,13 @@ else
                             }
                         </p>
 
+                        @* Bio előnézet – csak akkor jelenik meg, ha ki van töltve *@
                         @if (!string.IsNullOrWhiteSpace(model.Bio))
                         {
                             <div class="profil-edit-preview-bio">@model.Bio</div>
                         }
 
+                        @* Helyszín és Klub badge-ek *@
                         <div class="profil-edit-preview-tags">
                             @if (!string.IsNullOrWhiteSpace(model.Helyszin))
                             {
@@ -76,10 +87,13 @@ else
                 </div>
             </aside>
 
+            @* ===== JOBB OLDAL: SZERKESZTŐ ŰRLAPOK ===== *@
             <section class="profil-edit-main">
+                @* --- Alapadatok kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Alapadatok</h3>
 
+                    @* Visszajelzés üzenetek (mentés eredménye / feltöltés státusz) *@
                     @if (!string.IsNullOrWhiteSpace(message))
                     {
                         <div class="profil-edit-message">@message</div>
@@ -90,6 +104,7 @@ else
                         <div class="profil-edit-message">@uploadMessage</div>
                     }
 
+                    @* Kétoszlopos grid az alapadatoknak *@
                     <div class="profil-edit-grid">
                         <div class="profil-edit-field">
                             <label>Felhasználónév</label>
@@ -113,6 +128,7 @@ else
                     </div>
                 </div>
 
+                @* --- Profilinformációk kártya --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Profilinformációk</h3>
 
@@ -134,14 +150,17 @@ else
                     </div>
                 </div>
 
+                @* --- Képek kártya (fájl feltöltés) --- *@
                 <div class="profil-card">
                     <h3 class="profil-card-cim">Képek</h3>
 
                     <div class="profil-edit-grid-single">
+                        @* ===== AVATAR (PROFILKÉP) FELTÖLTÉS ===== *@
                         <div class="profil-edit-field">
                             <label>Profilkép feltöltése</label>
                             <InputFile OnChange="UploadAvatarFile" accept=".jpg,.jpeg,.png,.webp" />
 
+                            @* Feltöltött kép előnézete *@
                             @if (!string.IsNullOrWhiteSpace(model.AvatarUrl))
                             {
                                 <div class="profil-edit-image-preview profil-edit-avatar-preview">
@@ -150,6 +169,7 @@ else
                             }
                         </div>
 
+                        @* ===== BORÍTÓKÉP FELTÖLTÉS ===== *@
                         <div class="profil-edit-field">
                             <label>Borítókép feltöltése</label>
                             <InputFile OnChange="UploadCoverFile" accept=".jpg,.jpeg,.png,.webp" />
@@ -164,11 +184,14 @@ else
                     </div>
                 </div>
 
+                @* ===== AKCIÓ GOMBOK ===== *@
                 <div class="profil-edit-actions">
+                    @* Mentés gomb – disabled állapot mentés közben (dupla kattintás védelem) *@
                     <button type="button" class="btn-primary-custom" @onclick="Save" disabled="@isSaving">
                         @(isSaving ? "Mentés..." : "Változtatások mentése")
                     </button>
 
+                    @* Mégse gomb – visszanavigál a profiloldalra mentés nélkül *@
                     <button type="button" class="profil-edit-cancel" @onclick="Cancel">
                         Mégse
                     </button>
@@ -179,12 +202,14 @@ else
 }
 
 @code {
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private UpdateFelhasznaloDto model = new();
     private bool isLoading = true;
     private bool isSaving = false;
     private string message = "";
     private string uploadMessage = "";
 
+    // ===== ÉLETCIKLUS: ELSŐ RENDERELÉS UTÁN =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -198,6 +223,8 @@ else
             return;
         }
 
+        // A DTO feltöltése a felhasználó aktuális adataival
+        // Ez jelenik meg az inputokban alapértékként (amit aztán szerkeszthet)
         model = new UpdateFelhasznaloDto
         {
             FelhasznaloNev = user.FelhasznaloNev ?? "",
@@ -218,6 +245,8 @@ else
         StateHasChanged();
     }
 
+    // ===== MENTÉS =====
+    // A "Változtatások mentése" gomb @onclick eseménye
     private async Task Save()
     {
         if (isSaving)
@@ -249,11 +278,14 @@ else
         }
     }
 
+    // ===== MÉGSE =====
+    // Visszanavigál a profiloldalra mentés nélkül
     private void Cancel()
     {
         Navigation.NavigateTo("/profil");
     }
 
+    // ===== AVATAR FELTÖLTÉS =====
     private async Task UploadAvatarFile(InputFileChangeEventArgs e)
     {
         uploadMessage = "";
@@ -283,6 +315,8 @@ else
         }
     }
 
+    // ===== BORÍTÓKÉP FELTÖLTÉS =====
+    // Ugyanaz a logika mint az avatar feltöltésnél
     private async Task UploadCoverFile(InputFileChangeEventArgs e)
     {
         uploadMessage = "";
@@ -312,6 +346,7 @@ else
         }
     }
 
+    // ===== SEGÉDMETÓDUSOK =====
     private string GetMonogram()
     {
         if (string.IsNullOrWhiteSpace(model.TeljesNev))

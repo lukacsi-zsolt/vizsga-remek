@@ -10,6 +10,7 @@
 
 <PageTitle>Fórum – Szárnysegéd</PageTitle>
 
+@* ===== CSS STÍLUSOK ===== *@
 <style>
     .forum-loading {
         max-width: 1100px;
@@ -402,6 +403,7 @@
         margin-bottom: 18px;
     }
 
+    /* ===== RESZPONZÍV TÖRÉSPONTOK ===== */
     @@media (max-width: 900px) {
         .forum-layout {
             grid-template-columns: 1fr;
@@ -433,6 +435,8 @@
     }
 </style>
 
+@* ===== HTML STRUKTÚRA ===== *@
+@* Betöltési állapot *@
 @if (isLoading)
 {
     <div class="forum-loading">
@@ -450,6 +454,7 @@ else
         </div>
 
         <div class="forum-layout">
+            @* ===== BAL OLDALI SIDEBAR ===== *@
             <aside class="forum-sidebar">
                 <div class="forum-card">
                     <h3>Fórum</h3>
@@ -468,9 +473,12 @@ else
                 </div>
             </aside>
 
+            @* ===== FŐ TARTALOM ===== *@
             <section class="forum-main">
+                @* ===== ÚJ BEJEGYZÉS LÉTREHOZÁS ===== *@
                 @if (isLoggedIn)
                 {
+                    @* Ha a létrehozó panel ZÁRVA van → trigger gomb *@
                     @if (!ujBejegyzesNyitva)
                     {
                         <div class="forum-card forum-create-launcher">
@@ -484,6 +492,7 @@ else
                         </div>
                     }
 
+                    @* Ha a létrehozó panel NYITVA van → űrlap *@
                     @if (ujBejegyzesNyitva)
                     {
                         <div class="forum-card forum-create-card">
@@ -497,16 +506,19 @@ else
                                 </button>
                             </div>
 
+                            @* Visszajelzés üzenet *@
                             @if (!string.IsNullOrWhiteSpace(createMessage))
                             {
                                 <div class="forum-message">@createMessage</div>
                             }
 
+                            @* Cím mező *@
                             <div class="forum-field">
                                 <label>Cím</label>
                                 <input @bind="ujBejegyzes.Cim" placeholder="pl. Első repülésem Dobogókőn" />
                             </div>
 
+                            @* Tartalom mező *@
                             <div class="forum-field">
                                 <label>Tartalom</label>
                                 <textarea @bind="ujBejegyzes.Tartalom"
@@ -514,6 +526,7 @@ else
                                           placeholder="Írd le az élményedet, kérdésedet vagy tapasztalatodat..."></textarea>
                             </div>
 
+                            @* Spot kiválasztó + Kép feltöltés (egymás mellett) *@
                             <div class="forum-grid">
                                 <div class="forum-field">
                                     <label>Spot</label>
@@ -528,6 +541,7 @@ else
 
                                 <div class="forum-field">
                                     <label>Kép feltöltése</label>
+                                    @* InputFile: Blazor beépített fájlfeltöltő *@
                                     <InputFile OnChange="UploadPostImageFile" accept=".jpg,.jpeg,.png,.webp" />
 
                                     @if (!string.IsNullOrWhiteSpace(postImageMessage))
@@ -535,6 +549,7 @@ else
                                         <div class="forum-message" style="margin-top:10px;">@postImageMessage</div>
                                     }
 
+                                    @* Feltöltött kép előnézete *@
                                     @if (!string.IsNullOrWhiteSpace(ujBejegyzes.KepUrl))
                                     {
                                         <div class="forum-post-upload-preview">
@@ -546,6 +561,7 @@ else
                                 </div>
                             </div>
 
+                            @* Kiválasztott spot tag megjelenítése *@
                             @if (!string.IsNullOrWhiteSpace(selectedSpotSlug))
                             {
                                 <div class="forum-selected-tag">
@@ -553,6 +569,7 @@ else
                                 </div>
                             }
 
+                            @* Akció gombok *@
                             <div class="forum-actions">
                                 <button type="button"
                                         class="btn-primary-custom"
@@ -571,6 +588,8 @@ else
                     }
                 }
 
+                @* ===== SZŰRŐ KÁRTYA ===== *@
+                @* Keresés szöveg alapján + spot szűrő *@
                 <div class="forum-card forum-create-card forum-filter-card">
                     <div class="forum-grid">
                         <div class="forum-field">
@@ -597,6 +616,7 @@ else
                     </div>
                 </div>
 
+                @* ===== BEJEGYZÉSEK LISTÁJA ===== *@
                 @if (filteredPosts.Count == 0)
                 {
                     <div class="forum-card">
@@ -608,7 +628,9 @@ else
                     @foreach (var post in filteredPosts)
                     {
                         <article class="forum-post-card">
+                            @* Felhasználó fejléc (avatar + név + dátum) *@
                             <div class="forum-post-top">
+                                @* Kattintható → a felhasználó profiljára navigál *@
                                 <div class="forum-post-user" @onclick="() => OpenProfil(post.FelhasznaloNev)">
                                     @if (!string.IsNullOrWhiteSpace(post.AvatarUrl))
                                     {
@@ -637,6 +659,7 @@ else
                                 </div>
                             </div>
 
+                            @* Bejegyzés tartalma *@
                             <div class="forum-post-body">
                                 @if (!string.IsNullOrWhiteSpace(post.Cim))
                                 {
@@ -647,6 +670,7 @@ else
                                     @RenderTartalom(post)
                                 </div>
 
+                                @* Csatolt kép *@
                                 @if (!string.IsNullOrWhiteSpace(post.KepUrl))
                                 {
                                     <div class="forum-post-image-wrap">
@@ -657,6 +681,7 @@ else
                                     </div>
                                 }
 
+                                @* Spot tag *@
                                 @if (!string.IsNullOrWhiteSpace(post.SpotSlug))
                                 {
                                     <div class="forum-post-tags">
@@ -668,6 +693,7 @@ else
                                 }
                             </div>
 
+                            @* Lábléc *@
                             <div class="forum-post-footer">
                                 <button type="button"
                                         class="forum-footer-btn"
@@ -690,6 +716,7 @@ else
 }
 
 @code {
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private bool ujBejegyzesNyitva = false;
 
     private List<BejegyzesListaDto> bejegyzesek = new();
@@ -708,6 +735,8 @@ else
     private string searchText = "";
     private string selectedFilterSpotIdString = "";
 
+    // ===== COMPUTED PROPERTY-K =====
+    // Ezek automatikusan újraszámolódnak, amikor a mögöttes változó megváltozik
     private int? SelectedSpotId
     {
         get
@@ -728,12 +757,15 @@ else
         }
     }
 
+    // A kiválasztott spot slug-ja
     private string? selectedSpotSlug
         => spotok.FirstOrDefault(x => x.SpotID == SelectedSpotId)?.Slug;
 
+    // ===== SZŰRT BEJEGYZÉSEK =====
     private List<BejegyzesListaDto> filteredPosts =>
         bejegyzesek.Where(PostMatchesFilter).ToList();
 
+    // ===== ÉLETCIKLUS =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -749,12 +781,14 @@ else
         StateHasChanged();
     }
 
+    // ===== ADATBETÖLTÉS =====
     private async Task LoadBejegyzesek()
     {
         var result = await Http.GetFromJsonAsync<List<BejegyzesListaDto>>("api/forum/bejegyzesek");
         bejegyzesek = result ?? new List<BejegyzesListaDto>();
     }
 
+    // Spotok lekérdezése az API-ból
     private async Task LoadSpotok()
     {
         var result = await Http.GetFromJsonAsync<List<SpotListaElem>>("api/spotok");
@@ -769,6 +803,7 @@ else
         }
     }
 
+    // ===== SZŰRŐ LOGIKA =====
     private bool PostMatchesFilter(BejegyzesListaDto post)
     {
         var matchesText =
@@ -798,6 +833,7 @@ else
         postImageMessage = "";
     }
 
+    // ===== ÚJ BEJEGYZÉS LÉTREHOZÁSA =====
     private async Task CreateBejegyzes()
     {
         if (isCreating)
@@ -850,6 +886,7 @@ else
         }
     }
 
+    // ===== NAVIGÁCIÓS METÓDUSOK =====
     private void OpenProfil(string? felhasznaloNev)
     {
         if (string.IsNullOrWhiteSpace(felhasznaloNev))
@@ -863,6 +900,7 @@ else
         Navigation.NavigateTo($"/forum/{bejegyzesId}");
     }
 
+    // ===== TARTALOM RENDERELÉS (SPOT TAGEK LINKESÍTÉSE) =====
     private MarkupString RenderTartalom(BejegyzesListaDto bejegyzes)
     {
         var text = bejegyzes.Tartalom ?? "";
@@ -881,6 +919,7 @@ else
         return new MarkupString(text);
     }
 
+    // ===== KÉP FELTÖLTÉS =====
     private async Task UploadPostImageFile(InputFileChangeEventArgs e)
     {
         postImageMessage = "";
@@ -910,6 +949,8 @@ else
         }
     }
 
+    // ===== SEGÉDMETÓDUSOK =====
+    // Monogram generálás: "Kiss János" → "KJ"
     private string GetMonogram(string? teljesNev, string? felhasznaloNev)
     {
         if (!string.IsNullOrWhiteSpace(teljesNev))
@@ -927,11 +968,13 @@ else
         return "F";
     }
 
+    // Dátum formázás helyi időzónára
     private string FormatDatum(DateTime dateTime)
     {
         return dateTime.ToLocalTime().ToString("yyyy. MM. dd. HH:mm");
     }
 
+    // Slug generálás (magyar ékezetek cseréje)
     private string Slugify(string text)
     {
         return text
@@ -948,6 +991,7 @@ else
             .Replace(" ", "-");
     }
 
+    // ===== BELSŐ SEGÉDOSZTÁLY =====
     private class SpotListaElem
     {
         public int SpotID { get; set; }

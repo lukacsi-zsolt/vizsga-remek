@@ -9,8 +9,10 @@
 
 <PageTitle>Bejegyzés – Szárnysegéd</PageTitle>
 
+@* ===== FELTÉTELES RENDERELÉS ===== *@
 @if (isLoading)
 {
+    @* A bejegyzés nem található (404 az API-tól) *@
     <div class="forum-loading">
         <p>Bejegyzés betöltése...</p>
     </div>
@@ -26,15 +28,21 @@ else if (bejegyzes == null)
 else
 {
     <div class="forum-page">
+        @* Vissza gomb *@
         <div class="forum-detail-header">
             <button type="button" class="forum-back-btn" @onclick="BackToForum">
                 ← Vissza a fórumhoz
             </button>
         </div>
 
+        @* Kétoszlopos elrendezés: bejegyzés + sidebar *@
         <div class="forum-detail-layout">
+
+            @* ===== FŐ TARTALOM: BEJEGYZÉS + KOMMENTEK ===== *@
             <section class="forum-detail-main">
+                @* --- A bejegyzés kártyája --- *@
                 <article class="forum-post-card forum-post-card-detail">
+                    @* Szerző fejléc (avatar + név + dátum) *@
                     <div class="forum-post-top">
                         <div class="forum-post-user" @onclick="() => OpenProfil(bejegyzes.FelhasznaloNev)">
                             @if (!string.IsNullOrWhiteSpace(bejegyzes.AvatarUrl))
@@ -64,6 +72,7 @@ else
                         </div>
                     </div>
 
+                    @* Bejegyzés tartalma *@
                     <div class="forum-post-body">
                         @if (!string.IsNullOrWhiteSpace(bejegyzes.Cim))
                         {
@@ -74,6 +83,7 @@ else
                             @RenderTartalom(bejegyzes)
                         </div>
 
+                        @* Csatolt kép *@
                         @if (!string.IsNullOrWhiteSpace(bejegyzes.KepUrl))
                         {
                             <div class="forum-post-image-wrap">
@@ -84,6 +94,7 @@ else
                             </div>
                         }
 
+                        @* Spot tag link *@
                         @if (!string.IsNullOrWhiteSpace(bejegyzes.SpotSlug))
                         {
                             <div class="forum-post-tags">
@@ -96,12 +107,14 @@ else
                     </div>
                 </article>
 
+                @* ===== KOMMENTEK SZEKCIÓ ===== *@
                 <div class="forum-card forum-comments-card">
                     <div class="forum-comments-header">
                         <h3>Kommentek</h3>
                         <span>@kommentekDarab db</span>
                     </div>
 
+                    @* ===== ÚJ KOMMENT FORM (csak bejelentkezett felhasználóknak) ===== *@
                     @if (isLoggedIn)
                     {
                         <div class="forum-comment-form">
@@ -134,6 +147,7 @@ else
                         </div>
                     }
 
+                    @* ===== KOMMENTEK LISTÁJA (FA STRUKTÚRA) ===== *@
                     @if (kommentek.Count == 0)
                     {
                         <p class="forum-empty">Még nincsenek kommentek.</p>
@@ -150,6 +164,7 @@ else
                 </div>
             </section>
 
+            @* ===== JOBB OLDALI SIDEBAR: BEJEGYZÉS METAADATOK ===== *@
             <aside class="forum-detail-sidebar">
                 <div class="forum-card">
                     <h3>Bejegyzés adatai</h3>
@@ -186,8 +201,10 @@ else
 }
 
 @code {
+    // ===== ROUTE PARAMÉTER =====
     [Parameter] public int BejegyzesId { get; set; }
 
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private BejegyzesListaDto? bejegyzes;
     private List<KommentDto> kommentek = new();
 
@@ -198,8 +215,10 @@ else
     private string ujKommentTartalom = "";
     private string commentMessage = "";
 
+    // ===== COMPUTED PROPERTY =====
     private int kommentekDarab => CountComments(kommentek);
 
+    // ===== ÉLETCIKLUS =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -215,17 +234,21 @@ else
         StateHasChanged();
     }
 
+    // ===== ADATBETÖLTÉS =====
+    // Bejegyzés lekérdezése az API-ból
     private async Task LoadBejegyzes()
     {
         bejegyzes = await Http.GetFromJsonAsync<BejegyzesListaDto>($"api/forum/bejegyzesek/{BejegyzesId}");
     }
 
+    // Kommentek lekérdezése – az API már FA STRUKTÚRÁBAN adja vissza (a ForumController.BuildTree() miatt)
     private async Task LoadKommentek()
     {
         var result = await Http.GetFromJsonAsync<List<KommentDto>>($"api/forum/bejegyzesek/{BejegyzesId}/kommentek");
         kommentek = result ?? new List<KommentDto>();
     }
 
+    // ===== ÚJ GYÖKÉR KOMMENT LÉTREHOZÁSA =====
     private async Task CreateKomment()
     {
         if (isCreatingComment || string.IsNullOrWhiteSpace(ujKommentTartalom))
@@ -268,6 +291,7 @@ else
         }
     }
 
+    // ===== VÁLASZ LÉTREHOZÁSA EGY KOMMENTRE =====
     private async Task CreateValasz(int kommentId)
     {
         var replyBox = kommentekValaszDobozok.FirstOrDefault(x => x.KommentID == kommentId);
@@ -312,6 +336,7 @@ else
         }
     }
 
+    // ===== VÁLASZ DOBOZOK ÁLLAPOTKEZELÉSE =====
     private readonly List<ValaszDobozAllapot> kommentekValaszDobozok = new();
 
     private ValaszDobozAllapot GetValaszDoboz(int kommentId)
@@ -325,6 +350,7 @@ else
         return created;
     }
 
+    // ===== REKURZÍV KOMMENT RENDERELŐ =====
     private RenderFragment RenderKomment(KommentDto komment, int level) => builder =>
     {
         var seq = 0;
@@ -448,6 +474,7 @@ else
         builder.CloseElement();
     };
 
+    // ===== NAVIGÁCIÓ =====
     private void BackToForum()
     {
         Navigation.NavigateTo("/forum");
@@ -461,6 +488,7 @@ else
         Navigation.NavigateTo($"/profil/{felhasznaloNev}");
     }
 
+    // ===== TARTALOM RENDERELÉS (SPOT TAGEK LINKESÍTÉSE) =====
     private MarkupString RenderTartalom(BejegyzesListaDto bejegyzes)
     {
         var text = bejegyzes.Tartalom ?? "";
@@ -479,6 +507,7 @@ else
         return new MarkupString(text);
     }
 
+    // ===== SEGÉDMETÓDUSOK =====
     private string GetMonogram(string? teljesNev, string? felhasznaloNev)
     {
         if (!string.IsNullOrWhiteSpace(teljesNev))
@@ -501,6 +530,7 @@ else
         return dateTime.ToLocalTime().ToString("yyyy. MM. dd. HH:mm");
     }
 
+    // ===== REKURZÍV KOMMENT SZÁMLÁLÓ =====
     private int CountComments(List<KommentDto> lista)
     {
         var sum = 0;
@@ -515,6 +545,7 @@ else
         return sum;
     }
 
+    // ===== BELSŐ SEGÉDOSZTÁLY =====
     private class ValaszDobozAllapot
     {
         public int KommentID { get; set; }
