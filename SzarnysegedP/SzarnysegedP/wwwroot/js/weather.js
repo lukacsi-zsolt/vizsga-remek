@@ -1,5 +1,7 @@
-﻿window.loadWeather = async function () {
+﻿// ===== IDŐJÁRÁS WIDGET – OpenWeatherMap API =====
+window.loadWeather = async function () {
     try {
+        // ===== API HÍVÁS =====
         const response = await fetch("https://api.openweathermap.org/data/2.5/weather?id=3054643&appid=3caa2c69a27fcb1aff1c39f3d19f82c8&units=metric&lang=hu");
 
         if (!response.ok) {
@@ -8,11 +10,13 @@
 
         const data = await response.json();
 
+        // ===== DOM ELEMEK LEKÉRDEZÉSE =====
         const temp = document.getElementById("weather-temp");
         const wind = document.getElementById("weather-wind");
         const visibility = document.getElementById("weather-visibility");
         const sky = document.getElementById("weather-sky");
 
+        // ===== ADATOK MEGJELENÍTÉSE =====
         if (temp && data.main) {
             temp.textContent = Math.round(data.main.temp) + "°C";
         }
@@ -29,6 +33,7 @@
             sky.textContent = data.weather[0].description;
         }
     } catch (err) {
+        // ===== HIBAKEZELÉS =====
         console.error("Időjárás hiba:", err);
 
         const temp = document.getElementById("weather-temp");

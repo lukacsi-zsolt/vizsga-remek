@@ -1,10 +1,23 @@
-﻿@using System.Net.Http
-@using System.Net.Http.Json
-@using Microsoft.AspNetCore.Components.Forms
-@using Microsoft.AspNetCore.Components.Routing
-@using Microsoft.AspNetCore.Components.Web
+﻿@* ===== GLOBÁLIS USING DIREKTÍVÁK =====
+   Az itt felsorolt @using direktívák AUTOMATIKUSAN érvényesek az ÖSSZES Razor komponensre
+   a mappában. Így nem kell minden .razor fájlban külön importálni ezeket a névtereket.
+
+   Ez ugyanaz az elv, mint a C#-ban a global using (GlobalUsings.cs),
+   csak Razor komponensekre vonatkozik.
+*@
+@* ===== .NET ALAPKÖNYVTÁRAK ===== *@
+@using System.Net.Http										@* HttpClient, HttpResponseMessage – HTTP kérésekhez *@
+@using System.Net.Http.Json									@* GetFromJsonAsync, PostAsJsonAsync – JSON HTTP segédmetódusok *@
+@* ===== BLAZOR KOMPONENSEK ===== *@
+@using Microsoft.AspNetCore.Components.Forms				@* InputFile, EditForm, InputText – űrlap komponensek *@
+@using Microsoft.AspNetCore.Components.Routing				@* NavLink, Router – navigációs komponensek *@
+@using Microsoft.AspNetCore.Components.Web					@* RenderMode – renderelési mód beállításhoz *@
 @using static Microsoft.AspNetCore.Components.Web.RenderMode
+                                                            @* A "static" import lehetővé teszi, hogy a RenderMode
+                                                            értékeit prefix nélkül használjuk:
+                                                            InteractiveServer az RenderMode.InteractiveServer helyett *@
 @using Microsoft.AspNetCore.Components.Web.Virtualization
-@using Microsoft.JSInterop
-@using SzarnysegedP
-@using SzarnysegedP.Components
+@using Microsoft.JSInterop                                  @* IJSRuntime – JavaScript Interop (C# → JS és JS → C# hívások) *@
+@* ===== SAJÁT PROJEKT NÉVTEREK ===== *@
+@using SzarnysegedP                                         @* A projekt gyökér névtere (Program.cs, App.razor) *@
+@using SzarnysegedP.Components                              @* A komponensek névtere (Pages, Layout mappák tartalma) *@

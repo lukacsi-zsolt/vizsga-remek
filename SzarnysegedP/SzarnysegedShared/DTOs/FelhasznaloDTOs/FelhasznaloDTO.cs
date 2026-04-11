@@ -1,5 +1,15 @@
-﻿namespace SzarnysegedShared.DTOs.FelhasznaloDTOs
+﻿// FELHASZNÁLÓ DTO
+namespace SzarnysegedShared.DTOs.FelhasznaloDTOs
 {
+    // A felhasználó PUBLIKUS adatai – ezt kapja a kliens profil lekérdezéskor
+    // Használja: AuthController.Me(), FelhasznalokController.GetByUsername()
+    // ÖSSZEHASONLÍTÁS A FELHASZNALO ENTITÁSSAL:
+    // Felhasznalo (entitás):     FelhasznaloDTO (DTO):
+    //   FelhasznaloID      →       FelhasznaloID        ✓ (átkerül)
+    //   FelhasznaloNev     →       FelhasznaloNev       ✓ (átkerül)
+    //   PasswordHash       →       ---                  ✗ (NEM KERÜL ÁT! – biztonsági ok)
+    //   RegDatum           →       ---                  ✗ (nem szükséges a kliensen)
+    //   IsAdmin            →       IsAdmin              ✓ (átkerül)
     public class FelhasznaloDTO
     {
         public int FelhasznaloID { get; set; }
@@ -13,6 +23,7 @@
         public string? AvatarUrl { get; set; }
         public string? CoverUrl { get; set; }
         public bool IsAdmin { get; set; }
-        //jelszo hash meg mindig ne keruljon ide
+        // A PasswordHash SZÁNDÉKOSAN nincs itt!
+        // Ez a DTO lényege: csak a biztonságos, megjelenítendő adatok kerülnek át
     }
 }

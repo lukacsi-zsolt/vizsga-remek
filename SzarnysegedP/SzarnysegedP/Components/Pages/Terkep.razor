@@ -1,4 +1,5 @@
-﻿@page "/Terkep"
+﻿@* ===== OLDAL DIREKTÍVÁK ===== *@
+@page "/Terkep"
 @implements IAsyncDisposable
 @using System.Net.Http.Json
 @using SzarnysegedP.Services
@@ -12,7 +13,7 @@
 
 <link rel="stylesheet" href="/css/terkep-extra.css">
 
-
+@* ===== CSS STÍLUSOK ===== *@
 <style>
     .terkep-page {
         background: var(--cream);
@@ -522,6 +523,7 @@
 
 </style>
 
+@* ===== HTML STRUKTÚRA ===== *@
 <section class="terkep-page">
     <div class="terkep-wrap">
         <div class="terkep-hero">
@@ -550,6 +552,7 @@
         </div>
 
         <div class="terkep-layout">
+            @* ===== BAL OLDAL: TÉRKÉP ===== *@
             <div class="terkep-card terkep-map-card">
                 <div class="terkep-map-head">
                     <div>
@@ -572,6 +575,7 @@
                 <div id="mapbox-map"></div>
             </div>
 
+            @* ===== JOBB OLDAL: SIDEBAR ===== *@
             <div class="terkep-side">
                 <div class="terkep-card terkep-side-card">
                     <div class="terkep-side-head">
@@ -650,6 +654,7 @@
     </div>
 </section>
 
+@* ===== MODÁLIS ABLAK (SPOT LÉTREHOZÁS / JAVASLÁS) ===== *@
 @if (showModal)
 {
     <div class="terkep-modal-backdrop">
@@ -742,8 +747,10 @@
 }
 
 @code {
+    // ===== DOTNET REFERENCIA A JS INTEROP-HOZ =====
     private DotNetObjectReference<Terkep>? dotNetRef;
 
+    // ===== ÁLLAPOTVÁLTOZÓK =====
     private bool mapInitialized;
     private bool isLoggedIn;
     private bool isAdmin;
@@ -759,13 +766,16 @@
 
     private SpotFormModel spotForm = new();
 
+    // ===== KONFIGURÁCIÓS PROPERTY-K =====
     private string MapboxKey => Config["ApiTokens:MapboxKey"] ?? "";
     private string ApiBaseUrl => Config["ApiBaseUrl"] ?? "";
     private string FilteredJson => System.Text.Json.JsonSerializer.Serialize(filteredSpotok);
 
+    // ===== COMPUTED PROPERTY: SZŰRT SPOTOK =====
     private List<SpotDto> filteredSpotok =>
         spotok.Where(MatchesSearch).ToList();
 
+    // ===== ÉLETCIKLUS: INICIALIZÁLÁS =====
     protected override async Task OnInitializedAsync()
     {
         selectedSpotSlug = TryGetSpotSlugFromUrl();
@@ -775,6 +785,7 @@
         spotok = await LoadSpotokAsync();
     }
 
+    // ===== ÉLETCIKLUS: RENDERELÉS UTÁN =====
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender || mapInitialized)
@@ -790,6 +801,7 @@
         mapInitialized = true;
     }
 
+    // ===== ADATBETÖLTÉS =====
     private async Task<List<SpotDto>> LoadSpotokAsync()
     {
         try
@@ -803,6 +815,7 @@
         }
     }
 
+    // ===== KERESÉS / SZŰRÉS =====
     private bool MatchesSearch(SpotDto s)
     {
         if (string.IsNullOrWhiteSpace(searchText))
@@ -816,6 +829,7 @@
             || (s.Slug?.ToLowerInvariant().Contains(q) ?? false);
     }
 
+    // ===== URL QUERY PARAMÉTER KIOLVASÁS =====
     private string? TryGetSpotSlugFromUrl()
     {
         var uri = Nav.ToAbsoluteUri(Nav.Uri);
@@ -827,6 +841,7 @@
         return null;
     }
 
+    // ===== JS OLDALI SPOTOK FRISSÍTÉSE =====
     private async Task RefreshJsSpotsAsync()
     {
         if (!mapInitialized)
@@ -844,6 +859,8 @@
         }
     }
 
+    // ===== MODÁLIS ABLAK KEZELÉS =====
+    // Admin: spot közvetlen létrehozása
     private void OpenAdminCreateModal()
     {
         if (!isAdmin)
@@ -856,6 +873,7 @@
         _ = JS.InvokeVoidAsync("enableMapClickSelection", true);
     }
 
+    // Felhasználó: spot javaslat beküldése
     private void OpenSuggestionModal()
     {
         if (!isLoggedIn || isAdmin)
@@ -868,6 +886,7 @@
         _ = JS.InvokeVoidAsync("enableMapClickSelection", true);
     }
 
+    // Modális bezárása
     private async void CloseModal()
     {
         showModal = false;
@@ -876,6 +895,7 @@
         StateHasChanged();
     }
 
+    // ===== JS → C# VISSZAHÍVÁS (JS INVOKABLE) =====
     [JSInvokable]
     public Task HandleMapClick(double lat, double lon)
     {
@@ -888,6 +908,7 @@
         return Task.CompletedTask;
     }
 
+    // ===== SPOT MENTÉS (létrehozás vagy javaslat) =====
     private async Task SubmitSpotAsync()
     {
         formMessage = null;
@@ -956,6 +977,7 @@
         }
     }
 
+    // ===== DISPOSE: ERŐFORRÁSOK FELSZABADÍTÁSA =====
     public async ValueTask DisposeAsync()
     {
         if (dotNetRef != null)
@@ -973,6 +995,8 @@
         }
     }
 
+    // ===== BELSŐ SEGÉDOSZTÁLYOK =====
+    // Spot DTO: az API-ból érkező adatok deszerializálásához
     private class SpotDto
     {
         public int SpotID { get; set; }
@@ -989,6 +1013,7 @@
         public int? LetrehozoFelhasznaloID { get; set; }
     }
 
+    // Spot javaslat kérés (felhasználói) – Slug nélkül
     private class SpotSuggestionRequest
     {
         public string? Nev { get; set; }
@@ -1002,11 +1027,13 @@
         public double? Lon { get; set; }
     }
 
+    // Spot létrehozás kérés (admin) – örököl a javaslatból + Slug mező
     private class SpotCreateRequest : SpotSuggestionRequest
     {
         public string? Slug { get; set; }
     }
 
+    // A modális ablak form modellje – az inputok ehhez vannak @bind-elve
     private class SpotFormModel
     {
         public string? Nev { get; set; }
@@ -1020,6 +1047,7 @@
         public double? Lat { get; set; }
         public double? Lon { get; set; }
 
+        // Felhasználói javaslat DTO-ra konvertálás
         public SpotSuggestionRequest ToSuggestionRequest() => new()
         {
             Nev = Nev,
@@ -1033,6 +1061,7 @@
             Lon = Lon
         };
 
+        // Admin spot létrehozás DTO-ra konvertálás (Slug-gal)
         public SpotCreateRequest ToSpotCreateRequest() => new()
         {
             Nev = Nev,
@@ -1047,6 +1076,7 @@
             Lon = Lon
         };
     }
+    // ===== KERESÉS ESEMÉNYKEZELŐ =====
     private async Task HandleSearchInput(ChangeEventArgs e)
     {
         searchText = e.Value?.ToString() ?? "";

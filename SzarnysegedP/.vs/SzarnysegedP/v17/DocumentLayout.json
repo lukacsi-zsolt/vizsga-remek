@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\fcsro\\onedrive\\dokumentumok\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\forumdtos\\bejegyzeslistadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\forumdtos\\bejegyzeslistadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\fcsro\\onedrive\\dokumentumok\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\forumdtos\\kommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\forumdtos\\kommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|c:\\users\\fcsro\\onedrive\\dokumentumok\\github\\vizsga-remek\\szarnysegedp\\szarnysegedshared\\dtos\\admindtos\\admindashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51C83C8-E872-4A92-9ECB-8E392C52584E}|SzarnysegedShared\\SzarnysegedShared.csproj|solutionrelative:szarnysegedshared\\dtos\\admindtos\\admindashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BejegyzesListaDto.cs",
+              "DocumentMoniker": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\ForumDTOs\\BejegyzesListaDto.cs",
+              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\ForumDTOs\\BejegyzesListaDto.cs",
+              "ToolTip": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\ForumDTOs\\BejegyzesListaDto.cs",
+              "RelativeToolTip": "SzarnysegedShared\\DTOs\\ForumDTOs\\BejegyzesListaDto.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:22:23.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KommentDto.cs",
+              "DocumentMoniker": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\ForumDTOs\\KommentDto.cs",
+              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\ForumDTOs\\KommentDto.cs",
+              "ToolTip": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\ForumDTOs\\KommentDto.cs",
+              "RelativeToolTip": "SzarnysegedShared\\DTOs\\ForumDTOs\\KommentDto.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:19:54.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminDashboardDto.cs",
+              "DocumentMoniker": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\AdminDTOs\\AdminDashboardDto.cs",
+              "RelativeDocumentMoniker": "SzarnysegedShared\\DTOs\\AdminDTOs\\AdminDashboardDto.cs",
+              "ToolTip": "C:\\Users\\fcsro\\OneDrive\\Dokumentumok\\GitHub\\vizsga-remek\\SzarnysegedP\\SzarnysegedShared\\DTOs\\AdminDTOs\\AdminDashboardDto.cs",
+              "RelativeToolTip": "SzarnysegedShared\\DTOs\\AdminDTOs\\AdminDashboardDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:17:44.911Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

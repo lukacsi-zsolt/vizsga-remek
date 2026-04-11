@@ -1,5 +1,7 @@
-﻿console.log("terkep.js loaded");
+﻿// ===== TÉRKÉP KEZELŐ JAVASCRIPT – MAPBOX GL JS =====
+console.log("terkep.js loaded");
 
+// ===== GLOBÁLIS ÁLLAPOTVÁLTOZÓK =====
 window.__mapbox_initializing = window.__mapbox_initializing || false;
 window.__mapbox_initialized = window.__mapbox_initialized || false;
 window.__mapbox_map = window.__mapbox_map || null;
@@ -10,6 +12,7 @@ window.__api_base_url = window.__api_base_url || "";
 window.__spot_data_cache = window.__spot_data_cache || [];
 window.__map_click_selection_enabled = window.__map_click_selection_enabled || false;
 
+// ===== KONFIGURÁCIÓ BEÁLLÍTÁSA (C# → JS) =====
 window.setMapboxConfig = function (apiKey, spotSlug, apiBaseUrl) {
     window.apiKey = apiKey;
     window.__mapbox_spot_slug = spotSlug || null;
@@ -18,19 +21,23 @@ window.setMapboxConfig = function (apiKey, spotSlug, apiBaseUrl) {
     console.log("API base URL set:", window.__api_base_url);
 };
 
+// ===== DOTNET REFERENCIA BEÁLLÍTÁSA (C# → JS) =====
 window.setMapboxDotNetRef = function (dotnetRef) {
     window.__mapbox_dotnet_ref = dotnetRef;
     console.log("Mapbox dotnet ref set.");
 };
 
+// ===== SPOT ADATOK ÁTADÁSA (C# → JS) =====
 window.setInitialSpotData = function (spotok) {
     window.__spot_data_cache = Array.isArray(spotok) ? spotok : [];
 };
 
+// ===== TÉRKÉP KATTINTÁS ENGEDÉLYEZÉS/TILTÁS =====
 window.enableMapClickSelection = function (enabled) {
     window.__map_click_selection_enabled = !!enabled;
 };
 
+// ===== SPOT ADATOK LEKÉRDEZÉSE =====
 async function getSpotokFromApi() {
     if (window.__spot_data_cache && window.__spot_data_cache.length > 0) {
         return window.__spot_data_cache;
@@ -51,6 +58,7 @@ async function getSpotokFromApi() {
     }
 }
 
+// ===== ÉLŐBEN SZÉL ADATOK LEKÉRDEZÉSE =====
 async function getWind(lat, lon) {
     if (lat == null || lon == null) return "N/A";
 
@@ -67,6 +75,7 @@ async function getWind(lat, lon) {
     }
 }
 
+// ===== MARKER SZÍN MEGHATÁROZÁSA MAGASSÁG ALAPJÁN =====
 function getMarkerColor(spot) {
     if (!spot || !spot.magassag) return "#4985c9";
     if (spot.magassag >= 800) return "#fc0341";
@@ -74,16 +83,19 @@ function getMarkerColor(spot) {
     return "#4985c9";
 }
 
+// ===== FORMÁZÓ SEGÉDFÜGGVÉNYEK =====
+// Magasság formázás: null → "-", egyébként "750 m"
 function formatMagassag(magassag) {
     if (magassag == null) return "-";
     return `${magassag} m`;
 }
-
+// Ország formázás: üres → "Ismeretlen"
 function formatOrszag(orszag) {
     if (!orszag || orszag.trim() === "") return "Ismeretlen";
     return orszag;
 }
 
+// ===== ÖSSZES MARKER ELTÁVOLÍTÁSA =====
 function clearMarkers() {
     if (!window.__mapbox_markers) return;
 
@@ -97,6 +109,7 @@ function clearMarkers() {
     window.__mapbox_markers = [];
 }
 
+// ===== SPOTOK RENDERELÉSE (MARKEREK + TÁBLÁZAT) =====
 async function renderSpotok(map, spotok) {
     const tbody = document.getElementById("spot-list");
     if (tbody) tbody.innerHTML = "";
@@ -112,6 +125,7 @@ async function renderSpotok(map, spotok) {
         const color = getMarkerColor(spot);
         const ws = await getWind(spot.lat, spot.lon);
 
+        // ===== TÁBLÁZAT SOR HOZZÁADÁSA =====
         if (tbody) {
             const tr = document.createElement("tr");
             tr.innerHTML = `
@@ -145,6 +159,7 @@ async function renderSpotok(map, spotok) {
             });
         }
 
+        // ===== POPUP HTML TARTALOM =====
         const popupHtml = `
             <div style="min-width:200px;">
                 <strong style="font-size:15px;">${spot.nev ?? "Névtelen spot"}</strong><br>
@@ -155,6 +170,7 @@ async function renderSpotok(map, spotok) {
             </div>
         `;
 
+        // ===== MAPBOX MARKER LÉTREHOZÁSA =====
         const marker = new mapboxgl.Marker({ color })
             .setLngLat([spot.lon, spot.lat])
             .setPopup(new mapboxgl.Popup({ offset: 16 }).setHTML(popupHtml))
@@ -176,6 +192,7 @@ async function renderSpotok(map, spotok) {
     }
 }
 
+// ===== SPOTOK ÚJRATÖLTÉSE (C# → JS) =====
 window.reloadMapboxSpots = async function () {
     const map = window.__mapbox_map;
     if (!map) return;
@@ -184,6 +201,7 @@ window.reloadMapboxSpots = async function () {
     await renderSpotok(map, spotok);
 };
 
+// ===== TÉRKÉP MEGSEMMISÍTÉSE (C# → JS) =====
 window.disposeMapbox = function () {
     try {
         clearMarkers();
@@ -200,6 +218,7 @@ window.disposeMapbox = function () {
     window.__mapbox_dotnet_ref = null;
 };
 
+// ===== TÉRKÉP INICIALIZÁLÁSA (C# → JS) =====
 window.initMapbox = async function (containerId) {
     console.log("initMapbox called with containerId:", containerId);
 
@@ -221,6 +240,7 @@ window.initMapbox = async function (containerId) {
     try {
         mapboxgl.accessToken = window.apiKey;
 
+        // ===== MAPBOX TÉRKÉP LÉTREHOZÁSA =====
         const map = new mapboxgl.Map({
             container: containerId,
             style: "mapbox://styles/mapbox/outdoors-v12",
@@ -230,11 +250,13 @@ window.initMapbox = async function (containerId) {
 
         window.__mapbox_map = map;
 
+        // ===== TÉRKÉP BETÖLTŐDÉSE UTÁN =====
         map.on("load", async () => {
             try {
                 map.addControl(new mapboxgl.NavigationControl());
                 map.scrollZoom.disable();
 
+                // ===== TÉRKÉP KATTINTÁS ESEMÉNY =====
                 map.on("click", async (e) => {
                     if (window.__map_click_selection_enabled && window.__mapbox_dotnet_ref) {
                         await window.__mapbox_dotnet_ref.invokeMethodAsync(
@@ -254,6 +276,7 @@ window.initMapbox = async function (containerId) {
             }
         });
 
+        // Mapbox hibaesemény figyelése
         map.on("error", (e) => console.error("Mapbox error:", e));
     } catch (err) {
         window.__mapbox_initializing = false;
