@@ -25,7 +25,6 @@ namespace ErnyosKozoApi.Data
         public DbSet<Felhasznalo> Felhasznalok { get; set; }    // Felhasználók tábla
         public DbSet<Spot> Spotok { get; set; }                 // Repülős helyszínek tábla
         public DbSet<SpotJavaslat> SpotJavaslatok { get; set; } // Felhasználói spot javaslatok tábla
-        public DbSet<Utvonal> Utvonalak { get; set; }           // Útvonalak tábla
         public DbSet<Hir> Hirek { get; set; }                   // Hírek tábla
         public DbSet<Bejegyzes> Bejegyzesek { get; set; }       // Fórum bejegyzések tábla
         public DbSet<Komment> Kommentek { get; set; }           // Kommentek tábla

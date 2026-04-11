@@ -236,3 +236,6 @@ C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi
 C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\fcsro\OneDrive\Dokumentumok\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\lukac\Documents\GitHub\vizsga-remek\ErnyosKozoApiSolution\ErnyosKozoApi\obj\Debug\net8.0\staticwebassets.build.json
